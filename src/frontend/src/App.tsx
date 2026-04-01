@@ -90,12 +90,19 @@ const pages = [
     icon: "\uD83D\uDCCB",
     color: "#E8A320",
   },
+  {
+    name: "Our Partners",
+    desc: "All 16 insurance company partners (General, Health & Life) with detailed products",
+    url: "/site/insurers.html",
+    icon: "\uD83E\uDD1D",
+    color: "#27AE60",
+  },
 ];
 
 const assets = [
   {
     icon: <FileCode size={18} />,
-    label: "8 HTML Pages",
+    label: "9 HTML Pages",
     sub: "Pure static HTML5",
   },
   {

@@ -205,16 +205,23 @@ $(document).ready(function () {
   var tIdx = 0;
   var tCards = $('.testimonial-card');
   var tTotal = tCards.length;
+  function calcPerView() { return $(window).width() > 900 ? 3 : $(window).width() > 600 ? 2 : 1; }
   function slideTo(n) {
     if (tTotal === 0) return;
-    tIdx = (n + tTotal) % tTotal;
-    var perView = $(window).width() > 900 ? 3 : $(window).width() > 600 ? 2 : 1;
-    var cardWidth = $('.testimonials-track').width() / perView;
-    var offset = -tIdx * (cardWidth + 24);
+    var perView = calcPerView();
+    var gap = 24;
+    var containerWidth = $('.testimonials-slider').width();
+    var cardWidth = (containerWidth - (perView - 1) * gap) / perView;
+    var maxIdx = Math.max(0, tTotal - perView);
+    tIdx = ((n % tTotal) + tTotal) % tTotal;
+    if (tIdx > maxIdx) tIdx = 0;
+    tCards.css({ 'width': cardWidth + 'px', 'min-width': cardWidth + 'px', 'max-width': cardWidth + 'px' });
+    var offset = -(tIdx * (cardWidth + gap));
     $('.testimonials-track').css('transform', 'translateX(' + offset + 'px)');
     $('.t-dot').removeClass('active');
     $('.t-dot').eq(tIdx).addClass('active');
   }
+  if (tTotal > 0) slideTo(0);
   $(document).on('click', '.t-dot', function () { slideTo($(this).index()); });
   setInterval(function () { slideTo(tIdx + 1); }, 4500);
   $(window).on('resize', function () { slideTo(tIdx); });
@@ -497,6 +504,26 @@ $(document).ready(function () {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  });
+
+
+
+  /* ===== INSURANCE PARTNERS TABS ===== */
+  $(document).on('click', '.partners-tab', function () {
+    var cat = $(this).data('cat');
+    $('.partners-tab').removeClass('active');
+    $(this).addClass('active');
+    $('.partners-cat').removeClass('active');
+    $('#pcat-' + cat).addClass('active');
+  });
+
+  /* ===== INSURERS PAGE TABS ===== */
+  $(document).on('click', '.insurers-tab-btn', function () {
+    var tab = $(this).data('tab');
+    $('.insurers-tab-btn').removeClass('active');
+    $(this).addClass('active');
+    $('.insurers-tab-content').removeClass('active');
+    $('#itab-' + tab).addClass('active');
   });
 
 });

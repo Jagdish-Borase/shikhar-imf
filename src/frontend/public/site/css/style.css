@@ -1123,3 +1123,286 @@ img { max-width: 100%; height: auto; }
   .quote-type-btn { min-width: 70px; padding: 12px 14px; }
   .auth-social-btns { flex-direction: column; }
 }
+
+/* ===========================
+   ADDITIONAL ENHANCEMENTS
+   =========================== */
+
+/* TESTIMONIAL SLIDER FIX */
+.testimonial-card { flex: 0 0 auto; min-width: unset !important; }
+
+/* WHY CHOOSE US — DARK BG SECTION */
+.why-bg-section {
+  background: linear-gradient(135deg, #0b1e4a 0%, #1B3A7A 55%, #0d2b5e 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+.why-bg-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+  background-position: 0 0, 21px 21px;
+  pointer-events: none;
+}
+.why-bg-section .floating-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+.why-bg-section .floating-orb:nth-child(1) { width: 300px; height: 300px; background: rgba(39,174,96,0.12); top: -80px; left: -100px; animation-delay: 0s; }
+.why-bg-section .floating-orb:nth-child(2) { width: 250px; height: 250px; background: rgba(27,58,122,0.2); bottom: -60px; right: -80px; animation-delay: 3s; }
+.why-bg-section .floating-orb:nth-child(3) { width: 180px; height: 180px; background: rgba(232,163,32,0.1); top: 40%; right: 20%; animation-delay: 5s; }
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.05); }
+}
+.why-bg-section .section-tag { background: rgba(39,174,96,0.25); color: #5eed96; }
+.why-bg-section .section-title { color: #fff; }
+.why-bg-section .section-title span { color: #4ade80; }
+.why-bg-section .section-subtitle { color: rgba(255,255,255,0.65); }
+.why-bg-section .why-card {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+}
+.why-bg-section .why-card h4 { color: #fff; }
+.why-bg-section .why-card p { color: rgba(255,255,255,0.72); }
+.why-bg-section .why-card ul li { color: rgba(255,255,255,0.78); }
+.why-bg-section .why-card ul li::before { color: #4ade80; }
+.why-bg-section .why-card:hover { background: rgba(255,255,255,0.13); box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+.why-bg-section .why-icon { background: rgba(255,255,255,0.12) !important; }
+.why-bg-section .why-card:hover .why-icon { background: rgba(255,255,255,0.22) !important; color: #fff !important; }
+.why-bg-section .why-card::before { background: linear-gradient(90deg, #4ade80, #22d3ee); }
+
+/* ADVISOR GROWTH SECTION — COOL EFFECT */
+.advisor-growth-section {
+  background: linear-gradient(135deg, #e9f4ff 0%, #dbeeff 40%, #e4f9f0 100%) !important;
+  position: relative;
+  overflow: hidden;
+}
+.advisor-growth-section::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27,58,122,0.06) 0%, transparent 70%);
+  top: -150px; left: -150px;
+  pointer-events: none;
+}
+.advisor-growth-section::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(39,174,96,0.07) 0%, transparent 70%);
+  bottom: -100px; right: -100px;
+  pointer-events: none;
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+}
+.advisor-growth-section .support-card {
+  background: #fff;
+  border-top: 4px solid transparent;
+  border-image: linear-gradient(90deg, var(--primary), var(--green)) 1;
+  box-shadow: 0 8px 32px rgba(27,58,122,0.10);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.advisor-growth-section .support-card::after {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(27,58,122,0.06), rgba(39,174,96,0.06));
+  pointer-events: none;
+}
+.advisor-growth-section .support-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(27,58,122,0.18);
+}
+.advisor-growth-section .support-card .s-icon {
+  font-size: 2.8rem;
+  display: inline-block;
+  animation: bounceIcon 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+}
+.advisor-growth-section .support-card:nth-child(2) .s-icon { animation-delay: 1s; }
+.advisor-growth-section .support-card:nth-child(3) .s-icon { animation-delay: 2s; }
+@keyframes bounceIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.advisor-growth-section .support-card h4 {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.08rem;
+}
+.advisor-growth-section .section-tag { background: rgba(27,58,122,0.1); color: var(--primary); }
+
+/* INSURANCE PARTNERS SECTION */
+.partners-section { background: var(--off-white); }
+.partners-tabs {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.partners-tab {
+  padding: 10px 24px;
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  background: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.partners-tab:hover { border-color: var(--primary); color: var(--primary); }
+.partners-tab.active { background: var(--primary); border-color: var(--primary); color: white; box-shadow: 0 4px 16px rgba(27,58,122,0.3); }
+.partners-cat { display: none; }
+.partners-cat.active { display: block; animation: fadeIn 0.35s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+.insurer-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+  cursor: default;
+}
+.insurer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); border-color: rgba(27,58,122,0.2); }
+.ins-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.ins-info h5 { font-size: 0.92rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 4px; }
+.ins-info p { font-size: 0.77rem; color: var(--text-gray); line-height: 1.4; margin-bottom: 0; }
+.ins-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  background: rgba(27,58,122,0.1);
+  color: var(--primary);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.ins-badge-health { background: rgba(39,174,96,0.12); color: var(--green); }
+.ins-badge-life { background: rgba(232,163,32,0.15); color: #b7860b; }
+
+/* INSURERS PAGE STYLES */
+.insurers-tabs { display: flex; gap: 0; justify-content: center; margin-bottom: 40px; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.1); flex-wrap: wrap; }
+.insurers-tab-btn {
+  padding: 14px 36px;
+  background: white;
+  border: none;
+  border-right: 1px solid var(--border);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.insurers-tab-btn:last-child { border-right: none; }
+.insurers-tab-btn:hover { background: var(--light-blue); color: var(--primary); }
+.insurers-tab-btn.active { background: var(--primary); color: white; }
+.insurers-tab-content { display: none; }
+.insurers-tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+.insurers-full-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.insurer-full-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.insurer-full-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.insurer-full-card-header {
+  padding: 24px 24px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.ins-logo-lg {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+.insurer-full-card-header h4 { font-size: 1rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 4px; }
+.insurer-full-card-header .ins-type { font-size: 0.78rem; color: var(--text-gray); font-weight: 500; }
+.insurer-full-card-body { padding: 0 24px 24px; }
+.insurer-full-card-body p { font-size: 0.84rem; color: var(--text-gray); margin-bottom: 14px; line-height: 1.6; }
+.ins-products-list { list-style: none; padding: 0; margin-bottom: 16px; }
+.ins-products-list li { font-size: 0.82rem; padding: 5px 0; display: flex; align-items: center; gap: 8px; color: var(--text); border-bottom: 1px solid var(--border); }
+.ins-products-list li:last-child { border-bottom: none; }
+.ins-products-list li i { color: var(--green); font-size: 0.75rem; }
+.ins-card-footer { padding: 16px 24px; background: var(--off-white); border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.ins-card-footer .ins-badge { margin: 0; }
+.ins-get-quote { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; background: var(--primary); color: white; border-radius: 6px; font-size: 0.8rem; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+.ins-get-quote:hover { background: var(--primary-dark); color: white; transform: translateX(2px); }
+
+@media (max-width: 768px) {
+  .partners-grid { grid-template-columns: 1fr 1fr; }
+  .insurers-full-grid { grid-template-columns: 1fr; }
+  .insurers-tab-btn { padding: 12px 20px; font-size: 0.82rem; }
+  .partners-tabs { gap: 8px; }
+  .partners-tab { padding: 8px 16px; font-size: 0.82rem; }
+}
+@media (max-width: 480px) {
+  .partners-grid { grid-template-columns: 1fr; }
+  .insurers-tabs { flex-direction: column; border-radius: 12px; }
+  .insurers-tab-btn { border-right: none; border-bottom: 1px solid var(--border); }
+}
