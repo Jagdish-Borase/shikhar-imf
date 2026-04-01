@@ -12,6 +12,27 @@ import {
   Type,
 } from "lucide-react";
 
+// All site images are referenced here so the build pipeline keeps them
+const SITE_IMAGES = [
+  "/assets/generated/hero-life.dim_1920x800.jpg",
+  "/assets/generated/hero-health.dim_1920x800.jpg",
+  "/assets/generated/hero-motor.dim_1920x800.jpg",
+  "/assets/generated/hero-business.dim_1920x800.jpg",
+  "/assets/generated/product-life.dim_600x400.jpg",
+  "/assets/generated/product-health.dim_600x400.jpg",
+  "/assets/generated/product-motor.dim_600x400.jpg",
+  "/assets/generated/product-home.dim_600x400.jpg",
+  "/assets/generated/product-travel-new.dim_600x400.jpg",
+  "/assets/generated/product-business.dim_600x400.jpg",
+  "/assets/generated/about-intro-clean.dim_1200x700.jpg",
+  "/assets/generated/product-term.dim_600x400.jpg",
+  "/assets/generated/product-travel.dim_600x400.jpg",
+  "/assets/generated/product-investment.dim_600x400.jpg",
+  "/assets/generated/about-team.dim_900x500.jpg",
+  "/assets/generated/become-advisor.dim_800x500.jpg",
+  "/assets/generated/hero-banner.dim_1400x700.jpg",
+];
+
 const pages = [
   {
     name: "Home",
@@ -22,7 +43,7 @@ const pages = [
   },
   {
     name: "About Us",
-    desc: "Company story, core values, and full leadership team with photos from shikharimf.com",
+    desc: "Company story, core values, leadership team with profile bios, and support pillars",
     url: "/site/about.html",
     icon: "\uD83D\uDC65",
     color: "#27AE60",
@@ -48,23 +69,44 @@ const pages = [
     icon: "\uD83E\uDD1D",
     color: "#8e44ad",
   },
+  {
+    name: "Login",
+    desc: "Member login page with email/mobile + password, social login options and validation",
+    url: "/site/login.html",
+    icon: "\uD83D\uDD10",
+    color: "#1B3A7A",
+  },
+  {
+    name: "Register",
+    desc: "New account registration with full form validation and password strength indicator",
+    url: "/site/register.html",
+    icon: "\uD83D\uDC64",
+    color: "#27AE60",
+  },
+  {
+    name: "Get Quote",
+    desc: "Free insurance quote form with 6 product types, comparison info, and advisor benefits",
+    url: "/site/quote.html",
+    icon: "\uD83D\uDCCB",
+    color: "#E8A320",
+  },
 ];
 
 const assets = [
   {
     icon: <FileCode size={18} />,
-    label: "5 HTML Pages",
+    label: "8 HTML Pages",
     sub: "Pure static HTML5",
   },
   {
     icon: <Code2 size={18} />,
     label: "1 CSS File",
-    sub: "style.css (1,200+ lines)",
+    sub: "style.css (1,500+ lines)",
   },
   { icon: <Code2 size={18} />, label: "1 JS File", sub: "jQuery 3.7 powered" },
   {
     icon: <Image size={18} />,
-    label: "7 AI Images",
+    label: "11 AI Images",
     sub: "Hero + product banners",
   },
   { icon: <Type size={18} />, label: "Google Fonts", sub: "Poppins (CDN)" },
@@ -81,12 +123,12 @@ function PageCard({ page }: { page: (typeof pages)[0] }) {
       href={page.url}
       target="_blank"
       rel="noopener noreferrer"
-      onFocus={(e) => {
+      onMouseEnter={(e) => {
         e.currentTarget.style.borderColor = page.color;
         e.currentTarget.style.transform = "translateY(-4px)";
         e.currentTarget.style.boxShadow = "0 12px 40px rgba(0,0,0,0.12)";
       }}
-      onBlur={(e) => {
+      onMouseLeave={(e) => {
         e.currentTarget.style.borderColor = "transparent";
         e.currentTarget.style.transform = "translateY(0)";
         e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.08)";
@@ -180,6 +222,13 @@ export default function App() {
         minHeight: "100vh",
       }}
     >
+      {/* Hidden image preloads to prevent build pruning */}
+      <div style={{ display: "none" }} aria-hidden="true">
+        {SITE_IMAGES.map((src) => (
+          <img key={src} src={src} alt="" />
+        ))}
+      </div>
+
       {/* Header */}
       <header
         style={{
@@ -282,7 +331,7 @@ export default function App() {
                 fontWeight: 600,
               }}
             >
-              ✓ 5 Pages Ready
+              ✓ 8 Pages Ready
             </span>
           </div>
         </div>
@@ -521,54 +570,6 @@ export default function App() {
                 directly in any browser &mdash; no server needed.
               </div>
             </div>
-          </div>
-
-          <div
-            style={{
-              marginTop: 20,
-              background: "#0D1B3E",
-              borderRadius: 14,
-              padding: 28,
-            }}
-          >
-            <h3
-              style={{
-                margin: "0 0 16px",
-                fontSize: "1rem",
-                fontWeight: 700,
-                color: "white",
-              }}
-            >
-              &#x1F4C1; File Structure{" "}
-              <span
-                style={{ fontWeight: 400, fontSize: "0.85rem", opacity: 0.6 }}
-              >
-                (inside site/ folder)
-              </span>
-            </h3>
-            <pre
-              style={{
-                margin: 0,
-                fontSize: "0.82rem",
-                lineHeight: 1.8,
-                fontFamily: "'Courier New', monospace",
-                color: "rgba(255,255,255,0.8)",
-                overflowX: "auto",
-              }}
-            >{`site/
-\u251C\u2500\u2500 index.html          \u2190 Homepage (hero slider, products, testimonials)
-\u251C\u2500\u2500 about.html          \u2190 About Us + Leadership team with photos
-\u251C\u2500\u2500 services.html       \u2190 All 16 insurance products (4 tabs)
-\u251C\u2500\u2500 contact.html        \u2190 Contact form + Google Maps + FAQ
-\u251C\u2500\u2500 advisor.html        \u2190 Advisor application form
-\u251C\u2500\u2500 css/style.css       \u2190 All styles (1,200+ lines, mobile-first)
-\u251C\u2500\u2500 js/main.js          \u2190 jQuery: slider, validation, tabs, counters
-\u2514\u2500\u2500 ../assets/generated/
-    \u251C\u2500\u2500 hero-life.dim_1920x800.jpg
-    \u251C\u2500\u2500 hero-health.dim_1920x800.jpg
-    \u251C\u2500\u2500 hero-motor.dim_1920x800.jpg
-    \u251C\u2500\u2500 hero-business.dim_1920x800.jpg
-    \u2514\u2500\u2500 product-*.dim_600x400.jpg (3 files)`}</pre>
           </div>
         </section>
 
