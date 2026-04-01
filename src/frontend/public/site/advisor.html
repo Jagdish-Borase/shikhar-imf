@@ -7,6 +7,114 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Cool advisor page effects */
+    .benefit-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px 20px;
+      box-shadow: 0 4px 20px rgba(27,58,122,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-left: 4px solid transparent;
+      border-image: linear-gradient(180deg, var(--primary,#1a2e5e), var(--green,#27ae60)) 1;
+      position: relative;
+      overflow: hidden;
+    }
+    .benefit-card::before {
+      content:'';
+      position:absolute;
+      top:-40px;right:-40px;
+      width:100px;height:100px;
+      background:radial-gradient(circle,rgba(27,58,122,0.06),transparent 70%);
+      border-radius:50%;
+    }
+    .benefit-card:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(27,58,122,0.16); }
+    .advisor-benefits { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; }
+
+    /* Support section upgrade */
+    .support-grid-section {
+      background: linear-gradient(135deg, #0d1b3e 0%, #1a2e5e 60%, #0f4d3c 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .support-grid-section::before {
+      content:'';
+      position:absolute;inset:0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(39,174,96,0.12) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(26,125,196,0.15) 0%, transparent 50%);
+    }
+    .support-grid-section .section-title { color: #fff !important; }
+    .support-grid-section .section-title span { color: #4ade80 !important; }
+    .support-grid-section .section-tag { background: rgba(255,255,255,0.15); color: #fff; }
+    .support-card {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 32px 28px;
+      transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .support-card::after {
+      content:'';
+      position:absolute;
+      top:0;left:0;right:0;
+      height:3px;
+      background: linear-gradient(90deg, #27ae60, #1a7dc4);
+      border-radius:18px 18px 0 0;
+    }
+    .support-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.12);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.25);
+    }
+    .support-card .s-icon { font-size: 2.4rem; display: block; margin-bottom: 14px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+    .support-card h4 { color: #fff; font-size: 1.1rem; margin-bottom: 12px; }
+    .support-card ul { padding-left: 0; list-style: none; }
+    .support-card ul li { color: rgba(255,255,255,0.82); font-size:0.88rem; padding: 5px 0 5px 18px; position:relative; }
+    .support-card ul li::before { content:'✓'; position:absolute; left:0; color:#4ade80; font-weight:700; }
+
+    /* Highlights on the left */
+    .highlight-item { display:flex; align-items:flex-start; gap:10px; margin-bottom:12px; }
+    .highlight-item i { color: var(--green,#27ae60); margin-top:3px; flex-shrink:0; }
+
+    /* Steps / stats row above form */
+    .advisor-steps {
+      display: flex;
+      gap: 0;
+      justify-content: center;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .advisor-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 24px;
+      position: relative;
+      flex: 1;
+      min-width: 120px;
+    }
+    .advisor-step:not(:last-child)::after {
+      content:'';
+      position:absolute;
+      right: 0; top: 22px;
+      height: 2px; width: 50%;
+      background: linear-gradient(90deg, #27ae60, transparent);
+    }
+    .advisor-step-num {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #1a2e5e, #27ae60);
+      color: #fff; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 1.1rem;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 12px rgba(27,58,122,0.25);
+    }
+    .advisor-step p { font-size: 0.78rem; color: #555; font-weight: 500; margin: 0; }
+  </style>
 </head>
 <body>
 <div class="top-bar"><div class="top-bar-inner"><div class="top-bar-left"><span><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></span><span><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 93566 33524</a></span></div><div class="top-bar-right"><span><i class="fas fa-clock"></i> Mon-Fri: 9:30 AM - 6 PM</span><span class="badge-irdai"><i class="fas fa-shield-alt"></i> IRDAI Approved</span></div></div></div>
@@ -52,7 +160,7 @@
   </div>
 </div></section>
 
-<section class="section"><div class="container">
+<section class="section support-grid-section"><div class="container">
   <div class="section-header"><span class="section-tag">Full Support</span><h2 class="section-title">What Support <span>Will You Get?</span></h2></div>
   <div class="support-grid">
     <div class="support-card reveal"><span class="s-icon">🎓</span><h4>Training &amp; Development</h4><ul><li>Product &amp; sales training sessions</li><li>Compliance guidance</li><li>IRDAI certification support</li><li>Practical case study workshops</li></ul></div>
@@ -62,6 +170,12 @@
 </div></section>
 
 <section class="section" style="background:var(--light-blue)" id="apply"><div class="container">
+    <div class="advisor-steps">
+      <div class="advisor-step"><div class="advisor-step-num">1</div><p>Apply Online</p></div>
+      <div class="advisor-step"><div class="advisor-step-num">2</div><p>Team Connects</p></div>
+      <div class="advisor-step"><div class="advisor-step-num">3</div><p>Get Trained</p></div>
+      <div class="advisor-step"><div class="advisor-step-num">4</div><p>Start Earning</p></div>
+    </div>
   <div class="advisor-layout">
     <div class="advisor-left reveal">
       <span class="section-tag">Career Opportunity</span>
@@ -108,7 +222,7 @@
 
 <section class="cta-banner"><div class="cta-inner"><h2>Have Questions About the Advisor Program?</h2><p>Talk to our team and get all your questions answered before applying.</p><div class="btns"><a href="tel:+919356633524" class="btn btn-accent btn-lg"><i class="fas fa-phone"></i> Call +91 9356633524</a><a href="https://wa.me/919356633524" class="btn btn-outline-white btn-lg" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a></div></div></section>
 
-<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="logo"><img src="https://asb.shikharimf.com/assets/logo.png" alt="Shikhar IMF" onerror="this.style.display='none'"><span>Shikhar IMF</span></div><p>IRDAI-approved Insurance Marketing Firm empowering advisors across India.</p><div class="footer-socials"><a href="https://www.facebook.com/people/Shikhar-IMF-Pvt-Ltd/61581852464505/" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/shikharimf" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/919356633524" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col"><h5>Products</h5><ul><li><a href="services.html"><i class="fas fa-chevron-right"></i> Life Insurance</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Health Insurance</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Motor Insurance</a></li></ul></div><div class="footer-col"><h5>Company</h5><ul><li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li></ul></div><div class="footer-col"><h5>Connect</h5><ul class="footer-contact"><li><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></li><li><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 9356633524</a></li><li><i class="fas fa-map-marker-alt"></i>Office No-1311/12, Boulevard Towers, 13th Floor, Sadhu Vaswani Chowk, Pune - 411001</li></ul></div></div><div class="footer-bottom"><p>© 2026 Shikhar IMF Pvt. Ltd. All rights reserved.</p><div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div></div><div class="footer-disclaimer"><div class="container"><p>Insurance is the subject matter of solicitation. For more details on risk factors, terms &amp; conditions, please read the sales brochure carefully before concluding a sale.</p></div></div></footer>
+<footer class="footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="logo"><img src="https://asb.shikharimf.com/assets/logo.png" alt="Shikhar IMF" onerror="this.style.display='none'"><span>Shikhar IMF</span></div><p>IRDAI-approved Insurance Marketing Firm empowering advisors across India.</p><div class="footer-socials"><a href="https://www.facebook.com/people/Shikhar-IMF-Pvt-Ltd/61581852464505/" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/shikharimf" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/919356633524" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div><div class="footer-col"><h5>Products</h5><ul><li><a href="services.html"><i class="fas fa-chevron-right"></i> Life Insurance</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Health Insurance</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Motor Insurance</a></li></ul></div><div class="footer-col"><h5>Company</h5><ul><li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li></ul></div><div class="footer-col"><h5>Connect</h5><ul class="footer-contact"><li><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></li><li><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 9356633524</a></li><li><i class="fas fa-map-marker-alt"></i>Office No-1311/12, Boulevard Towers, 13th Floor, Sadhu Vaswani Chowk, Pune - 411001</li></ul></div></div><div class="footer-bottom"><p>© 2026 Shikhar IMF Pvt. Ltd. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="irdai-guidelines.html">IRDAI Guidelines</a></div></div></div><div class="footer-disclaimer"><div class="container"><p>Insurance is the subject matter of solicitation. For more details on risk factors, terms &amp; conditions, please read the sales brochure carefully before concluding a sale.</p></div></div></footer>
 <div class="floating-btns"><a href="https://wa.me/919356633524" class="float-btn whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a><button class="float-btn scroll-top"><i class="fas fa-chevron-up"></i></button></div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="js/main.js"></script>
 </body></html>

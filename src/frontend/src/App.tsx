@@ -31,6 +31,22 @@ const SITE_IMAGES = [
   "/assets/generated/about-team.dim_900x500.jpg",
   "/assets/generated/become-advisor.dim_800x500.jpg",
   "/assets/generated/hero-banner.dim_1400x700.jpg",
+  "/assets/generated/logo-bajaj-general-transparent.dim_300x150.png",
+  "/assets/generated/logo-godigit-transparent.dim_300x150.png",
+  "/assets/generated/logo-icici-lombard-transparent.dim_300x150.png",
+  "/assets/generated/logo-tata-aig-transparent.dim_300x150.png",
+  "/assets/generated/logo-hdfc-ergo-transparent.dim_300x150.png",
+  "/assets/generated/logo-united-india-transparent.dim_300x150.png",
+  "/assets/generated/logo-care-health-transparent.dim_300x150.png",
+  "/assets/generated/logo-star-health-transparent.dim_300x150.png",
+  "/assets/generated/logo-aditya-birla-transparent.dim_300x150.png",
+  "/assets/generated/logo-manipal-cigna-transparent.dim_300x150.png",
+  "/assets/generated/logo-icici-prudential-transparent.dim_300x150.png",
+  "/assets/generated/logo-hdfc-life-transparent.dim_300x150.png",
+  "/assets/generated/logo-bajaj-life-transparent.dim_300x150.png",
+  "/assets/generated/logo-lic-transparent.dim_300x150.png",
+  "/assets/generated/logo-sbi-life-transparent.dim_300x150.png",
+  "/assets/generated/logo-max-life-transparent.dim_300x150.png",
 ];
 
 const pages = [

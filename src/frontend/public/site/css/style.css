@@ -200,7 +200,18 @@ img { max-width: 100%; height: auto; }
 .why-card ul li::before { content: '✓'; color: var(--green); font-weight: 700; }
 
 /* ===== TESTIMONIALS ===== */
-.testimonials-section { background: var(--off-white); }
+.testimonials-section { background: linear-gradient(135deg, #0f2a5e 0%, #1B3A7A 50%, #1a4a2e 100%); position: relative; }
+.testimonials-section::before { content: ''; position: absolute; top: -60px; left: 0; width: 100%; height: 60px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 60' preserveAspectRatio='none'%3E%3Cpath d='M0,60 C300,0 900,0 1200,60 L1200,60 L0,60 Z' fill='%230f2a5e'/%3E%3C/svg%3E") no-repeat center/cover; }
+.testimonials-section .section-tag { background: rgba(255,255,255,0.15); color: #7dd3fc; }
+.testimonials-section .section-title { color: #fff; }
+.testimonials-section .section-title span { color: #4ade80; }
+.testimonials-section .testimonial-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(10px); }
+.testimonials-section .testimonial-text { color: rgba(255,255,255,0.85); }
+.testimonials-section .author-info .name { color: #fff; }
+.testimonials-section .author-info .role { color: rgba(255,255,255,0.6); }
+.testimonials-section .verified { color: #4ade80; }
+.testimonials-section .t-dot { background: rgba(255,255,255,0.3); }
+.testimonials-section .t-dot.active { background: #4ade80; }
 .testimonials-slider { position: relative; overflow: hidden; }
 .testimonials-track { display: flex; gap: 24px; transition: transform 0.5s ease; }
 .testimonial-card { min-width: calc(33.333% - 16px); background: white; border-radius: var(--radius-lg); padding: 30px; box-shadow: var(--shadow); flex-shrink: 0; }
@@ -294,6 +305,7 @@ img { max-width: 100%; height: auto; }
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(27,58,122,0.1); }
 .form-group input.error, .form-group select.error, .form-group textarea.error { border-color: #e74c3c; box-shadow: 0 0 0 3px rgba(231,76,60,0.1); }
 .form-group input.success, .form-group select.success { border-color: var(--green); }
+.form-group select, select.auth-input { -webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231b3a7a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; background-size: 12px; padding-right: 36px; }
 .error-msg { font-size: 0.78rem; color: #e74c3c; margin-top: 4px; display: none; align-items: center; gap: 5px; }
 .error-msg.show { display: flex; }
 .form-group textarea { resize: vertical; min-height: 110px; }
@@ -1210,13 +1222,21 @@ img { max-width: 100%; height: auto; }
   50% { transform: scale(1.1); opacity: 0.7; }
 }
 .advisor-growth-section .support-card {
-  background: #fff;
-  border-top: 4px solid transparent;
-  border-image: linear-gradient(90deg, var(--primary), var(--green)) 1;
-  box-shadow: 0 8px 32px rgba(27,58,122,0.10);
+  background: linear-gradient(145deg, #ffffff, #f8fbff);
+  box-shadow: 0 8px 32px rgba(27,58,122,0.12);
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
+  border-top: none;
+  border: 1px solid rgba(27,58,122,0.08);
+}
+.advisor-growth-section .support-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--green));
+  border-radius: 12px 12px 0 0;
 }
 .advisor-growth-section .support-card::after {
   content: '';
@@ -1283,16 +1303,14 @@ img { max-width: 100%; height: auto; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 .partners-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 22px;
 }
 .insurer-card {
   background: white;
   border-radius: var(--radius-lg);
-  padding: 22px 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
+  padding: 20px 22px 20px 22px;
+  overflow: hidden;
   box-shadow: 0 2px 12px rgba(0,0,0,0.07);
   border: 1px solid var(--border);
   transition: all 0.3s;
@@ -1300,8 +1318,9 @@ img { max-width: 100%; height: auto; }
 }
 .insurer-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.12); border-color: rgba(27,58,122,0.2); }
 .ins-logo {
-  width: 52px;
-  height: 52px;
+  float: left;
+  width: 120px;
+  height: 72px;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -1310,11 +1329,13 @@ img { max-width: 100%; height: auto; }
   font-weight: 800;
   font-size: 0.88rem;
   letter-spacing: 0.5px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-right: 18px;
+  margin-bottom: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-.ins-info h5 { font-size: 0.92rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 4px; }
-.ins-info p { font-size: 0.77rem; color: var(--text-gray); line-height: 1.4; margin-bottom: 0; }
+.ins-info { overflow: hidden; }
+.ins-info h5 { font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 4px; }
+.ins-info p { font-size: 0.78rem; color: var(--text-gray); line-height: 1.45; margin-bottom: 0; }
 .ins-badge {
   display: inline-block;
   padding: 2px 10px;
@@ -1369,8 +1390,8 @@ img { max-width: 100%; height: auto; }
   gap: 16px;
 }
 .ins-logo-lg {
-  width: 64px;
-  height: 64px;
+  width: 150px;
+  height: 90px;
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -1395,7 +1416,7 @@ img { max-width: 100%; height: auto; }
 .ins-get-quote:hover { background: var(--primary-dark); color: white; transform: translateX(2px); }
 
 @media (max-width: 768px) {
-  .partners-grid { grid-template-columns: 1fr 1fr; }
+  .partners-grid { grid-template-columns: 1fr; }
   .insurers-full-grid { grid-template-columns: 1fr; }
   .insurers-tab-btn { padding: 12px 20px; font-size: 0.82rem; }
   .partners-tabs { gap: 8px; }
@@ -1403,6 +1424,7 @@ img { max-width: 100%; height: auto; }
 }
 @media (max-width: 480px) {
   .partners-grid { grid-template-columns: 1fr; }
+  .ins-logo { width: 100px; height: 60px; }
   .insurers-tabs { flex-direction: column; border-radius: 12px; }
   .insurers-tab-btn { border-right: none; border-bottom: 1px solid var(--border); }
 }

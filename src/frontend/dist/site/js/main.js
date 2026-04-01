@@ -231,8 +231,12 @@ $(document).ready(function () {
     var name = $(this).val().split('\\').pop();
     $(this).closest('.file-input-wrap').find('.file-name').text(name || 'No file chosen');
   });
-  $(document).on('click', '.file-input-wrap', function () {
-    $(this).find('input[type=file]').trigger('click');
+  $(document).on('click', 'input[type=file]', function (e) {
+    e.stopPropagation();
+  });
+  $(document).on('click', '.file-input-wrap', function (e) {
+    if ($(e.target).is('input[type=file]')) return;
+    $(this).find('input[type=file]')[0].click();
   });
 
   /* ===== LIVE FIELD VALIDATION (blur / input) ===== */
