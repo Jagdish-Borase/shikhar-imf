@@ -1,0 +1,25 @@
+type Time = int;
+type ContactForm = 
+ record {
+   email: text;
+   insuranceType: text;
+   message: text;
+   name: text;
+   phone: text;
+   timestamp: Time;
+ };
+type AdvisorApplication = 
+ record {
+   email: text;
+   experience: text;
+   location: text;
+   name: text;
+   phone: text;
+   timestamp: Time;
+ };
+service : {
+  getAllAdvisorApplications: () -> (vec AdvisorApplication) query;
+  getAllContactForms: () -> (vec ContactForm) query;
+  submitAdvisorApplication: (app: AdvisorApplication) -> ();
+  submitContactForm: (form: ContactForm) -> ();
+}

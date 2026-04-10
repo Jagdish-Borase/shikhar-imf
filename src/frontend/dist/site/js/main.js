@@ -16,6 +16,44 @@ function validateField($field) {
   return true;
 }
 
+/* =====================================================================
+   LEAD GEN POPUP CONFIGURATION — window.LeadPopupConfig
+   =====================================================================
+   SETTINGS (edit these to control popup behaviour):
+
+   mode          : Controls WHEN the popup is shown. Options:
+                   'always'  → Show on EVERY page load, ignores storage.
+                               Best for testing/demo. Reload = popup appears.
+                   'session' → Show ONCE per browser session (tab lifetime).
+                               Resets when user closes the tab/browser.
+                               Uses sessionStorage key: shikhar_lead_popup_shown
+                               To reset manually: DevTools > Application > Session Storage
+                               → delete the key 'shikhar_lead_popup_shown'.
+                   'once'    → Show only ONCE EVER in that browser.
+                               Uses localStorage key: shikhar_lead_popup_shown
+                               To reset: DevTools > Application > Local Storage
+                               → delete the key 'shikhar_lead_popup_shown'.
+
+   delaySeconds  : Seconds to wait before popup appears after page load.
+                   Default: 2.5 (2500ms). Set to 0 to show immediately.
+
+   HOW TO TEST / CONFIGURE:
+   ─────────────────────────
+   * See popup on EVERY reload (demo/testing): mode: 'always', delaySeconds: 0
+   * Session-based (default):                  mode: 'session'
+   * One-time ever:                            mode: 'once'
+   * Show immediately:                         delaySeconds: 0
+
+   OVERRIDE PER-PAGE: Add BEFORE the main.js <script> tag on any page:
+   <script>
+     window.LeadPopupConfig = { mode: 'always', delaySeconds: 0 };
+   </script>
+   ===================================================================== */
+window.LeadPopupConfig = {
+  mode        : 'session',   // 'always' | 'session' | 'once'
+  delaySeconds: 2.5          // seconds before popup appears (0 = instant)
+};
+
 /* ===== TEAM MEMBER DATA ===== */
 var teamData = {
   laxman: {
@@ -96,6 +134,35 @@ $(document).ready(function () {
   $(document).on('click', function (e) {
     if (!$(e.target).closest('.navbar').length) {
       $('.mobile-menu').removeClass('open');
+    }
+  });
+
+  /* ===== MOBILE SUB-MENU ACCORDION ===== */
+  $(document).on('click', '.mobile-dropdown-label', function () {
+    var $items = $(this).next('.mobile-dropdown-items');
+    var isOpen = $items.hasClass('open');
+    // Close all, open clicked
+    $('.mobile-dropdown-items').removeClass('open');
+    if (!isOpen) $items.addClass('open');
+  });
+
+  /* ===== NAV DROPDOWN (desktop) ===== */
+  $('.nav-dropdown-toggle').on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var $menu = $(this).siblings('.nav-dropdown-menu');
+    var isOpen = $menu.is(':visible');
+    $('.nav-dropdown-menu').hide();
+    $('.nav-dropdown-toggle i').css('transform', '');
+    if (!isOpen) {
+      $menu.show();
+      $(this).find('i').css('transform', 'rotate(180deg)');
+    }
+  });
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.nav-dropdown').length) {
+      $('.nav-dropdown-menu').hide();
+      $('.nav-dropdown-toggle i').css('transform', '');
     }
   });
 
@@ -272,6 +339,33 @@ $(document).ready(function () {
       if (!validateField($(this))) valid = false;
     });
     if (!$('input[name="experience"]:checked').length) { $('.radio-error').addClass('show'); valid = false; } else { $('.radio-error').removeClass('show'); }
+
+    // Soft validation for optional PAN number (if filled, must match format)
+    var panVal = $('#panNumber').val().trim().toUpperCase();
+    if (panVal) {
+      var $panGroup = $('#panNumber').closest('.form-group');
+      var $panMsg = $panGroup.find('.error-msg');
+      if (!/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(panVal)) {
+        showError($('#panNumber'), $panMsg, 'PAN must be 10 characters (e.g. ABCDE1234F).');
+        valid = false;
+      } else {
+        clearError($('#panNumber'), $panMsg);
+      }
+    }
+
+    // Soft validation for optional Aadhaar number (if filled, must be 12 digits)
+    var aadhaarVal = $('#aadhaarNumber').val().trim();
+    if (aadhaarVal) {
+      var $aadhaarGroup = $('#aadhaarNumber').closest('.form-group');
+      var $aadhaarMsg = $aadhaarGroup.find('.error-msg');
+      if (!/^[0-9]{12}$/.test(aadhaarVal)) {
+        showError($('#aadhaarNumber'), $aadhaarMsg, 'Aadhaar must be exactly 12 digits.');
+        valid = false;
+      } else {
+        clearError($('#aadhaarNumber'), $aadhaarMsg);
+      }
+    }
+
     if (!valid) return;
     var $btn = $(this).find('.btn-submit');
     $btn.prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> Submitting...');
@@ -283,6 +377,30 @@ $(document).ready(function () {
     }, 2000);
   });
   $(document).on('change', 'input[name="experience"]', function () { $('.radio-error').removeClass('show'); });
+
+  // Auto-uppercase PAN number input
+  $(document).on('input', '#panNumber', function () {
+    var pos = this.selectionStart;
+    $(this).val($(this).val().toUpperCase());
+    this.setSelectionRange(pos, pos);
+    // Clear error on input if already showing
+    if ($(this).closest('.form-group').find('.error-msg').hasClass('show')) {
+      var panVal = $(this).val().trim();
+      if (/^[A-Z]{5}[0-9]{4}[A-Z]$/.test(panVal)) {
+        clearError($(this), $(this).closest('.form-group').find('.error-msg'));
+      }
+    }
+  });
+
+  // Clear Aadhaar error on input
+  $(document).on('input', '#aadhaarNumber', function () {
+    if ($(this).closest('.form-group').find('.error-msg').hasClass('show')) {
+      var aadhaarVal = $(this).val().trim();
+      if (/^[0-9]{12}$/.test(aadhaarVal)) {
+        clearError($(this), $(this).closest('.form-group').find('.error-msg'));
+      }
+    }
+  });
 
   /* ===== LOGIN FORM ===== */
   $('#loginForm').on('submit', function (e) {
@@ -529,5 +647,134 @@ $(document).ready(function () {
     $('.insurers-tab-content').removeClass('active');
     $('#itab-' + tab).addClass('active');
   });
+
+  /* ===================================================================
+     LEAD GENERATION POPUP MODAL
+     Configuration: window.LeadPopupConfig (defined at top of this file).
+     Override per-page by adding a <script> BEFORE main.js:
+       <script>window.LeadPopupConfig = { mode: 'always', delaySeconds: 0 };</script>
+     =================================================================== */
+  (function () {
+    var POPUP_KEY = 'shikhar_lead_popup_shown';
+    var pageCfg = $.extend({ mode: 'session', delaySeconds: 2.5 }, window.LeadPopupConfig || {});
+
+    function getStorage() {
+      if (pageCfg.mode === 'once')    return localStorage;
+      if (pageCfg.mode === 'session') return sessionStorage;
+      return null; // 'always' — never read or write storage
+    }
+
+    function closeLeadPopup(markShown) {
+      $('#leadGenOverlay').removeClass('active');
+      if (markShown) {
+        var store = getStorage();
+        if (store) { try { store.setItem(POPUP_KEY, 'true'); } catch (e) {} }
+      }
+    }
+
+    function showLeadPopup() {
+      var store = getStorage();
+      if (store) {
+        try { if (store.getItem(POPUP_KEY) === 'true') return; } catch (e) {}
+      }
+      var delayMs = (parseFloat(pageCfg.delaySeconds) || 0) * 1000;
+      setTimeout(function () { $('#leadGenOverlay').addClass('active'); }, delayMs);
+    }
+
+    // Validation helpers for popup
+    function leadValidate() {
+      var ok = true;
+
+      var fields = [
+        { sel: '#lgFirstName',  type: 'text',   msg: 'This field is required.' },
+        { sel: '#lgLastName',   type: 'text',   msg: 'This field is required.' },
+        { sel: '#lgMobile',     type: 'phone',  msg: '' },
+        { sel: '#lgEmail',      type: 'email',  msg: '' },
+        { sel: '#lgInsurance',  type: 'select', msg: 'Please select your insurance requirement.' }
+      ];
+
+      $.each(fields, function (_, f) {
+        var $el = $(f.sel);
+        var $grp = $el.closest('.form-group');
+        var $err = $grp.find('.error-msg');
+        var val = $el.val() ? $el.val().trim() : '';
+
+        $grp.removeClass('error success');
+        $err.removeClass('show').text('');
+
+        if (!val) {
+          $grp.addClass('error');
+          $err.text(f.msg).addClass('show');
+          ok = false;
+          return;
+        }
+        if (f.type === 'phone' && !isPhone(val)) {
+          $grp.addClass('error');
+          $err.text('Enter a valid 10-digit mobile number.').addClass('show');
+          ok = false;
+          return;
+        }
+        if (f.type === 'email' && !isEmail(val)) {
+          $grp.addClass('error');
+          $err.text('Enter a valid email address.').addClass('show');
+          ok = false;
+          return;
+        }
+        $grp.addClass('success');
+      });
+
+      return ok;
+    }
+
+    // Close button
+    $(document).on('click', '#leadGenClose', function () {
+      closeLeadPopup(true);
+    });
+
+    // Click outside modal to close
+    $(document).on('click', '#leadGenOverlay', function (e) {
+      if ($(e.target).is('#leadGenOverlay')) {
+        closeLeadPopup(true);
+      }
+    });
+
+    // Escape key to close
+    $(document).on('keydown', function (e) {
+      if (e.key === 'Escape') closeLeadPopup(true);
+    });
+
+    // Submit
+    $(document).on('click', '#lgSubmitBtn', function () {
+      if (!leadValidate()) return;
+      // Success state
+      $('#lgFormBody').hide();
+      $('#lgSuccessState').css('display', 'flex');
+      var store = getStorage();
+      if (store) { try { store.setItem(POPUP_KEY, 'true'); } catch (e) {} }
+      // Countdown auto-close (3 seconds)
+      var secs = 3;
+      var $cd = $('#lgCountdown');
+      $cd.text('Closing in ' + secs + 's\u2026');
+      var timer = setInterval(function () {
+        secs--;
+        if (secs <= 0) {
+          clearInterval(timer);
+          closeLeadPopup(false);
+        } else {
+          $cd.text('Closing in ' + secs + 's\u2026');
+        }
+      }, 1000);
+    });
+
+    // Clear error on input/change
+    $(document).on('input change', '#lgFirstName, #lgLastName, #lgMobile, #lgEmail, #lgInsurance', function () {
+      var $grp = $(this).closest('.form-group');
+      $grp.removeClass('error');
+      $grp.find('.error-msg').removeClass('show').text('');
+    });
+
+    // Trigger on page load
+    showLeadPopup();
+  })();
 
 });

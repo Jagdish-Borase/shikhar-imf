@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insurance Guide - Shikhar IMF | Complete Guide to Personal &amp; Business Insurance</title>
+  <meta name="description" content="Your complete insurance guide — explore all personal and business insurance products. Life, Health, Motor, Travel, Marine, Liability, and more explained clearly.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== INSURANCE GUIDE PAGE STYLES ===== */
+    .ig-hero {
+      height: 420px;
+      background-image: url('../assets/generated/hero-insurance-guide.dim_1920x800.jpg'), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .ig-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(9,18,50,0.93) 0%, rgba(27,58,122,0.75) 55%, rgba(9,40,25,0.6) 100%);
+    }
+    .ig-hero-particles {
+      position: absolute; inset: 0; z-index: 1; overflow: hidden; pointer-events: none;
+    }
+    .ig-hero-particles span {
+      position: absolute; display: block; border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      animation: igParticle 10s ease-in-out infinite;
+    }
+    .ig-hero-particles span:nth-child(1) { width: 320px; height: 320px; top: -100px; right: 3%; animation-delay: 0s; }
+    .ig-hero-particles span:nth-child(2) { width: 200px; height: 200px; bottom: -50px; left: 8%; animation-delay: 2s; background: rgba(39,174,96,0.08); }
+    .ig-hero-particles span:nth-child(3) { width: 100px; height: 100px; top: 25%; right: 22%; animation-delay: 1.5s; }
+    @keyframes igParticle {
+      0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-18px) scale(1.04); }
+    }
+    .ig-hero-content {
+      position: relative; z-index: 2;
+      max-width: 1200px; margin: 0 auto; padding: 0 30px; color: white;
+    }
+    .ig-hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,163,32,0.9); color: var(--primary-dark);
+      padding: 5px 16px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .ig-hero-content h1 {
+      font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 800;
+      line-height: 1.15; margin-bottom: 14px;
+    }
+    .ig-hero-content h1 span { color: var(--accent); }
+    .ig-hero-content p {
+      font-size: 1.05rem; opacity: 0.9; max-width: 560px; line-height: 1.75; margin-bottom: 24px;
+    }
+    .ig-hero-stats {
+      display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+    }
+    .ig-stat { text-align: center; }
+    .ig-stat strong { display: block; font-size: 1.5rem; font-weight: 800; color: var(--accent); }
+    .ig-stat span { font-size: 0.72rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px; }
+    .ig-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.25); }
+
+    /* ===== QUICK NAV INDEX ===== */
+    .ig-quicknav {
+      background: white; border-bottom: 2px solid var(--border);
+      position: sticky; top: 72px; z-index: 100;
+      box-shadow: 0 4px 20px rgba(27,58,122,0.08);
+    }
+    .ig-quicknav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 14px 20px;
+      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    }
+    .ig-quicknav-label {
+      font-size: 0.78rem; font-weight: 700; color: var(--text-gray);
+      text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;
+    }
+    .ig-nav-pills { display: flex; gap: 8px; flex-wrap: wrap; }
+    .ig-nav-pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 14px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 600;
+      background: var(--light-blue); color: var(--primary);
+      border: 1px solid rgba(27,58,122,0.15);
+      cursor: pointer; text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .ig-nav-pill:hover { background: var(--primary); color: white; transform: translateY(-1px); }
+    .ig-nav-pill.personal { background: #e8f8f0; color: var(--green-dark); border-color: rgba(39,174,96,0.2); }
+    .ig-nav-pill.personal:hover { background: var(--green); color: white; }
+    .ig-nav-pill.business { background: #fef9e7; color: #b7860b; border-color: rgba(232,163,32,0.3); }
+    .ig-nav-pill.business:hover { background: var(--accent); color: var(--primary-dark); }
+
+    /* ===== MAIN TABS ===== */
+    .ig-main-tabs {
+      display: flex; gap: 0; justify-content: center; margin-bottom: 0;
+      border-radius: 14px; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 460px; margin: 0 auto 50px;
+    }
+    .ig-main-tab {
+      flex: 1; padding: 15px 28px;
+      border: none; background: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem; font-weight: 700;
+      color: var(--text-gray); cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex; align-items: center; justify-content: center; gap: 9px;
+    }
+    .ig-main-tab:first-child { border-right: 1px solid var(--border); }
+    .ig-main-tab:hover { color: var(--primary); background: var(--light-blue); }
+    .ig-main-tab.active {
+      background: linear-gradient(135deg, var(--primary-light), var(--primary));
+      color: white;
+    }
+    .ig-tab-pane { display: none; }
+    .ig-tab-pane.active { display: block; animation: fadeIn 0.35s ease; }
+
+    /* ===== SUB-CATEGORY ACCORDION ===== */
+    .ig-subcat {
+      background: white; border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(27,58,122,0.08);
+      border: 1px solid var(--border); margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .ig-subcat-header {
+      padding: 20px 28px; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      background: linear-gradient(135deg, rgba(27,58,122,0.04), rgba(37,80,184,0.02));
+      transition: background 0.2s ease;
+      user-select: none;
+    }
+    .ig-subcat-header:hover { background: linear-gradient(135deg, rgba(27,58,122,0.08), rgba(37,80,184,0.05)); }
+    .ig-subcat.open .ig-subcat-header { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); }
+    .ig-subcat-header-left { display: flex; align-items: center; gap: 16px; }
+    .ig-subcat-icon {
+      width: 52px; height: 52px; border-radius: 14px;
+      background: var(--light-blue);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: var(--primary);
+      flex-shrink: 0; transition: all 0.3s ease;
+    }
+    .ig-subcat.open .ig-subcat-icon { background: rgba(255,255,255,0.2); color: white; }
+    .ig-subcat-header h3 { font-size: 1.08rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 2px; }
+    .ig-subcat-header p { font-size: 0.8rem; color: var(--text-gray); }
+    .ig-subcat.open .ig-subcat-header h3 { color: white; }
+    .ig-subcat.open .ig-subcat-header p { color: rgba(255,255,255,0.75); }
+    .ig-subcat-chevron { font-size: 0.9rem; color: var(--text-gray); transition: transform 0.3s ease; }
+    .ig-subcat.open .ig-subcat-chevron { transform: rotate(180deg); color: white; }
+    .ig-subcat-count {
+      font-size: 0.72rem; font-weight: 700; padding: 3px 10px;
+      background: rgba(27,58,122,0.1); color: var(--primary);
+      border-radius: 20px;
+    }
+    .ig-subcat.open .ig-subcat-count { background: rgba(255,255,255,0.2); color: white; }
+    .ig-subcat-body { display: none; padding: 28px; background: #fcfdff; }
+    .ig-subcat.open .ig-subcat-body { display: block; animation: slideDown 0.3s ease; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ===== INSURANCE TYPE CARDS GRID ===== */
+    .ig-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .ig-card {
+      background: white; border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(27,58,122,0.06);
+      transition: all 0.3s ease; overflow: hidden;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .ig-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--green));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .ig-card:hover::before { transform: scaleX(1); }
+    .ig-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(27,58,122,0.14); border-color: rgba(27,58,122,0.2); }
+    .ig-card-head {
+      padding: 20px 20px 14px;
+      display: flex; align-items: flex-start; gap: 14px;
+    }
+    .ig-card-icon {
+      width: 48px; height: 48px; border-radius: 12px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem;
+      background: var(--light-blue); color: var(--primary);
+    }
+    .ig-card-icon.green { background: #e8f8f0; color: var(--green-dark); }
+    .ig-card-icon.gold { background: #fef9e7; color: #b7860b; }
+    .ig-card-icon.teal { background: #e8faf8; color: #16a085; }
+    .ig-card-icon.purple { background: #f5eef8; color: #8e44ad; }
+    .ig-card-icon.red { background: #fdecea; color: #c0392b; }
+    .ig-card-icon.navy { background: #eef2ff; color: #2c3e7a; }
+    .ig-card-title { font-size: 0.95rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 2px; }
+    .ig-card-subtitle { font-size: 0.75rem; color: var(--text-gray); font-weight: 500; }
+    .ig-card-body { padding: 0 20px 16px; flex: 1; }
+    .ig-card-desc { font-size: 0.83rem; color: var(--text-gray); line-height: 1.65; margin-bottom: 14px; }
+    .ig-card-benefits { list-style: none; padding: 0; margin: 0 0 16px; }
+    .ig-card-benefits li {
+      font-size: 0.78rem; color: var(--text);
+      padding: 4px 0; display: flex; align-items: flex-start; gap: 8px;
+      border-bottom: 1px dashed rgba(0,0,0,0.05);
+    }
+    .ig-card-benefits li:last-child { border-bottom: none; }
+    .ig-card-benefits li i { color: var(--green); font-size: 0.7rem; margin-top: 3px; flex-shrink: 0; }
+    .ig-card-footer {
+      padding: 12px 20px 16px;
+      border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+      background: linear-gradient(135deg, #fafbff, #f8fbff);
+    }
+    .ig-badge {
+      display: inline-block; padding: 2px 10px; border-radius: 20px;
+      font-size: 0.68rem; font-weight: 700;
+      background: var(--light-blue); color: var(--primary);
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    .ig-badge.life { background: #fef9e7; color: #b7860b; }
+    .ig-badge.health { background: #e8f8f0; color: var(--green-dark); }
+    .ig-badge.motor { background: #fff3e0; color: #e65100; }
+    .ig-badge.invest { background: #f3e5f5; color: #6a1b9a; }
+    .ig-badge.travel { background: #e8faf8; color: #16a085; }
+    .ig-badge.business { background: #fdecea; color: #c0392b; }
+    .ig-get-quote {
+      display: inline-flex; align-items: center; gap: 5px;
+      padding: 7px 16px; border-radius: 7px;
+      background: var(--primary); color: white;
+      font-size: 0.77rem; font-weight: 700;
+      text-decoration: none; transition: all 0.2s ease;
+    }
+    .ig-get-quote:hover { background: var(--green); color: white; transform: translateX(2px); }
+
+    /* ===== EXPLORE SECTION ON HOME (index.html) ===== */
+    .explore-section { background: linear-gradient(160deg, #f0f5ff 0%, #eaf5ee 50%, #f5f8ff 100%); }
+    .explore-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .explore-col { }
+    .explore-col-header {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+      padding: 16px 20px; border-radius: 12px;
+    }
+    .explore-col-header.personal-hdr {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    }
+    .explore-col-header.business-hdr {
+      background: linear-gradient(135deg, #1a5c3a, var(--green-dark));
+    }
+    .explore-col-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: white; flex-shrink: 0;
+    }
+    .explore-col-header h3 { font-size: 1.05rem; font-weight: 800; color: white; margin-bottom: 2px; }
+    .explore-col-header p { font-size: 0.76rem; color: rgba(255,255,255,0.8); }
+    .explore-items-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .explore-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 11px 14px; border-radius: 9px;
+      background: white; border: 1px solid var(--border);
+      text-decoration: none; color: var(--text);
+      font-size: 0.82rem; font-weight: 600;
+      transition: all 0.22s ease;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    }
+    .explore-item:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); box-shadow: 0 6px 18px rgba(27,58,122,0.12); }
+    .explore-item i { font-size: 1rem; flex-shrink: 0; }
+    .explore-item.personal-item i { color: var(--primary); }
+    .explore-item.business-item i { color: var(--green-dark); }
+    .explore-item:hover i { transform: scale(1.1); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .ig-cards-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .ig-hero { height: 340px; }
+      .ig-quicknav { top: 0; position: relative; }
+      .ig-quicknav-inner { padding: 12px 16px; }
+      .ig-cards-grid { grid-template-columns: 1fr; }
+      .ig-main-tabs { max-width: 100%; border-radius: 10px; margin-bottom: 30px; }
+      .ig-main-tab { padding: 12px 16px; font-size: 0.85rem; }
+      .ig-subcat-header { padding: 16px 18px; }
+      .ig-subcat-body { padding: 18px 16px; }
+      .explore-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .ig-hero-stats { gap: 14px; }
+      .ig-divider { height: 30px; }
+      .explore-items-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-left">
+      <span><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></span>
+      <span><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 93566 33524</a></span>
+    </div>
+    <div class="top-bar-right">
+      <span><i class="fas fa-clock"></i> Mon-Fri: 9:30 AM - 6 PM</span>
+      <span class="badge-irdai"><i class="fas fa-shield-alt"></i> IRDAI Approved</span>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://asb.shikharimf.com/assets/logo.png" alt="Shikhar IMF" onerror="this.style.display='none'">
+      <span>Shikhar IMF</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="insurers.html">Partners</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle">Company <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html"><span class="dd-icon" style="background:#eef2ff"><i class="fas fa-building" style="color:#1B3A7A"></i></span> About Us</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle active">Learn <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown-menu">
+          <a href="product-highlights.html"><span class="dd-icon" style="background:#fef9e7"><i class="fas fa-star" style="color:#E8A320"></i></span> Product Highlights</a>
+          <a href="learning-videos.html"><span class="dd-icon" style="background:#e8f8f0"><i class="fas fa-play-circle" style="color:#27AE60"></i></span> Learning &amp; Videos</a>
+          <a href="insurance-guide.html" class="active"><span class="dd-icon" style="background:#eef2ff"><i class="fas fa-book-open" style="color:#1B3A7A"></i></span> Insurance Guide</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+      <a href="advisor.html" class="btn-advisor-cta"><i class="fas fa-handshake"></i> Become an Advisor</a>
+      <a href="quote.html" class="btn-quote"><i class="fas fa-file-alt"></i> Get Quote</a>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="insurers.html">Our Partners</a>
+    <a href="contact.html">Contact</a>
+    <span class="mobile-dropdown-label"><i class="fas fa-building" style="margin-right:6px;color:#1B3A7A"></i> Company</span>
+    <div class="mobile-dropdown-items">
+      <a href="about.html"><i class="fas fa-building" style="color:#1B3A7A;margin-right:6px"></i> About Us</a>
+    </div>
+    <span class="mobile-dropdown-label"><i class="fas fa-graduation-cap" style="margin-right:6px;color:#E8A320"></i> Learn</span>
+    <div class="mobile-dropdown-items">
+      <a href="product-highlights.html"><i class="fas fa-star" style="color:#E8A320;margin-right:6px"></i> Product Highlights</a>
+      <a href="learning-videos.html"><i class="fas fa-play-circle" style="color:#27AE60;margin-right:6px"></i> Learning &amp; Videos</a>
+      <a href="insurance-guide.html" style="color:var(--primary);font-weight:700"><i class="fas fa-book-open" style="color:#1B3A7A;margin-right:6px"></i> Insurance Guide</a>
+    </div>
+    <div class="mobile-menu-btns">
+      <a href="login.html" class="btn-login">Login</a>
+      <a href="advisor.html" class="btn-advisor-cta"><i class="fas fa-handshake"></i> Become an Advisor</a>
+      <a href="quote.html" class="btn-quote">Get Quote</a>
+    </div>
+  </div>
+</nav>
+<!-- HERO -->
+<section class="ig-hero">
+  <div class="ig-hero-overlay"></div>
+  <div class="ig-hero-particles"><span></span><span></span><span></span></div>
+  <div class="ig-hero-content">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Insurance Guide</span></div>
+    <div class="ig-hero-badge"><i class="fas fa-book-open"></i> Complete Insurance Guide</div>
+    <h1>Your <span>Complete Insurance</span> Guide</h1>
+    <p>Everything you need to know about protecting what matters most — your family, health, assets, and business.</p>
+    <div class="ig-hero-stats">
+      <div class="ig-stat"><strong>40+</strong><span>Insurance Types</span></div>
+      <div class="ig-divider"></div>
+      <div class="ig-stat"><strong>2</strong><span>Categories</span></div>
+      <div class="ig-divider"></div>
+      <div class="ig-stat"><strong>20+</strong><span>Insurer Partners</span></div>
+      <div class="ig-divider"></div>
+      <div class="ig-stat"><strong>Free</strong><span>Expert Advice</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK NAV INDEX -->
+<div class="ig-quicknav">
+  <div class="ig-quicknav-inner">
+    <span class="ig-quicknav-label"><i class="fas fa-compass" style="margin-right:5px;color:var(--primary)"></i> Quick Jump:</span>
+    <div class="ig-nav-pills">
+      <a class="ig-nav-pill personal" href="#life-section"><i class="fas fa-heart"></i> Life</a>
+      <a class="ig-nav-pill personal" href="#health-section"><i class="fas fa-heartbeat"></i> Health</a>
+      <a class="ig-nav-pill personal" href="#investment-section"><i class="fas fa-chart-line"></i> Investment</a>
+      <a class="ig-nav-pill personal" href="#motor-section"><i class="fas fa-car"></i> Motor</a>
+      <a class="ig-nav-pill personal" href="#travel-section"><i class="fas fa-plane"></i> Travel &amp; Property</a>
+      <a class="ig-nav-pill business" href="#marine-section"><i class="fas fa-anchor"></i> Marine &amp; Property</a>
+      <a class="ig-nav-pill business" href="#employee-section"><i class="fas fa-users"></i> Employee Benefits</a>
+      <a class="ig-nav-pill business" href="#liability-section"><i class="fas fa-gavel"></i> Liability</a>
+      <a class="ig-nav-pill business" href="#engineering-section"><i class="fas fa-hard-hat"></i> Engineering</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<section class="section" style="background:var(--off-white)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">All Insurance Types</span>
+      <h2 class="section-title">Personal &amp; <span>Business Insurance</span></h2>
+      <p class="section-subtitle">Browse all insurance categories. Each product explained with key benefits so you can make an informed choice.</p>
+    </div>
+
+    <!-- MAIN TABS -->
+    <div class="ig-main-tabs">
+      <button class="ig-main-tab active" data-tab="personal"><i class="fas fa-user-shield"></i> Personal Insurance</button>
+      <button class="ig-main-tab" data-tab="business"><i class="fas fa-building"></i> Business Insurance</button>
+    </div>
+
+    <!-- PERSONAL INSURANCE TAB -->
+    <div class="ig-tab-pane active" id="tab-personal">
+
+      <!-- LIFE INSURANCE -->
+      <div class="ig-subcat open" id="life-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon"><i class="fas fa-heart"></i></div>
+            <div>
+              <h3>Life Insurance</h3>
+              <p>Secure your family's future with the right life cover</p>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">7 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <!-- Term Life -->
+            <div class="ig-card">
+              <div class="ig-card-head">
+                <div class="ig-card-icon"><i class="fas fa-shield-alt"></i></div>
+                <div><div class="ig-card-title">Term Life Insurance</div><div class="ig-card-subtitle">Pure protection plan</div></div>
+              </div>
+              <div class="ig-card-body">
+                <p class="ig-card-desc">Pure protection plan that pays a lump sum to nominees if the insured passes away during the policy term. Maximum cover at the lowest possible premium.</p>
+                <ul class="ig-card-benefits">
+                  <li><i class="fas fa-check-circle"></i> High coverage at very low premium</li>
+                  <li><i class="fas fa-check-circle"></i> Tax benefits under Section 80C</li>
+                  <li><i class="fas fa-check-circle"></i> Complete family financial security</li>
+                </ul>
+              </div>
+              <div class="ig-card-footer"><span class="ig-badge life">Life</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <!-- Whole Life -->
+            <div class="ig-card">
+              <div class="ig-card-head">
+                <div class="ig-card-icon"><i class="fas fa-infinity"></i></div>
+                <div><div class="ig-card-title">Whole Life Insurance</div><div class="ig-card-subtitle">Lifelong protection + savings</div></div>
+              </div>
+              <div class="ig-card-body">
+                <p class="ig-card-desc">Covers the insured for their entire lifetime with an additional savings component that builds cash value over time.</p>
+                <ul class="ig-card-benefits">
+                  <li><i class="fas fa-check-circle"></i> Lifelong protection guaranteed</li>
+                  <li><i class="fas fa-check-circle"></i> Maturity benefit on survival</li>
+                  <li><i class="fas fa-check-circle"></i> Loan facility against policy</li>
+                </ul>
+              </div>
+              <div class="ig-card-footer"><span class="ig-badge life">Life</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <!-- ULIPs -->
+            <div class="ig-card">
+              <div class="ig-card-head">
+                <div class="ig-card-icon gold"><i class="fas fa-chart-line"></i></div>
+                <div><div class="ig-card-title">ULIPs</div><div class="ig-card-subtitle">Insurance + market investment</div></div>
+              </div>
+              <div class="ig-card-body">
+                <p class="ig-card-desc">Unit Linked Insurance Plans combine life insurance with investment in market-linked funds — equity, debt, or balanced options.</p>
+                <ul class="ig-card-benefits">
+                  <li><i class="fas fa-check-circle"></i> Market-linked wealth creation</li>
+                  <li><i class="fas fa-check-circle"></i> Flexibility to switch between funds</li>
+                  <li><i class="fas fa-check-circle"></i> Tax benefits under 80C &amp; 10(10D)</li>
+                </ul>
+              </div>
+              <div class="ig-card-footer"><span class="ig-badge invest">ULIP</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <!-- Endowment -->
+            <div class="ig-card">
+              <div class="ig-card-head">
+                <div class="ig-card-icon"><i class="fas fa-piggy-bank"></i></div>
+                <div><div class="ig-card-title">Endowment Plans</div><div class="ig-card-subtitle">Life cover + savings maturity</div></div>
+              </div>
+              <div class="ig-card-body">
+                <p class="ig-card-desc">A dual-benefit plan offering life cover during the term and a guaranteed maturity payout at the end of the policy period.</p>
+                <ul class="ig-card-benefits">
+                  <li><i class="fas fa-check-circle"></i> Guaranteed returns at maturity</li>
+                  <li><i class="fas fa-check-circle"></i> Disciplined, forced savings habit</li>
+                  <li><i class="fas fa-check-circle"></i> Bonus additions from insurer profits</li>
+                </ul>
+              </div>
+              <div class="ig-card-footer"><span class="ig-badge life">Life</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <!-- Money Back -->
+            <div class="ig-card">
+              <div class="ig-card-head">
+                <div class="ig-card-icon green"><i class="fas fa-hand-holding-usd"></i></div>
+                <div><div class="ig-card-title">Money Back Plans</div><div class="ig-card-subtitle">Regular payouts + life cover</div></div>
+              </div>
+              <div class="ig-card-body">
+                <p class="ig-card-desc">Receive a percentage of sum assured at regular intervals during the policy term, plus full cover for the life insured.</p>
+                <ul class="ig-card-benefits">
+                  <li><i class="fas fa-check-circle"></i> Periodic survival benefit payouts</li>
+                  <li><i class="fas fa-check-circle"></i> Full sum assured to family on death</li>
+                  <li><i class="fas fa-check-circle"></i> Ideal for goal-based planning</li>
+                </ul>
+              </div>
+              <div class="ig-card-footer"><span class="ig-badge life">Life</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <!-- Child Plans -->
+            <div class="ig-card">
+              <div class="ig-card-head">
+                <div class="ig-card-icon teal"><i class="fas fa-child"></i></div>
+                <div><div class="ig-card-title">Child Plans</div><div class="ig-card-subtitle">Secure your child's future</div></div>
+              </div>
+              <div class="ig-card-body">
+                <p class="ig-card-desc">Ensures your child's education and future goals are funded even if the parent is no longer around — with premium waiver on parent's death.</p>
+                <ul class="ig-card-benefits">
+                  <li><i class="fas fa-check-circle"></i> Education and marriage funding</li>
+                  <li><i class="fas fa-check-circle"></i> Premium waiver on parent's death</li>
+                  <li><i class="fas fa-check-circle"></i> Future protection regardless of events</li>
+                </ul>
+              </div>
+              <div class="ig-card-footer"><span class="ig-badge life">Life</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <!-- Group Plans -->
+            <div class="ig-card">
+              <div class="ig-card-head">
+                <div class="ig-card-icon purple"><i class="fas fa-users"></i></div>
+                <div><div class="ig-card-title">Group Life Plans</div><div class="ig-card-subtitle">Life cover for employee groups</div></div>
+              </div>
+              <div class="ig-card-body">
+                <p class="ig-card-desc">Provides life insurance coverage to a group of employees under a single master policy at cost-effective group rates.</p>
+                <ul class="ig-card-benefits">
+                  <li><i class="fas fa-check-circle"></i> Cost-effective group pricing</li>
+                  <li><i class="fas fa-check-circle"></i> Boosts employee retention</li>
+                  <li><i class="fas fa-check-circle"></i> Single master premium payment</li>
+                </ul>
+              </div>
+              <div class="ig-card-footer"><span class="ig-badge life">Group</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HEALTH INSURANCE -->
+      <div class="ig-subcat" id="health-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon" style="background:#e8f8f0;color:var(--green-dark)"><i class="fas fa-heartbeat"></i></div>
+            <div><h3>Health Insurance</h3><p>Comprehensive medical coverage for every family member</p></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">6 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon green"><i class="fas fa-hospital"></i></div><div><div class="ig-card-title">Health Insurance</div><div class="ig-card-subtitle">Hospitalisation cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Covers hospitalisation expenses, surgery, ICU charges, and day-care procedures with access to 10,000+ cashless hospitals across India.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Cashless treatment at network hospitals</li><li><i class="fas fa-check-circle"></i> Pre &amp; post hospitalisation expenses</li><li><i class="fas fa-check-circle"></i> No-claim bonus benefit</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge health">Health</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon green"><i class="fas fa-stethoscope"></i></div><div><div class="ig-card-title">OPD Insurance</div><div class="ig-card-subtitle">Outpatient coverage</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Covers outpatient department expenses that regular health insurance misses — doctor visits, diagnostic tests, medicines, and specialist consultations.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Doctor consultation reimbursement</li><li><i class="fas fa-check-circle"></i> Diagnostic tests &amp; lab work</li><li><i class="fas fa-check-circle"></i> Medicines and pharmacy covered</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge health">Health</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon gold"><i class="fas fa-star"></i></div><div><div class="ig-card-title">1 Crore Health Cover</div><div class="ig-card-subtitle">Premium super top-up</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Premium health plan with ₹1 Crore sum insured — ideal for super top-up coverage ensuring access to the best hospitals with no compromise.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Exceptionally high sum insured</li><li><i class="fas fa-check-circle"></i> Super top-up structure saves premium</li><li><i class="fas fa-check-circle"></i> Access to premium hospital network</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge health">Health</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon"><i class="fas fa-clinic-medical"></i></div><div><div class="ig-card-title">Arogya Sanjeevani</div><div class="ig-card-subtitle">IRDAI standard policy</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">The standard health policy mandated by IRDAI — affordable, simple, and accepted by all insurers. Great for first-time buyers and senior citizens.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Affordable standardised premium</li><li><i class="fas fa-check-circle"></i> Cataract treatment &amp; AYUSH cover</li><li><i class="fas fa-check-circle"></i> Accepted nationwide by all insurers</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge health">Health</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon teal"><i class="fas fa-home"></i></div><div><div class="ig-card-title">Family Health Insurance</div><div class="ig-card-subtitle">Floater policy for the family</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">A single policy with a shared sum insured covering the entire family — spouse, children, and parents. Cost-effective compared to individual policies for each.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Floater sum insured for the whole family</li><li><i class="fas fa-check-circle"></i> All family members covered under one plan</li><li><i class="fas fa-check-circle"></i> Highly cost-effective family protection</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge health">Health</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon red"><i class="fas fa-ribbon"></i></div><div><div class="ig-card-title">Cancer Insurance</div><div class="ig-card-subtitle">Specialised critical illness</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Dedicated cancer cover providing a lump sum payout on diagnosis across all stages — from early detection to advanced treatment support.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Lump sum payout on diagnosis</li><li><i class="fas fa-check-circle"></i> All cancer stages covered</li><li><i class="fas fa-check-circle"></i> Critical illness benefit included</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge health">Health</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INVESTMENT INSURANCE -->
+      <div class="ig-subcat" id="investment-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon" style="background:#f3e5f5;color:#6a1b9a"><i class="fas fa-chart-pie"></i></div>
+            <div><h3>Investment Plans</h3><p>Grow your wealth while staying protected</p></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">4 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon purple"><i class="fas fa-chart-line"></i></div><div><div class="ig-card-title">Investment Plans</div><div class="ig-card-subtitle">Market-linked with protection</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Market-linked investment products that grow your wealth through professionally managed funds while providing life insurance coverage.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Wealth creation with market upside</li><li><i class="fas fa-check-circle"></i> Professional fund management</li><li><i class="fas fa-check-circle"></i> Flexible premium payment options</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge invest">Investment</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon gold"><i class="fas fa-lock"></i></div><div><div class="ig-card-title">Guaranteed Return Plans</div><div class="ig-card-subtitle">Fixed assured returns</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Insurance products offering fixed, pre-declared returns guaranteed at maturity — no market risk. Ideal for risk-averse investors seeking predictable outcomes.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> 100% guaranteed maturity benefit</li><li><i class="fas fa-check-circle"></i> Life protection throughout tenure</li><li><i class="fas fa-check-circle"></i> Tax-free returns under 10(10D)</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge invest">Investment</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon"><i class="fas fa-calculator"></i></div><div><div class="ig-card-title">Tax Saving Investment</div><div class="ig-card-subtitle">80C deduction + protection</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Insurance products designed specifically to maximise tax savings under Section 80C while also providing meaningful life protection for the family.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Sec 80C deduction up to ₹1.5 lakh</li><li><i class="fas fa-check-circle"></i> Tax-free maturity proceeds</li><li><i class="fas fa-check-circle"></i> Life cover as added benefit</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge invest">Tax Saving</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon green"><i class="fas fa-coins"></i></div><div><div class="ig-card-title">Smart Deposit</div><div class="ig-card-subtitle">Short-term secure investment</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Short-duration investment product with capital protection and competitive returns. Ideal for parking surplus funds securely with flexible tenure options.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Full capital protection guaranteed</li><li><i class="fas fa-check-circle"></i> Competitive risk-free returns</li><li><i class="fas fa-check-circle"></i> Flexible short-to-medium tenure</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge invest">Investment</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOTOR INSURANCE -->
+      <div class="ig-subcat" id="motor-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon" style="background:#fff3e0;color:#e65100"><i class="fas fa-car"></i></div>
+            <div><h3>Motor Insurance</h3><p>Drive worry-free with the right vehicle cover</p></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">5 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon gold"><i class="fas fa-car"></i></div><div><div class="ig-card-title">Car Insurance</div><div class="ig-card-subtitle">Comprehensive motor cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">All-in-one comprehensive motor insurance covering own vehicle damage, third-party liability, theft, natural calamities and personal accident.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Own damage cover for your vehicle</li><li><i class="fas fa-check-circle"></i> Third party liability (mandatory by law)</li><li><i class="fas fa-check-circle"></i> 24/7 roadside assistance</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge motor">Motor</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon gold"><i class="fas fa-car-side"></i></div><div><div class="ig-card-title">Brand New Car Insurance</div><div class="ig-card-subtitle">Bumper-to-bumper cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Zero-depreciation comprehensive cover for new cars — get the full invoice value reimbursed without any depreciation deduction on parts.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Zero depreciation on all parts</li><li><i class="fas fa-check-circle"></i> Return to invoice value on total loss</li><li><i class="fas fa-check-circle"></i> Bumper-to-bumper protection</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge motor">Motor</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon" style="background:#fff3e0;color:#e65100"><i class="fas fa-bicycle"></i></div><div><div class="ig-card-title">Two Wheeler Insurance</div><div class="ig-card-subtitle">Bike &amp; scooter protection</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Essential and comprehensive coverage for two-wheelers — bikes, scooters, and motorcycles — covering own damage, TP liability, and personal accident.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Own damage cover for your bike</li><li><i class="fas fa-check-circle"></i> Mandatory TP cover included</li><li><i class="fas fa-check-circle"></i> Personal accident for rider</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge motor">Motor</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon" style="background:#fef9e7;color:#b7860b"><i class="fas fa-taxi"></i></div><div><div class="ig-card-title">Taxi Insurance</div><div class="ig-card-subtitle">Commercial taxi cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Specially designed for taxis and cab-aggregator vehicles used for commercial purposes — covers the vehicle, driver, and passenger liability.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Approved for commercial passenger use</li><li><i class="fas fa-check-circle"></i> Driver personal accident cover</li><li><i class="fas fa-check-circle"></i> Passenger liability protection</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge motor">Commercial</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon" style="background:#fff3e0;color:#e65100"><i class="fas fa-truck"></i></div><div><div class="ig-card-title">Commercial Vehicle Insurance</div><div class="ig-card-subtitle">Trucks, tempos &amp; buses</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Comprehensive insurance for commercial vehicles — trucks, tempos, goods carriers, and buses — covering vehicle, driver, and cargo protection.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Cargo and goods-in-transit protection</li><li><i class="fas fa-check-circle"></i> Driver personal accident benefit</li><li><i class="fas fa-check-circle"></i> RC endorsement support</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge motor">Commercial</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAVEL & PROPERTY -->
+      <div class="ig-subcat" id="travel-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon" style="background:#e8faf8;color:#16a085"><i class="fas fa-plane"></i></div>
+            <div><h3>Travel &amp; Property Insurance</h3><p>Protect your travels, home, and lifestyle</p></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">4 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon teal"><i class="fas fa-plane-departure"></i></div><div><div class="ig-card-title">Travel Insurance</div><div class="ig-card-subtitle">Domestic &amp; international trips</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Comprehensive protection for domestic and international travel — covers medical emergencies abroad, trip cancellations, delayed flights, and lost baggage.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Medical emergency cover abroad</li><li><i class="fas fa-check-circle"></i> Baggage loss and delay cover</li><li><i class="fas fa-check-circle"></i> Flight delay compensation</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge travel">Travel</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon navy"><i class="fas fa-home"></i></div><div><div class="ig-card-title">Home Insurance</div><div class="ig-card-subtitle">Protect your home &amp; contents</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Protects your home's structure and all household contents from fire, natural disasters, theft, and accidental damage with comprehensive cover.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Fire, flood &amp; earthquake cover</li><li><i class="fas fa-check-circle"></i> Theft &amp; burglary protection</li><li><i class="fas fa-check-circle"></i> Contents and appliances cover</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge">Property</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon green"><i class="fas fa-paw"></i></div><div><div class="ig-card-title">Pet Insurance</div><div class="ig-card-subtitle">Health cover for your pets</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Covers veterinary expenses for your beloved pets including illnesses, surgeries, accidents, and wellness check-ups — so you never have to choose.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Vet consultation &amp; treatment costs</li><li><i class="fas fa-check-circle"></i> Surgical procedures covered</li><li><i class="fas fa-check-circle"></i> Accidental injury protection</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge travel">Pet</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon red"><i class="fas fa-shield-virus"></i></div><div><div class="ig-card-title">Personal Cyber Insurance</div><div class="ig-card-subtitle">Protection against cyber fraud</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Protection against online fraud, identity theft, phishing attacks, and social media hacking — essential in today's digital-first world.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Online banking &amp; UPI fraud cover</li><li><i class="fas fa-check-circle"></i> Identity theft protection</li><li><i class="fas fa-check-circle"></i> Social media liability coverage</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge">Cyber</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end tab-personal -->
+
+    <!-- BUSINESS INSURANCE TAB -->
+    <div class="ig-tab-pane" id="tab-business">
+
+      <!-- MARINE & PROPERTY -->
+      <div class="ig-subcat open" id="marine-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon"><i class="fas fa-anchor"></i></div>
+            <div><h3>Marine &amp; Property Insurance</h3><p>Protect your business assets and goods in transit</p></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">4 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon"><i class="fas fa-ship"></i></div><div><div class="ig-card-title">Marine Insurance</div><div class="ig-card-subtitle">Goods in transit protection</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Essential protection for goods being transported by sea, air, road, or rail — covers loss, theft, and damage during inland and international transit.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Inland and international sea transit</li><li><i class="fas fa-check-circle"></i> All-risk comprehensive cover</li><li><i class="fas fa-check-circle"></i> Storage and warehouse cover</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Business</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon red"><i class="fas fa-fire"></i></div><div><div class="ig-card-title">Fire &amp; Burglary Insurance</div><div class="ig-card-subtitle">Property protection plan</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Comprehensive protection for your business premises, stock, machinery, and contents against fire, theft, burglary, and natural calamities.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Building and contents fully covered</li><li><i class="fas fa-check-circle"></i> Business interruption benefit</li><li><i class="fas fa-check-circle"></i> Reinstatement value option</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Business</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon gold"><i class="fas fa-store"></i></div><div><div class="ig-card-title">Shop Owner Insurance</div><div class="ig-card-subtitle">Comprehensive shop protection</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">A package policy designed for retail shop owners covering stock, fire, burglary, public liability, and employee-related risks under one policy.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Stock and inventory protection</li><li><i class="fas fa-check-circle"></i> Fire, burglary and theft cover</li><li><i class="fas fa-check-circle"></i> Public liability for customers</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Business</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon navy"><i class="fas fa-briefcase"></i></div><div><div class="ig-card-title">Office Package Policy</div><div class="ig-card-subtitle">All-round office protection</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Comprehensive package for offices covering contents, electronic equipment, glass, public liability, and portable equipment under a single affordable policy.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Office contents &amp; furniture covered</li><li><i class="fas fa-check-circle"></i> Electronic equipment protection</li><li><i class="fas fa-check-circle"></i> Third party liability for visitors</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Business</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EMPLOYEE BENEFITS -->
+      <div class="ig-subcat" id="employee-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon" style="background:#e8f8f0;color:var(--green-dark)"><i class="fas fa-users"></i></div>
+            <div><h3>Employee Benefits Insurance</h3><p>Protect and retain your valuable workforce</p></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">3 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon green"><i class="fas fa-hospital-user"></i></div><div><div class="ig-card-title">Group Health Insurance</div><div class="ig-card-subtitle">Health cover for your team</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Cashless health cover for all employees under a single group policy — often includes maternity, day-one pre-existing disease cover, and family floater options.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Cashless treatment for all employees</li><li><i class="fas fa-check-circle"></i> Maternity &amp; newborn cover</li><li><i class="fas fa-check-circle"></i> Pre-existing disease cover from day one</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Group</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon gold"><i class="fas fa-user-shield"></i></div><div><div class="ig-card-title">Group Personal Accident</div><div class="ig-card-subtitle">Accident cover for the team</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Provides financial protection to employees and their families in case of accidental death, permanent disability, or temporary disablement due to workplace accidents.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Death &amp; permanent disability benefit</li><li><i class="fas fa-check-circle"></i> Hospital cash allowance</li><li><i class="fas fa-check-circle"></i> Worldwide accident coverage</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Group</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon"><i class="fas fa-file-contract"></i></div><div><div class="ig-card-title">Group Term Life</div><div class="ig-card-subtitle">Life cover for employee group</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Affordable group life insurance for employees — provides death benefit to their families, with no individual medical examinations required for most members.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Death benefit to employee's family</li><li><i class="fas fa-check-circle"></i> Premium is tax deductible for employer</li><li><i class="fas fa-check-circle"></i> No medical required for members</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Group</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIABILITY INSURANCE -->
+      <div class="ig-subcat" id="liability-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon" style="background:#fdecea;color:#c0392b"><i class="fas fa-gavel"></i></div>
+            <div><h3>Liability Insurance</h3><p>Protect your business from legal and financial claims</p></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">6 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon red"><i class="fas fa-user-md"></i></div><div><div class="ig-card-title">Professional Indemnity — Doctors</div><div class="ig-card-subtitle">Medical negligence cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Protects medical professionals against claims arising from negligence, errors, or omissions in professional medical services rendered to patients.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Legal defence costs covered</li><li><i class="fas fa-check-circle"></i> Settlement and court costs</li><li><i class="fas fa-check-circle"></i> Reputation and career protection</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Liability</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon red"><i class="fas fa-building"></i></div><div><div class="ig-card-title">Professional Indemnity — Companies</div><div class="ig-card-subtitle">Professional error cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Covers companies (IT, consulting, legal, CA firms) against claims arising from professional errors, omissions, or negligence in delivering services to clients.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Legal defence and settlements</li><li><i class="fas fa-check-circle"></i> Client claims and disputes</li><li><i class="fas fa-check-circle"></i> Regulatory investigation cover</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Liability</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon" style="background:#fff3e0;color:#e65100"><i class="fas fa-hard-hat"></i></div><div><div class="ig-card-title">Workmen Compensation</div><div class="ig-card-subtitle">Employer liability for workers</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Mandatory under the Workmen's Compensation Act — covers employer's liability for work-related injuries, death, or disability of employees on the job.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Mandatory legal compliance</li><li><i class="fas fa-check-circle"></i> Medical expenses for injured workers</li><li><i class="fas fa-check-circle"></i> Death &amp; permanent disability benefit</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Liability</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon navy"><i class="fas fa-balance-scale"></i></div><div><div class="ig-card-title">General Liability</div><div class="ig-card-subtitle">Third party injury &amp; damage</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Protects businesses from financial losses arising from third-party claims of bodily injury or property damage caused by business operations or premises.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Public liability for visitors and customers</li><li><i class="fas fa-check-circle"></i> Product liability for manufacturers</li><li><i class="fas fa-check-circle"></i> Business premises accident cover</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Liability</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon purple"><i class="fas fa-shield-virus"></i></div><div><div class="ig-card-title">Cyber Risk Insurance</div><div class="ig-card-subtitle">Business cyber attack cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Protects businesses against losses from cyber attacks, data breaches, ransomware, and regulatory penalties — increasingly essential in the digital age.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Data breach response &amp; notification</li><li><i class="fas fa-check-circle"></i> Business interruption from cyberattack</li><li><i class="fas fa-check-circle"></i> Regulatory fines &amp; penalties</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Cyber</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon navy"><i class="fas fa-user-tie"></i></div><div><div class="ig-card-title">Directors &amp; Officers (D&amp;O)</div><div class="ig-card-subtitle">Management liability cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Protects company directors and officers from personal financial loss due to claims arising from alleged wrongful acts in their management decisions.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Personal asset protection for directors</li><li><i class="fas fa-check-circle"></i> Shareholder &amp; regulatory claims</li><li><i class="fas fa-check-circle"></i> Legal defence costs covered</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Liability</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENGINEERING INSURANCE -->
+      <div class="ig-subcat" id="engineering-section">
+        <div class="ig-subcat-header">
+          <div class="ig-subcat-header-left">
+            <div class="ig-subcat-icon" style="background:#fff3e0;color:#e65100"><i class="fas fa-hard-hat"></i></div>
+            <div><h3>Engineering Insurance</h3><p>Specialised cover for construction and industrial projects</p></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <span class="ig-subcat-count">3 Types</span>
+            <i class="fas fa-chevron-down ig-subcat-chevron"></i>
+          </div>
+        </div>
+        <div class="ig-subcat-body">
+          <div class="ig-cards-grid">
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon" style="background:#fff3e0;color:#e65100"><i class="fas fa-tools"></i></div><div><div class="ig-card-title">Contractor All Risk (CAR)</div><div class="ig-card-subtitle">Civil construction cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Comprehensive cover for civil construction projects — buildings, roads, bridges — protecting against material damage, third-party liability, and workers' injuries during construction.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Material damage during construction</li><li><i class="fas fa-check-circle"></i> Third party property &amp; injury liability</li><li><i class="fas fa-check-circle"></i> Workers' compensation included</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Engineering</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon" style="background:#fff3e0;color:#e65100"><i class="fas fa-cogs"></i></div><div><div class="ig-card-title">Erection All Risk (EAR)</div><div class="ig-card-subtitle">Mechanical installation cover</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Covers risks during erection, installation, and testing of machinery, plant, and mechanical/electrical equipment at construction or industrial sites.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> Machinery &amp; equipment damage</li><li><i class="fas fa-check-circle"></i> Testing period cover included</li><li><i class="fas fa-check-circle"></i> Third party liability at site</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Engineering</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+            <div class="ig-card">
+              <div class="ig-card-head"><div class="ig-card-icon" style="background:#fff3e0;color:#e65100"><i class="fas fa-tractor"></i></div><div><div class="ig-card-title">Contractor Plant &amp; Machinery</div><div class="ig-card-subtitle">Equipment protection</div></div></div>
+              <div class="ig-card-body"><p class="ig-card-desc">Covers accidental damage to construction plant and machinery like JCBs, cranes, compressors, and mixers — whether owned, hired, or leased by the contractor.</p><ul class="ig-card-benefits"><li><i class="fas fa-check-circle"></i> All-risk accidental damage cover</li><li><i class="fas fa-check-circle"></i> Hired &amp; leased plant covered</li><li><i class="fas fa-check-circle"></i> Breakdown and fire damage</li></ul></div>
+              <div class="ig-card-footer"><span class="ig-badge business">Engineering</span><a href="quote.html" class="ig-get-quote"><i class="fas fa-file-alt"></i> Get Quote</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end tab-business -->
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <h2>Not Sure Which Policy to Choose?</h2>
+    <p>Our IRDAI-certified advisors will help you find the perfect insurance combination for your unique needs — completely free.</p>
+    <div class="cta-checks">
+      <span class="cta-check"><i class="fas fa-check-circle"></i> Free Expert Consultation</span>
+      <span class="cta-check"><i class="fas fa-check-circle"></i> Compare 20+ Insurers</span>
+      <span class="cta-check"><i class="fas fa-check-circle"></i> Instant Policy Issuance</span>
+    </div>
+    <div class="btns">
+      <a href="quote.html" class="btn btn-accent btn-lg"><i class="fas fa-file-alt"></i> Get Free Quote</a>
+      <a href="contact.html" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> Talk to Expert</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer"><div class="container">
+  <div class="footer-grid">
+    <div class="footer-brand"><div class="logo"><img src="https://asb.shikharimf.com/assets/logo.png" alt="Shikhar IMF" onerror="this.style.display='none'"><span>Shikhar IMF</span></div><p>Your trusted IRDAI-approved Insurance Marketing Firm based in Pune, India.</p><div class="footer-socials"><a href="https://www.facebook.com/people/Shikhar-IMF-Pvt-Ltd/61581852464505/" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/shikharimf" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/919356633524" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
+    <div class="footer-col"><h5>Insurance Guide</h5><ul><li><a href="insurance-guide.html"><i class="fas fa-chevron-right"></i> Personal Insurance</a></li><li><a href="insurance-guide.html#tab-business"><i class="fas fa-chevron-right"></i> Business Insurance</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> All Products</a></li><li><a href="quote.html"><i class="fas fa-chevron-right"></i> Get a Quote</a></li></ul></div>
+    <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li><li><a href="advisor.html"><i class="fas fa-chevron-right"></i> Become an Advisor</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li></ul></div>
+    <div class="footer-col"><h5>Connect With Us</h5><ul class="footer-contact"><li><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></li><li><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 9356633524</a></li><li><i class="fab fa-whatsapp"></i><a href="https://wa.me/919356633524">WhatsApp Us</a></li><li><i class="fas fa-map-marker-alt"></i>Office No-1311/12, Boulevard Towers, 13th Floor, Sadhu Vaswani Chowk, Camp, Pune - 411001</li><li><i class="fas fa-clock"></i>Mon-Fri: 9:30 AM – 6:00 PM</li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 Shikhar IMF Pvt. Ltd. All rights reserved. | IRDAI Registered &bull; ISO Certified</p><div class="footer-bottom-links"><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="irdai-guidelines.html">IRDAI Guidelines</a></div></div>
+</div>
+<div class="footer-disclaimer"><div class="container"><p>Insurance is the subject matter of solicitation. For more details on risk factors, terms &amp; conditions, please read the sales brochure carefully before concluding a sale. Shikhar IMF is a registered trademark. All insurance products are subject to IRDAI approval and guidelines.</p></div></div>
+</footer>
+
+<div class="floating-btns">
+  <a href="https://wa.me/919356633524" class="float-btn whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <button class="float-btn scroll-top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<!-- LEAD GENERATION POPUP -->
+<div id="leadGenOverlay" role="dialog" aria-modal="true" aria-labelledby="lgModalTitle">
+  <div id="leadGenModal">
+    <button id="leadGenClose" aria-label="Close popup"><i class="fas fa-times"></i></button>
+    <div class="lead-left">
+      <div class="lead-particles"><div class="lead-dot"></div><div class="lead-dot"></div><div class="lead-dot"></div><div class="lead-dot"></div><div class="lead-dot"></div></div>
+      <div class="lead-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+      <h3 id="lgModalTitle">Get Your Free Insurance Consultation</h3>
+      <p class="lead-sub">Talk to a certified advisor in 24 hours — no obligation, no spam.</p>
+      <ul class="lead-benefits">
+        <li><i class="fas fa-check-circle"></i> Compare 20+ top insurance plans instantly</li>
+        <li><i class="fas fa-check-circle"></i> Personalised cover recommendations for your family</li>
+        <li><i class="fas fa-check-circle"></i> Dedicated claim support &amp; zero paperwork hassle</li>
+        <li><i class="fas fa-check-circle"></i> IRDAI-approved advisors you can trust</li>
+      </ul>
+      <div class="lead-left-badge"><i class="fas fa-award"></i> IRDAI Approved &amp; Trusted</div>
+    </div>
+    <div class="lead-right">
+      <h4>Request a Free Callback</h4>
+      <p class="lead-right-sub">Fill in your details and we'll have an expert reach out to you.</p>
+      <div id="lgFormBody">
+        <div class="lead-form-row">
+          <div class="form-group"><label>First Name <span style="color:#e74c3c">*</span></label><input type="text" id="lgFirstName" placeholder="Amit" required><span class="error-msg"></span></div>
+          <div class="form-group"><label>Last Name <span style="color:#e74c3c">*</span></label><input type="text" id="lgLastName" placeholder="Sharma" required><span class="error-msg"></span></div>
+        </div>
+        <div class="form-group"><label>Mobile Number <span style="color:#e74c3c">*</span></label><input type="tel" id="lgMobile" class="phone-field" placeholder="9XXXXXXXXX" maxlength="10" required><span class="error-msg"></span></div>
+        <div class="form-group"><label>Email ID <span style="color:#e74c3c">*</span></label><input type="email" id="lgEmail" placeholder="amit@email.com" required><span class="error-msg"></span></div>
+        <div class="form-group">
+          <label>Insurance Requirement <span style="color:#e74c3c">*</span></label>
+          <select id="lgInsurance" required><option value="">-- Select Insurance Type --</option><option value="health">Health Insurance</option><option value="life">Life Insurance</option><option value="motor">Motor Insurance</option><option value="business">Business Insurance</option><option value="other">Other</option></select>
+          <span class="error-msg"></span>
+        </div>
+        <button id="lgSubmitBtn" class="lead-submit-btn"><i class="fas fa-paper-plane"></i> Get Free Consultation</button>
+        <p class="lead-privacy"><i class="fas fa-lock"></i> Your information is safe &amp; never shared.</p>
+      </div>
+      <div id="lgSuccessState" class="lead-success">
+        <div class="lead-success-icon"><i class="fas fa-check"></i></div>
+        <h4>Thank You!</h4>
+        <p>Our advisor will contact you within <strong>24 hours</strong> to discuss the best plans for you.</p>
+        <p class="lead-countdown" id="lgCountdown"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+$(function(){
+  // ===== MAIN TAB SWITCH =====
+  $('.ig-main-tab').on('click', function(){
+    var tab = $(this).data('tab');
+    $('.ig-main-tab').removeClass('active');
+    $(this).addClass('active');
+    $('.ig-tab-pane').removeClass('active');
+    $('#tab-' + tab).addClass('active');
+    // Open first accordion in switched tab
+    $('#tab-' + tab + ' .ig-subcat').first().addClass('open');
+  });
+
+  // ===== ACCORDION TOGGLE =====
+  $(document).on('click', '.ig-subcat-header', function(){
+    var $subcat = $(this).closest('.ig-subcat');
+    $subcat.toggleClass('open');
+  });
+
+  // ===== QUICK NAV PILLS — smooth scroll =====
+  $('.ig-nav-pill').on('click', function(e){
+    var href = $(this).attr('href');
+    if(href && href.startsWith('#')){
+      e.preventDefault();
+      var target = $(href);
+      if(target.length){
+        // Activate correct main tab
+        if(['#life-section','#health-section','#investment-section','#motor-section','#travel-section'].indexOf(href) > -1){
+          $('.ig-main-tab[data-tab="personal"]').trigger('click');
+        } else {
+          $('.ig-main-tab[data-tab="business"]').trigger('click');
+        }
+        // Open the target accordion
+        setTimeout(function(){
+          target.addClass('open');
+          var offset = target.offset().top - 140;
+          $('html, body').animate({ scrollTop: offset }, 500);
+        }, 100);
+      }
+    }
+  });
+
+  // ===== HANDLE HASH ON PAGE LOAD =====
+  var hash = window.location.hash;
+  if(hash){
+    var businessSections = ['#marine-section','#employee-section','#liability-section','#engineering-section'];
+    if(businessSections.indexOf(hash) > -1){
+      $('.ig-main-tab[data-tab="business"]').trigger('click');
+    }
+    setTimeout(function(){
+      var target = $(hash);
+      if(target.length){
+        target.addClass('open');
+        var offset = target.offset().top - 140;
+        $('html, body').animate({ scrollTop: offset }, 500);
+      }
+    }, 200);
+  }
+});
+</script>
+</body>
+</html>

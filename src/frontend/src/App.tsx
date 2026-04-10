@@ -354,7 +354,7 @@ export default function App() {
                 fontWeight: 600,
               }}
             >
-              ✓ 8 Pages Ready
+              ✓ 15 Pages Ready
             </span>
           </div>
         </div>

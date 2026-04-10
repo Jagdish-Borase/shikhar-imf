@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Highlights - Shikhar IMF | Insurance Education &amp; Plans</title>
+  <meta name="description" content="Explore Shikhar IMF's insurance product highlights. Learn about Health, Life, Motor, and Business insurance plans with detailed guides and video walkthroughs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* =====================================================
+       PRODUCT HIGHLIGHTS PAGE — UNIQUE STYLES
+       ===================================================== */
+
+    /* ---- Hero ---- */
+    .ph-hero {
+      min-height: 420px;
+      background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1920&q=80');
+      background-size: cover;
+      background-position: center 30%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .ph-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(130deg, rgba(13,27,62,0.93) 0%, rgba(27,58,122,0.75) 55%, rgba(11,60,40,0.55) 100%);
+    }
+    .ph-hero-orbs { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    .ph-hero-orbs span {
+      position: absolute; border-radius: 50%; filter: blur(60px); animation: orbFloat 10s ease-in-out infinite;
+    }
+    .ph-hero-orbs span:nth-child(1) { width:380px;height:380px;top:-80px;right:5%;background:rgba(39,174,96,0.12);animation-delay:0s; }
+    .ph-hero-orbs span:nth-child(2) { width:220px;height:220px;bottom:-50px;left:10%;background:rgba(232,163,32,0.1);animation-delay:3s; }
+    .ph-hero-orbs span:nth-child(3) { width:160px;height:160px;top:40%;right:30%;background:rgba(27,58,122,0.2);animation-delay:6s; }
+    @keyframes orbFloat {
+      0%,100%{ transform:translateY(0) scale(1); }
+      50%{ transform:translateY(-18px) scale(1.06); }
+    }
+    .ph-hero-content {
+      position: relative; z-index: 3;
+      max-width: 1200px; margin: 0 auto; padding: 60px 30px 60px;
+      color: white;
+    }
+    .ph-hero-content .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,163,32,0.92); color: #0d1b3e;
+      padding: 5px 18px; border-radius: 30px;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .ph-hero-content h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800; line-height: 1.12;
+      margin-bottom: 16px;
+    }
+    .ph-hero-content h1 span { color: var(--accent); }
+    .ph-hero-content p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.88);
+      max-width: 580px; line-height: 1.75; margin-bottom: 28px;
+    }
+    .ph-hero-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+    .ph-hero-chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.12); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white; padding: 7px 16px; border-radius: 30px;
+      font-size: 0.82rem; font-weight: 600;
+      transition: all 0.3s ease; cursor: pointer; text-decoration: none;
+    }
+    .ph-hero-chip:hover { background: rgba(255,255,255,0.22); color: white; transform: translateY(-2px); }
+    .ph-hero-chip.health { border-color: rgba(39,174,96,0.5); }
+    .ph-hero-chip.life { border-color: rgba(37,80,184,0.5); }
+    .ph-hero-chip.motor { border-color: rgba(232,163,32,0.5); }
+    .ph-hero-chip.business { border-color: rgba(0,188,188,0.5); }
+
+    /* ---- Category Tabs ---- */
+    .cat-tabs-wrap {
+      background: white;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+      position: sticky; top: 72px; z-index: 50;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .cat-tabs {
+      max-width: 1200px; margin: 0 auto; padding: 0 20px;
+      display: flex; gap: 0; overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .cat-tabs::-webkit-scrollbar { display: none; }
+    .cat-tab {
+      display: flex; align-items: center; gap: 8px;
+      padding: 16px 24px; font-size: 0.88rem; font-weight: 700;
+      color: var(--text-gray); border: none; background: none;
+      cursor: pointer; white-space: nowrap; position: relative;
+      transition: all 0.25s ease; border-bottom: 3px solid transparent;
+      letter-spacing: 0.01em;
+    }
+    .cat-tab:hover { color: var(--text); }
+    .cat-tab.active-health { color: #16a34a; border-bottom-color: #16a34a; }
+    .cat-tab.active-life { color: var(--primary); border-bottom-color: var(--primary); }
+    .cat-tab.active-motor { color: #b45309; border-bottom-color: var(--accent); }
+    .cat-tab.active-business { color: #0d9488; border-bottom-color: #0d9488; }
+    .cat-tab .ct-dot {
+      width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+    }
+    .ct-dot-health { background: #22c55e; }
+    .ct-dot-life { background: var(--primary-light); }
+    .ct-dot-motor { background: var(--accent); }
+    .ct-dot-business { background: #14b8a6; }
+
+    /* ---- Highlights Intro Strip ---- */
+    .highlights-intro-strip {
+      padding: 40px 0 20px;
+    }
+    .his-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .his-card {
+      border-radius: 14px; padding: 22px 20px;
+      display: flex; align-items: center; gap: 14px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer; text-decoration: none;
+    }
+    .his-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.12); }
+    .his-card-health { background: linear-gradient(135deg, #dcfce7, #bbf7d0); border: 1px solid #86efac; }
+    .his-card-life   { background: linear-gradient(135deg, #dbeafe, #bfdbfe); border: 1px solid #93c5fd; }
+    .his-card-motor  { background: linear-gradient(135deg, #fef9c3, #fde68a); border: 1px solid #fbbf24; }
+    .his-card-business{ background: linear-gradient(135deg, #ccfbf1, #99f6e4); border: 1px solid #5eead4; }
+    .his-icon {
+      width: 50px; height: 50px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .his-icon-health { background: #22c55e; color: white; }
+    .his-icon-life { background: var(--primary-light); color: white; }
+    .his-icon-motor { background: var(--accent); color: white; }
+    .his-icon-business { background: #0d9488; color: white; }
+    .his-text h4 { font-size: 0.88rem; font-weight: 700; color: #1a1a1a; margin-bottom: 2px; }
+    .his-text p { font-size: 0.75rem; color: #555; }
+
+    /* ---- Section Headers with color ---- */
+    .highlights-section { padding: 70px 0 20px; scroll-margin-top: 130px; }
+    .cat-section-header {
+      display: flex; align-items: center; gap: 18px;
+      margin-bottom: 40px; padding-bottom: 20px;
+      border-bottom: 2px solid rgba(0,0,0,0.06);
+    }
+    .cat-section-icon {
+      width: 64px; height: 64px; border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; flex-shrink: 0;
+    }
+    .cat-health .cat-section-icon { background: linear-gradient(135deg,#22c55e,#15803d); color: white; }
+    .cat-life .cat-section-icon { background: linear-gradient(135deg,var(--primary-light),var(--primary)); color: white; }
+    .cat-motor .cat-section-icon { background: linear-gradient(135deg,#fbbf24,#d97706); color: white; }
+    .cat-business .cat-section-icon { background: linear-gradient(135deg,#14b8a6,#0f766e); color: white; }
+    .cat-section-text h2 { font-size: 1.8rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 4px; }
+    .cat-section-text p { font-size: 0.92rem; color: var(--text-gray); }
+    .cat-badge-count {
+      margin-left: auto; font-size: 0.8rem; font-weight: 700;
+      padding: 5px 14px; border-radius: 20px;
+    }
+    .cat-health .cat-badge-count { background: #dcfce7; color: #15803d; }
+    .cat-life .cat-badge-count { background: #dbeafe; color: var(--primary); }
+    .cat-motor .cat-badge-count { background: #fef9c3; color: #b45309; }
+    .cat-business .cat-badge-count { background: #ccfbf1; color: #0f766e; }
+
+    /* ---- Highlights Grid ---- */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 50px;
+    }
+
+    /* ---- Highlight Card ---- */
+    /* === highlights-embed-section === copy this block for embedding on other pages */
+    .highlights-embed-section .highlight-card,
+    .highlight-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      display: flex; flex-direction: column;
+      position: relative;
+    }
+    .highlight-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.13);
+    }
+    /* category color accent bar */
+    .highlight-card::before {
+      content:''; position:absolute; top:0;left:0;right:0; height:4px;
+    }
+    .highlight-card.hc-health::before { background: linear-gradient(90deg,#22c55e,#4ade80); }
+    .highlight-card.hc-life::before   { background: linear-gradient(90deg,var(--primary),var(--primary-light)); }
+    .highlight-card.hc-motor::before  { background: linear-gradient(90deg,var(--accent),#fbbf24); }
+    .highlight-card.hc-business::before { background: linear-gradient(90deg,#0d9488,#2dd4bf); }
+
+    /* Video Thumbnail */
+    .hc-video-thumb {
+      position: relative; overflow: hidden;
+      cursor: pointer; background: #0d1b3e;
+    }
+    .hc-video-thumb img {
+      width: 100%; height: 200px; object-fit: cover;
+      display: block; transition: transform 0.4s ease, opacity 0.3s ease;
+    }
+    .hc-video-thumb:hover img { transform: scale(1.06); opacity: 0.85; }
+    .hc-play-btn {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 56px; height: 56px; border-radius: 50%;
+      background: rgba(255,255,255,0.95);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--primary);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      pointer-events: none;
+    }
+    .hc-video-thumb:hover .hc-play-btn {
+      transform: translate(-50%,-50%) scale(1.15);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+    .hc-video-label {
+      position: absolute; bottom: 10px; left: 12px;
+      background: rgba(0,0,0,0.7); color: white;
+      font-size: 0.72rem; font-weight: 600;
+      padding: 3px 10px; border-radius: 20px;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .hc-duration {
+      position: absolute; bottom: 10px; right: 12px;
+      background: rgba(0,0,0,0.75); color: white;
+      font-size: 0.7rem; padding: 3px 8px; border-radius: 4px;
+    }
+
+    /* Card Body */
+    .hc-body { padding: 22px 22px 20px; flex: 1; display: flex; flex-direction: column; }
+    .hc-cat-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+      padding: 3px 12px; border-radius: 20px; margin-bottom: 12px; width: fit-content;
+    }
+    .hc-cat-badge.badge-health { background: #dcfce7; color: #15803d; }
+    .hc-cat-badge.badge-life   { background: #dbeafe; color: var(--primary); }
+    .hc-cat-badge.badge-motor  { background: #fef9c3; color: #b45309; }
+    .hc-cat-badge.badge-business{ background: #ccfbf1; color: #0f766e; }
+
+    .hc-title { font-size: 1.08rem; font-weight: 700; color: var(--primary-dark); margin-bottom: 8px; line-height: 1.35; }
+    .hc-desc { font-size: 0.86rem; color: var(--text-gray); line-height: 1.7; margin-bottom: 14px; }
+    .hc-benefits {
+      list-style: none; padding: 0; margin: 0 0 18px;
+      display: flex; flex-direction: column; gap: 5px;
+    }
+    .hc-benefits li {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 0.82rem; color: var(--text);
+    }
+    .hc-benefits li i { margin-top: 2px; flex-shrink: 0; font-size: 0.72rem; }
+    .hc-benefits li i.health-icon { color: #22c55e; }
+    .hc-benefits li i.life-icon   { color: var(--primary-light); }
+    .hc-benefits li i.motor-icon  { color: var(--accent); }
+    .hc-benefits li i.business-icon { color: #14b8a6; }
+
+    .hc-footer {
+      margin-top: auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 14px; border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .hc-cta-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.83rem; font-weight: 700;
+      transition: gap 0.25s ease;
+    }
+    .hc-cta-link:hover { gap: 10px; }
+    .hc-cta-link.health-link  { color: #16a34a; }
+    .hc-cta-link.life-link    { color: var(--primary); }
+    .hc-cta-link.motor-link   { color: #b45309; }
+    .hc-cta-link.business-link{ color: #0f766e; }
+    .hc-watch-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.78rem; font-weight: 600; padding: 6px 14px;
+      border-radius: 20px; cursor: pointer; border: none; transition: all 0.25s ease;
+    }
+    .hc-watch-btn.wbtn-health { background: #dcfce7; color: #15803d; }
+    .hc-watch-btn.wbtn-health:hover { background: #22c55e; color: white; }
+    .hc-watch-btn.wbtn-life   { background: #dbeafe; color: var(--primary); }
+    .hc-watch-btn.wbtn-life:hover { background: var(--primary); color: white; }
+    .hc-watch-btn.wbtn-motor  { background: #fef9c3; color: #b45309; }
+    .hc-watch-btn.wbtn-motor:hover { background: var(--accent); color: white; }
+    .hc-watch-btn.wbtn-business{ background: #ccfbf1; color: #0f766e; }
+    .hc-watch-btn.wbtn-business:hover { background: #0d9488; color: white; }
+
+    /* ---- Section dividers ---- */
+    .sec-divider {
+      height: 1px; background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+      margin: 20px 0;
+    }
+
+    /* ---- Alternate section backgrounds ---- */
+    .sec-bg-alt { background: #f4f7fb; }
+    .sec-bg-dark { background: linear-gradient(160deg, #0d1b3e 0%, #1B3A7A 50%, #0b3c28 100%); }
+    .sec-bg-warm { background: linear-gradient(160deg, #fffbeb, #fff8e1); }
+    .sec-bg-teal { background: linear-gradient(160deg, #f0fdfa, #e6fffc); }
+
+    /* ---- Video Modal ---- */
+    .video-modal-overlay {
+      position: fixed; inset: 0; z-index: 9500;
+      background: rgba(0,0,0,0.88); backdrop-filter: blur(6px);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .video-modal-overlay.open { opacity: 1; pointer-events: all; }
+    .video-modal {
+      background: #0d1b3e; border-radius: 16px;
+      overflow: hidden; position: relative;
+      width: min(860px, 95vw); max-height: 90vh;
+      box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+    }
+    .video-modal-overlay.open .video-modal { transform: scale(1); }
+    .video-modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .video-modal-title {
+      font-size: 0.92rem; font-weight: 600; color: white;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .video-modal-close {
+      width: 32px; height: 32px; border-radius: 50%; background: rgba(255,255,255,0.1);
+      color: white; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; transition: background 0.2s;
+    }
+    .video-modal-close:hover { background: rgba(255,255,255,0.25); }
+    .video-modal-body { padding: 0; }
+    .video-responsive-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+    }
+    .video-responsive-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+    }
+
+    /* ---- Featured Highlight (wide card) ---- */
+    .featured-highlight {
+      border-radius: 20px; overflow: hidden;
+      background: white; box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+      display: grid; grid-template-columns: 1fr 1fr;
+      margin-bottom: 36px; position: relative;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .featured-highlight:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+    .fh-video { position: relative; overflow: hidden; background: #0d1b3e; cursor: pointer; }
+    .fh-video img { width:100%; height:100%; min-height:280px; object-fit:cover; display:block; transition:transform 0.4s ease, opacity 0.3s ease; }
+    .fh-video:hover img { transform: scale(1.04); opacity: 0.85; }
+    .fh-play-btn {
+      position:absolute; top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:70px; height:70px; border-radius:50%;
+      background:rgba(255,255,255,0.96);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.6rem; color:var(--primary);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+      transition: transform 0.3s ease;
+    }
+    .fh-video:hover .fh-play-btn { transform:translate(-50%,-50%) scale(1.1); }
+    .fh-featured-badge {
+      position:absolute; top:14px; left:14px;
+      background: var(--accent); color: var(--primary-dark);
+      font-size:0.72rem; font-weight:700; padding:4px 14px; border-radius:20px;
+      text-transform:uppercase; letter-spacing:0.5px;
+    }
+    .fh-body { padding: 34px 32px; display:flex; flex-direction:column; justify-content:center; }
+    .fh-body .fh-cat { margin-bottom:12px; }
+    .fh-body h3 { font-size:1.4rem; font-weight:800; color:var(--primary-dark); margin-bottom:10px; line-height:1.3; }
+    .fh-body p { font-size:0.9rem; color:var(--text-gray); line-height:1.75; margin-bottom:18px; }
+    .fh-benefits { display:flex; flex-direction:column; gap:7px; margin-bottom:20px; }
+    .fh-benefit { display:flex; align-items:center; gap:9px; font-size:0.86rem; color:var(--text); }
+
+    /* ---- Info / educate strip ---- */
+    .educate-strip {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      border-radius: 20px; padding: 40px 44px;
+      display: flex; align-items: center; gap: 40px;
+      margin-bottom: 24px; position: relative; overflow: hidden;
+    }
+    .educate-strip::before {
+      content:''; position:absolute; width:280px;height:280px; border-radius:50%;
+      background:rgba(255,255,255,0.04); top:-80px; right:-60px;
+    }
+    .educate-strip::after {
+      content:''; position:absolute; width:180px;height:180px; border-radius:50%;
+      background:rgba(39,174,96,0.08); bottom:-60px; left:20%;
+    }
+    .es-icon { font-size: 3rem; flex-shrink:0; z-index:1; }
+    .es-text { z-index:1; }
+    .es-text h3 { font-size:1.3rem; font-weight:800; color:white; margin-bottom:6px; }
+    .es-text p { font-size:0.9rem; color:rgba(255,255,255,0.82); line-height:1.7; }
+    .es-cta { margin-left:auto; flex-shrink:0; z-index:1; }
+
+    /* ---- CTA Bottom ---- */
+    .highlights-cta-bar {
+      background: linear-gradient(135deg, #0d1b3e, #1B3A7A, #0b3c28);
+      border-radius: 20px; padding: 50px 44px;
+      text-align: center; position: relative; overflow: hidden;
+      margin-top: 30px; margin-bottom: 40px;
+    }
+    .highlights-cta-bar::before {
+      content:''; position:absolute; inset:0;
+      background: radial-gradient(circle at 20% 50%, rgba(39,174,96,0.1), transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(232,163,32,0.08), transparent 50%);
+    }
+    .highlights-cta-bar h2 { font-size:1.9rem; font-weight:800; color:white; margin-bottom:10px; position:relative; z-index:1; }
+    .highlights-cta-bar p { color:rgba(255,255,255,0.82); font-size:1rem; margin-bottom:24px; position:relative; z-index:1; }
+    .highlights-cta-bar .btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; position:relative; z-index:1; }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 1024px) {
+      .highlights-grid { grid-template-columns: repeat(2,1fr); }
+      .his-grid { grid-template-columns: 1fr 1fr; }
+      .featured-highlight { grid-template-columns: 1fr; }
+      .fh-video img { min-height: 240px; }
+      .educate-strip { flex-direction:column; padding:28px 24px; gap:18px; }
+      .es-cta { margin-left:0; }
+    }
+    @media (max-width: 768px) {
+      .highlights-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .cat-tabs-wrap { top: 0; }
+      .cat-tab { padding: 12px 16px; font-size: 0.82rem; }
+      .cat-section-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .cat-badge-count { margin-left: 0; }
+      .highlights-cta-bar { padding:30px 20px; }
+      .highlights-cta-bar h2 { font-size:1.4rem; }
+      .ph-hero-content { padding: 48px 20px; }
+    }
+    @media (max-width: 600px) {
+      .highlights-grid { grid-template-columns: 1fr; }
+      .his-grid { grid-template-columns: 1fr 1fr; }
+      .fh-body { padding: 22px 20px; }
+    }
+    @media (max-width: 480px) {
+      .his-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .his-card { padding: 14px 12px; }
+      .his-icon { width: 38px; height: 38px; font-size: 1.1rem; }
+    }
+
+    /* ---- Floating tooltip on video ---- */
+    .hc-video-overlay-info {
+      position:absolute; top:10px; right:10px;
+      background:rgba(0,0,0,0.6); color:white;
+      font-size:0.7rem; font-weight:600;
+      padding:4px 10px; border-radius:20px;
+      display:flex; align-items:center; gap:5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-left">
+      <span><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></span>
+      <span><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 93566 33524</a></span>
+    </div>
+    <div class="top-bar-right">
+      <span><i class="fas fa-clock"></i> Mon-Fri: 9:30 AM - 6 PM</span>
+      <span class="badge-irdai"><i class="fas fa-shield-alt"></i> IRDAI Approved</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://asb.shikharimf.com/assets/logo.png" alt="Shikhar IMF" onerror="this.style.display='none'">
+      <span>Shikhar IMF</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="insurers.html">Partners</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle">Company <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html"><span class="dd-icon" style="background:#eef2ff"><i class="fas fa-building" style="color:#1B3A7A"></i></span> About Us</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle active">Learn <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown-menu">
+          <a href="product-highlights.html" class="active"><span class="dd-icon" style="background:#fef9e7"><i class="fas fa-star" style="color:#E8A320"></i></span> Product Highlights</a>
+          <a href="learning-videos.html"><span class="dd-icon" style="background:#e8f8f0"><i class="fas fa-play-circle" style="color:#27AE60"></i></span> Learning &amp; Videos</a>
+          <a href="insurance-guide.html"><span class="dd-icon" style="background:#eef2ff"><i class="fas fa-book-open" style="color:#1B3A7A"></i></span> Insurance Guide</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+      <a href="advisor.html" class="btn-advisor-cta"><i class="fas fa-handshake"></i> Become an Advisor</a>
+      <a href="quote.html" class="btn-quote"><i class="fas fa-file-alt"></i> Get Quote</a>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="insurers.html">Our Partners</a>
+    <a href="contact.html">Contact</a>
+    <span class="mobile-dropdown-label"><i class="fas fa-building" style="margin-right:6px;color:#1B3A7A"></i> Company</span>
+    <div class="mobile-dropdown-items">
+      <a href="about.html"><i class="fas fa-building" style="color:#1B3A7A;margin-right:6px"></i> About Us</a>
+    </div>
+    <span class="mobile-dropdown-label"><i class="fas fa-graduation-cap" style="margin-right:6px;color:#E8A320"></i> Learn</span>
+    <div class="mobile-dropdown-items">
+      <a href="product-highlights.html"><i class="fas fa-star" style="color:#E8A320;margin-right:6px"></i> Product Highlights</a>
+      <a href="learning-videos.html"><i class="fas fa-play-circle" style="color:#27AE60;margin-right:6px"></i> Learning &amp; Videos</a>
+      <a href="insurance-guide.html"><i class="fas fa-book-open" style="color:#1B3A7A;margin-right:6px"></i> Insurance Guide</a>
+    </div>
+    <div class="mobile-menu-btns">
+      <a href="login.html" class="btn-login">Login</a>
+      <a href="advisor.html" class="btn-advisor-cta"><i class="fas fa-handshake"></i> Become an Advisor</a>
+      <a href="quote.html" class="btn-quote">Get Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO SECTION
+     ============================================================ -->
+<section class="ph-hero">
+  <div class="ph-hero-overlay"></div>
+  <div class="ph-hero-orbs">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="ph-hero-content">
+    <div class="breadcrumb" style="margin-bottom:16px">
+      <a href="index.html" style="color:rgba(255,255,255,0.7)">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span style="color:var(--accent)">Product Highlights</span>
+    </div>
+    <div class="hero-badge">
+      <i class="fas fa-star"></i> Curated Product Education
+    </div>
+    <h1>Insurance <span>Product</span><br>Highlights</h1>
+    <p>Explore India's best insurance products with expert insights, video walkthroughs, and key benefits — all in one place. Make smarter coverage decisions today.</p>
+    <div class="ph-hero-chips">
+      <a href="#health-highlights" class="ph-hero-chip health"><i class="fas fa-heartbeat"></i> Health Insurance</a>
+      <a href="#life-highlights" class="ph-hero-chip life"><i class="fas fa-user-shield"></i> Life Insurance</a>
+      <a href="#motor-highlights" class="ph-hero-chip motor"><i class="fas fa-car"></i> Motor Insurance</a>
+      <a href="#business-highlights" class="ph-hero-chip business"><i class="fas fa-briefcase"></i> Business Insurance</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CATEGORY STICKY TAB BAR
+     ============================================================ -->
+<div class="cat-tabs-wrap">
+  <div class="cat-tabs">
+    <button class="cat-tab" data-target="health-highlights">
+      <span class="ct-dot ct-dot-health"></span><i class="fas fa-heartbeat"></i> Health Insurance
+    </button>
+    <button class="cat-tab" data-target="life-highlights">
+      <span class="ct-dot ct-dot-life"></span><i class="fas fa-user-shield"></i> Life Insurance
+    </button>
+    <button class="cat-tab" data-target="motor-highlights">
+      <span class="ct-dot ct-dot-motor"></span><i class="fas fa-car"></i> Motor Insurance
+    </button>
+    <button class="cat-tab" data-target="business-highlights">
+      <span class="ct-dot ct-dot-business"></span><i class="fas fa-briefcase"></i> Business Insurance
+    </button>
+  </div>
+</div>
+
+<!-- ============================================================
+     INTRO STRIP — Quick-jump cards
+     ============================================================ -->
+<section class="highlights-intro-strip">
+  <div class="container">
+    <div class="his-grid">
+      <a href="#health-highlights" class="his-card his-card-health reveal">
+        <div class="his-icon his-icon-health"><i class="fas fa-heartbeat"></i></div>
+        <div class="his-text">
+          <h4>Health Insurance</h4>
+          <p>Family cover · Critical illness · Top-up plans</p>
+        </div>
+      </a>
+      <a href="#life-highlights" class="his-card his-card-life reveal reveal-delay-1">
+        <div class="his-icon his-icon-life"><i class="fas fa-user-shield"></i></div>
+        <div class="his-text">
+          <h4>Life Insurance</h4>
+          <p>Term · ULIP · Endowment · Child plans</p>
+        </div>
+      </a>
+      <a href="#motor-highlights" class="his-card his-card-motor reveal reveal-delay-2">
+        <div class="his-icon his-icon-motor"><i class="fas fa-car"></i></div>
+        <div class="his-text">
+          <h4>Motor Insurance</h4>
+          <p>Comprehensive · Third party · Bike plans</p>
+        </div>
+      </a>
+      <a href="#business-highlights" class="his-card his-card-business reveal reveal-delay-3">
+        <div class="his-icon his-icon-business"><i class="fas fa-briefcase"></i></div>
+        <div class="his-text">
+          <h4>Business Insurance</h4>
+          <p>Fire · Marine · Liability · Group health</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" style="margin:0 5%"></div>
+
+<!-- ============================================================
+     HEALTH INSURANCE HIGHLIGHTS
+     ============================================================ -->
+<section class="highlights-section" id="health-highlights">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="cat-section-header cat-health reveal">
+      <div class="cat-section-icon"><i class="fas fa-heartbeat"></i></div>
+      <div class="cat-section-text">
+        <h2>Health Insurance <span style="color:#22c55e">Highlights</span></h2>
+        <p>Comprehensive coverage for your family's medical needs — cashless, hassle-free, and tailored for India.</p>
+      </div>
+      <span class="cat-badge-count">4 Products</span>
+    </div>
+
+    <!-- Featured Health Card -->
+    <div class="featured-highlight reveal" data-video-id="xvLmH_qUJgY" data-video-title="Family Floater Health Insurance — Complete Guide">
+      <div class="fh-video">
+        <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg" alt="Family Floater Health Insurance Video">
+        <div class="fh-play-btn"><i class="fas fa-play" style="margin-left:3px"></i></div>
+        <div class="fh-featured-badge">⭐ Featured</div>
+        <div class="hc-video-overlay-info"><i class="fas fa-play-circle"></i> Watch Now</div>
+      </div>
+      <div class="fh-body">
+        <div class="fh-cat">
+          <span class="hc-cat-badge badge-health"><i class="fas fa-heartbeat"></i> Health Insurance</span>
+        </div>
+        <h3>Family Floater Health Plan — The Ultimate Guide</h3>
+        <p>A single policy that covers your entire family under one sum insured. Compare premiums, network hospitals, and claim processes from India's top health insurers with our expert walkthrough.</p>
+        <div class="fh-benefits">
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:#22c55e"></i> Covers entire family under one premium</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:#22c55e"></i> 10,000+ cashless network hospitals across India</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:#22c55e"></i> Pre &amp; post hospitalization covered up to 90 days</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:#22c55e"></i> No-claim bonus up to 50% of sum insured</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="quote.html" class="btn btn-green"><i class="fas fa-file-alt"></i> Get Health Quote</a>
+          <button class="btn btn-outline-primary video-trigger-btn" style="font-size:0.88rem;padding:10px 20px" data-video-id="xvLmH_qUJgY" data-video-title="Family Floater Health Insurance — Complete Guide">
+            <i class="fas fa-play-circle"></i> Watch Video
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== highlights-embed-section — reusable block ===== -->
+    <div class="highlights-embed-section">
+      <div class="highlights-grid">
+
+        <!-- Health Card 1 -->
+        <div class="highlight-card hc-health reveal">
+          <div class="hc-video-thumb video-trigger" data-video-id="xvLmH_qUJgY" data-video-title="Critical Illness Insurance Explained">
+            <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg" alt="Critical Illness Insurance">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Video Guide</div>
+            <div class="hc-duration">6:24</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-health"><i class="fas fa-heartbeat"></i> Health</span>
+            <h3 class="hc-title">Critical Illness Insurance</h3>
+            <p class="hc-desc">Lump-sum payout on diagnosis of 30+ critical conditions including cancer, heart attack, and kidney failure — no hospital bills required.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle health-icon"></i> Lump-sum payout on first diagnosis</li>
+              <li><i class="fas fa-circle health-icon"></i> Covers 30+ critical illnesses</li>
+              <li><i class="fas fa-circle health-icon"></i> Tax benefit under Section 80D</li>
+              <li><i class="fas fa-circle health-icon"></i> No medical bills needed to claim</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link health-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-health video-trigger-btn" data-video-id="xvLmH_qUJgY" data-video-title="Critical Illness Insurance Explained">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Health Card 2 -->
+        <div class="highlight-card hc-health reveal reveal-delay-1">
+          <div class="hc-video-thumb video-trigger" data-video-id="xvLmH_qUJgY" data-video-title="Top-Up Health Insurance Plans — When &amp; Why">
+            <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg" alt="Top-Up Health Plans">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Explained</div>
+            <div class="hc-duration">5:10</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-health"><i class="fas fa-heartbeat"></i> Health</span>
+            <h3 class="hc-title">Top-Up &amp; Super Top-Up Plans</h3>
+            <p class="hc-desc">Extend your existing health cover at a fraction of the cost. Ideal for boosting corporate insurance or adding a safety net to your base policy.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle health-icon"></i> Starts coverage above existing deductible</li>
+              <li><i class="fas fa-circle health-icon"></i> Very affordable premiums</li>
+              <li><i class="fas fa-circle health-icon"></i> Super top-up covers multiple claims</li>
+              <li><i class="fas fa-circle health-icon"></i> Available for family &amp; individuals</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link health-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-health video-trigger-btn" data-video-id="xvLmH_qUJgY" data-video-title="Top-Up Health Insurance Plans">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Health Card 3 -->
+        <div class="highlight-card hc-health reveal reveal-delay-2">
+          <div class="hc-video-thumb video-trigger" data-video-id="xvLmH_qUJgY" data-video-title="Senior Citizen Health Plans — Best Options in India">
+            <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg" alt="Senior Citizen Health Insurance">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Senior Plans</div>
+            <div class="hc-duration">7:45</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-health"><i class="fas fa-heartbeat"></i> Health</span>
+            <h3 class="hc-title">Senior Citizen Health Insurance</h3>
+            <p class="hc-desc">Specially designed plans for parents and senior citizens aged 60+. Covers pre-existing diseases after a short waiting period with no upper age limit entry.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle health-icon"></i> No upper age limit in select plans</li>
+              <li><i class="fas fa-circle health-icon"></i> Pre-existing disease cover after 1-2 years</li>
+              <li><i class="fas fa-circle health-icon"></i> Day-care &amp; domiciliary cover</li>
+              <li><i class="fas fa-circle health-icon"></i> Free annual health check-up</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link health-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-health video-trigger-btn" data-video-id="xvLmH_qUJgY" data-video-title="Senior Citizen Health Plans">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end highlights-embed-section -->
+  </div>
+</section>
+
+<div class="sec-divider" style="margin:0 5%"></div>
+
+<!-- ============================================================
+     LIFE INSURANCE HIGHLIGHTS
+     ============================================================ -->
+<section class="highlights-section sec-bg-alt" id="life-highlights" style="padding-top:60px;padding-bottom:60px">
+  <div class="container">
+
+    <div class="cat-section-header cat-life reveal">
+      <div class="cat-section-icon"><i class="fas fa-user-shield"></i></div>
+      <div class="cat-section-text">
+        <h2>Life Insurance <span style="color:var(--primary-light)">Highlights</span></h2>
+        <p>Secure your family's financial future with the right life cover — term, investment-linked, or savings-cum-protection plans.</p>
+      </div>
+      <span class="cat-badge-count">4 Products</span>
+    </div>
+
+    <!-- Featured Life Card -->
+    <div class="featured-highlight reveal" data-video-id="JuMZi0uHXTE" data-video-title="Term Life Insurance — Complete Buyer's Guide">
+      <div class="fh-body">
+        <div class="fh-cat">
+          <span class="hc-cat-badge badge-life"><i class="fas fa-user-shield"></i> Life Insurance</span>
+        </div>
+        <h3>Term Life Insurance — Maximum Cover, Minimum Premium</h3>
+        <p>Pure protection plan offering the highest sum assured at the lowest premiums. Ensure your family's income security for 20-40 years with India's most popular life insurance product.</p>
+        <div class="fh-benefits">
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:var(--primary-light)"></i> ₹1 Crore cover from as low as ₹550/month</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:var(--primary-light)"></i> Tax deduction under Section 80C &amp; 10(10D)</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:var(--primary-light)"></i> Critical illness &amp; accidental rider options</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:var(--primary-light)"></i> Claim settlement ratio above 98% for top insurers</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="quote.html" class="btn btn-primary"><i class="fas fa-file-alt"></i> Get Life Quote</a>
+          <button class="btn btn-outline-primary video-trigger-btn" style="font-size:0.88rem;padding:10px 20px" data-video-id="JuMZi0uHXTE" data-video-title="Term Life Insurance Guide">
+            <i class="fas fa-play-circle"></i> Watch Video
+          </button>
+        </div>
+      </div>
+      <div class="fh-video">
+        <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg" alt="Term Life Insurance Video">
+        <div class="fh-play-btn"><i class="fas fa-play" style="margin-left:3px"></i></div>
+        <div class="fh-featured-badge">⭐ Featured</div>
+      </div>
+    </div>
+
+    <!-- ===== highlights-embed-section ===== -->
+    <div class="highlights-embed-section">
+      <div class="highlights-grid">
+
+        <!-- Life Card 1 -->
+        <div class="highlight-card hc-life reveal">
+          <div class="hc-video-thumb video-trigger" data-video-id="JuMZi0uHXTE" data-video-title="ULIP vs Term Insurance — Which Is Better?">
+            <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg" alt="ULIP Insurance">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Comparison Guide</div>
+            <div class="hc-duration">8:12</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-life"><i class="fas fa-user-shield"></i> Life</span>
+            <h3 class="hc-title">ULIP — Investment-Linked Plans</h3>
+            <p class="hc-desc">Unit Linked Insurance Plans combine life cover with market-linked investment. Ideal for long-term wealth creation with built-in life protection.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle life-icon"></i> Dual benefit: insurance + investment</li>
+              <li><i class="fas fa-circle life-icon"></i> Switch between equity, debt, balanced funds</li>
+              <li><i class="fas fa-circle life-icon"></i> Tax-free maturity under Section 10(10D)</li>
+              <li><i class="fas fa-circle life-icon"></i> 5-year lock-in, long-term wealth building</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link life-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-life video-trigger-btn" data-video-id="JuMZi0uHXTE" data-video-title="ULIP Insurance Plans">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Life Card 2 -->
+        <div class="highlight-card hc-life reveal reveal-delay-1">
+          <div class="hc-video-thumb video-trigger" data-video-id="JuMZi0uHXTE" data-video-title="Endowment Plan vs Savings Plan in India">
+            <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg" alt="Endowment Plan">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Savings Plan</div>
+            <div class="hc-duration">6:55</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-life"><i class="fas fa-user-shield"></i> Life</span>
+            <h3 class="hc-title">Endowment &amp; Savings Plans</h3>
+            <p class="hc-desc">Structured savings plans that pay a guaranteed lump sum on maturity or death — perfect for goal-based planning like education, marriage, or retirement.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle life-icon"></i> Guaranteed maturity benefit</li>
+              <li><i class="fas fa-circle life-icon"></i> Bonus additions over policy term</li>
+              <li><i class="fas fa-circle life-icon"></i> Loan facility against policy value</li>
+              <li><i class="fas fa-circle life-icon"></i> Tax-saving under 80C + 10(10D)</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link life-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-life video-trigger-btn" data-video-id="JuMZi0uHXTE" data-video-title="Endowment Savings Plans">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Life Card 3 -->
+        <div class="highlight-card hc-life reveal reveal-delay-2">
+          <div class="hc-video-thumb video-trigger" data-video-id="JuMZi0uHXTE" data-video-title="Child Plan Insurance — Secure Your Child's Future">
+            <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg" alt="Child Plan">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Child Plans</div>
+            <div class="hc-duration">5:38</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-life"><i class="fas fa-user-shield"></i> Life</span>
+            <h3 class="hc-title">Child Plans — Future-Ready Coverage</h3>
+            <p class="hc-desc">Specially crafted plans to build a dedicated corpus for your child's higher education and marriage, with waiver of premium benefit if parent is not around.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle life-icon"></i> Premium waiver on parent's death</li>
+              <li><i class="fas fa-circle life-icon"></i> Policy continues even after parent's demise</li>
+              <li><i class="fas fa-circle life-icon"></i> Staggered payouts at key milestones</li>
+              <li><i class="fas fa-circle life-icon"></i> Market-linked or guaranteed returns</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link life-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-life video-trigger-btn" data-video-id="JuMZi0uHXTE" data-video-title="Child Insurance Plans">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end highlights-embed-section -->
+
+  </div>
+</section>
+
+<!-- Educate Strip -->
+<section style="padding: 10px 0 40px; background: var(--off-white)">
+  <div class="container">
+    <div class="educate-strip reveal">
+      <div class="es-icon">🎓</div>
+      <div class="es-text">
+        <h3>Not Sure Which Life Plan Is Right for You?</h3>
+        <p>Our IRDAI-certified advisors offer a free 30-minute consultation. We'll match the right plan to your income, age, and goals — no obligation.</p>
+      </div>
+      <div class="es-cta">
+        <a href="advisor.html" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> Speak to an Advisor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sec-divider" style="margin:0 5%"></div>
+
+<!-- ============================================================
+     MOTOR INSURANCE HIGHLIGHTS
+     ============================================================ -->
+<section class="highlights-section" id="motor-highlights" style="padding-top:60px;padding-bottom:60px">
+  <div class="container">
+
+    <div class="cat-section-header cat-motor reveal">
+      <div class="cat-section-icon"><i class="fas fa-car"></i></div>
+      <div class="cat-section-text">
+        <h2>Motor Insurance <span style="color:var(--accent)">Highlights</span></h2>
+        <p>From basic third-party cover to zero depreciation, find the best motor insurance plan for your car or two-wheeler.</p>
+      </div>
+      <span class="cat-badge-count">4 Products</span>
+    </div>
+
+    <!-- Featured Motor Card -->
+    <div class="featured-highlight reveal" data-video-id="xvLmH_qUJgY" data-video-title="Comprehensive vs Third Party Car Insurance — Full Comparison">
+      <div class="fh-video">
+        <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg" alt="Motor Insurance Video">
+        <div class="fh-play-btn"><i class="fas fa-play" style="margin-left:3px"></i></div>
+        <div class="fh-featured-badge">⭐ Featured</div>
+      </div>
+      <div class="fh-body">
+        <div class="fh-cat">
+          <span class="hc-cat-badge badge-motor"><i class="fas fa-car"></i> Motor Insurance</span>
+        </div>
+        <h3>Comprehensive Car Insurance — Full Protection</h3>
+        <p>The most popular car insurance that covers own damage, third-party liability, theft, natural calamities, and personal accident — all in one plan with instant policy issuance.</p>
+        <div class="fh-benefits">
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:var(--accent)"></i> Own damage + third party in one plan</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:var(--accent)"></i> 3,000+ cashless network garages across India</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:var(--accent)"></i> 24/7 roadside assistance &amp; towing</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:var(--accent)"></i> Zero depreciation add-on available</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="quote.html" class="btn btn-accent"><i class="fas fa-car"></i> Get Motor Quote</a>
+          <button class="btn btn-outline-primary video-trigger-btn" style="font-size:0.88rem;padding:10px 20px" data-video-id="xvLmH_qUJgY" data-video-title="Comprehensive Car Insurance Guide">
+            <i class="fas fa-play-circle"></i> Watch Video
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== highlights-embed-section ===== -->
+    <div class="highlights-embed-section">
+      <div class="highlights-grid">
+
+        <!-- Motor Card 1 -->
+        <div class="highlight-card hc-motor reveal">
+          <div class="hc-video-thumb video-trigger" data-video-id="xvLmH_qUJgY" data-video-title="Zero Depreciation Cover — Is It Worth It?">
+            <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg" alt="Zero Depreciation">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Add-on Guide</div>
+            <div class="hc-duration">4:52</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-motor"><i class="fas fa-car"></i> Motor</span>
+            <h3 class="hc-title">Zero Depreciation Add-On</h3>
+            <p class="hc-desc">Claim 100% repair cost without any depreciation deduction on parts. A must-have add-on for new cars in the first 3-5 years.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle motor-icon"></i> Full claim on parts without depreciation</li>
+              <li><i class="fas fa-circle motor-icon"></i> Ideal for cars under 5 years old</li>
+              <li><i class="fas fa-circle motor-icon"></i> Available for 2 claims per policy year</li>
+              <li><i class="fas fa-circle motor-icon"></i> Slightly higher premium, big claim benefit</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link motor-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-motor video-trigger-btn" data-video-id="xvLmH_qUJgY" data-video-title="Zero Depreciation Add-On">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motor Card 2 -->
+        <div class="highlight-card hc-motor reveal reveal-delay-1">
+          <div class="hc-video-thumb video-trigger" data-video-id="xvLmH_qUJgY" data-video-title="Two-Wheeler Bike Insurance — Complete Guide">
+            <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg" alt="Bike Insurance">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Bike Insurance</div>
+            <div class="hc-duration">5:30</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-motor"><i class="fas fa-car"></i> Motor</span>
+            <h3 class="hc-title">Two-Wheeler Insurance</h3>
+            <p class="hc-desc">Protect your bike or scooter with comprehensive or third-party insurance. Compare premiums from 10+ insurers and renew in under 2 minutes online.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle motor-icon"></i> Mandatory third-party cover included</li>
+              <li><i class="fas fa-circle motor-icon"></i> Theft &amp; natural calamity cover</li>
+              <li><i class="fas fa-circle motor-icon"></i> Personal accident cover for rider</li>
+              <li><i class="fas fa-circle motor-icon"></i> NCB up to 50% discount on renewal</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link motor-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-motor video-trigger-btn" data-video-id="xvLmH_qUJgY" data-video-title="Two-Wheeler Bike Insurance">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Motor Card 3 -->
+        <div class="highlight-card hc-motor reveal reveal-delay-2">
+          <div class="hc-video-thumb video-trigger" data-video-id="xvLmH_qUJgY" data-video-title="No Claim Bonus — How to Protect &amp; Maximize Your NCB">
+            <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg" alt="NCB Motor">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> NCB Guide</div>
+            <div class="hc-duration">4:18</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-motor"><i class="fas fa-car"></i> Motor</span>
+            <h3 class="hc-title">NCB Protection Add-On</h3>
+            <p class="hc-desc">No Claim Bonus can give you up to 50% discount on premium after 5 claim-free years. NCB Protection ensures you don't lose this benefit after a minor claim.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle motor-icon"></i> Retain NCB even after 1 claim/year</li>
+              <li><i class="fas fa-circle motor-icon"></i> Transferable when you change insurer</li>
+              <li><i class="fas fa-circle motor-icon"></i> Accumulates up to 50% over 5 years</li>
+              <li><i class="fas fa-circle motor-icon"></i> Very affordable add-on premium</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="quote.html" class="hc-cta-link motor-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-motor video-trigger-btn" data-video-id="xvLmH_qUJgY" data-video-title="NCB Protection Motor Insurance">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end highlights-embed-section -->
+  </div>
+</section>
+
+<div class="sec-divider" style="margin:0 5%"></div>
+
+<!-- ============================================================
+     BUSINESS INSURANCE HIGHLIGHTS
+     ============================================================ -->
+<section class="highlights-section sec-bg-teal" id="business-highlights" style="padding-top:60px;padding-bottom:60px">
+  <div class="container">
+
+    <div class="cat-section-header cat-business reveal">
+      <div class="cat-section-icon"><i class="fas fa-briefcase"></i></div>
+      <div class="cat-section-text">
+        <h2>Business Insurance <span style="color:#14b8a6">Highlights</span></h2>
+        <p>Protect your business assets, employees, and operations with India's most trusted commercial insurance solutions.</p>
+      </div>
+      <span class="cat-badge-count">4 Products</span>
+    </div>
+
+    <!-- Featured Business Card -->
+    <div class="featured-highlight reveal" data-video-id="JuMZi0uHXTE" data-video-title="Business Insurance — Why Every Indian SME Needs Coverage">
+      <div class="fh-body">
+        <div class="fh-cat">
+          <span class="hc-cat-badge badge-business"><i class="fas fa-briefcase"></i> Business Insurance</span>
+        </div>
+        <h3>Group Health Insurance for Employees</h3>
+        <p>Cover your entire workforce under a single group mediclaim policy. Attract and retain top talent while fulfilling your duty of care as an employer — at significantly lower premiums.</p>
+        <div class="fh-benefits">
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:#14b8a6"></i> Cover entire team with one policy</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:#14b8a6"></i> No pre-existing disease waiting period</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:#14b8a6"></i> Premiums 30-40% lower than individual plans</div>
+          <div class="fh-benefit"><i class="fas fa-check-circle" style="color:#14b8a6"></i> Dependents (spouse, children) can be covered</div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="contact.html" class="btn btn-primary" style="background:linear-gradient(135deg,#14b8a6,#0f766e);border:none"><i class="fas fa-building"></i> Get Business Quote</a>
+          <button class="btn btn-outline-primary video-trigger-btn" style="font-size:0.88rem;padding:10px 20px" data-video-id="JuMZi0uHXTE" data-video-title="Group Health Insurance for Business">
+            <i class="fas fa-play-circle"></i> Watch Video
+          </button>
+        </div>
+      </div>
+      <div class="fh-video">
+        <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg" alt="Business Insurance Video">
+        <div class="fh-play-btn"><i class="fas fa-play" style="margin-left:3px"></i></div>
+        <div class="fh-featured-badge" style="background:#14b8a6;color:white">⭐ Featured</div>
+      </div>
+    </div>
+
+    <!-- ===== highlights-embed-section ===== -->
+    <div class="highlights-embed-section">
+      <div class="highlights-grid">
+
+        <!-- Business Card 1 -->
+        <div class="highlight-card hc-business reveal">
+          <div class="hc-video-thumb video-trigger" data-video-id="JuMZi0uHXTE" data-video-title="Fire &amp; Burglary Insurance for Business Properties">
+            <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg" alt="Fire Insurance">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Property Cover</div>
+            <div class="hc-duration">6:02</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-business"><i class="fas fa-briefcase"></i> Business</span>
+            <h3 class="hc-title">Fire &amp; Property Insurance</h3>
+            <p class="hc-desc">Protect your office, factory, shop, or warehouse from fire, flood, earthquake, riots, and burglary with comprehensive property insurance.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle business-icon"></i> Covers fire, flood, earthquake, storm</li>
+              <li><i class="fas fa-circle business-icon"></i> Contents &amp; stock protection</li>
+              <li><i class="fas fa-circle business-icon"></i> Business interruption coverage available</li>
+              <li><i class="fas fa-circle business-icon"></i> Flexible sum insured options</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="contact.html" class="hc-cta-link business-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-business video-trigger-btn" data-video-id="JuMZi0uHXTE" data-video-title="Fire &amp; Property Insurance">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Card 2 -->
+        <div class="highlight-card hc-business reveal reveal-delay-1">
+          <div class="hc-video-thumb video-trigger" data-video-id="JuMZi0uHXTE" data-video-title="Marine Cargo Insurance — Protect Your Goods in Transit">
+            <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg" alt="Marine Insurance">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Marine &amp; Cargo</div>
+            <div class="hc-duration">5:44</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-business"><i class="fas fa-briefcase"></i> Business</span>
+            <h3 class="hc-title">Marine &amp; Cargo Insurance</h3>
+            <p class="hc-desc">Protect your goods during transit — by road, rail, sea, or air. Essential for manufacturers, exporters, and trading businesses handling high-value shipments.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle business-icon"></i> Covers all modes of transport</li>
+              <li><i class="fas fa-circle business-icon"></i> Loss, theft, damage in transit covered</li>
+              <li><i class="fas fa-circle business-icon"></i> Single transit &amp; open cover policies</li>
+              <li><i class="fas fa-circle business-icon"></i> Import/export cargo coverage</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="contact.html" class="hc-cta-link business-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-business video-trigger-btn" data-video-id="JuMZi0uHXTE" data-video-title="Marine Cargo Insurance">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Card 3 -->
+        <div class="highlight-card hc-business reveal reveal-delay-2">
+          <div class="hc-video-thumb video-trigger" data-video-id="JuMZi0uHXTE" data-video-title="Liability Insurance for Indian Businesses">
+            <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg" alt="Liability Insurance">
+            <div class="hc-play-btn"><i class="fas fa-play" style="margin-left:2px"></i></div>
+            <div class="hc-video-label"><i class="fas fa-play-circle"></i> Liability Guide</div>
+            <div class="hc-duration">7:15</div>
+          </div>
+          <div class="hc-body">
+            <span class="hc-cat-badge badge-business"><i class="fas fa-briefcase"></i> Business</span>
+            <h3 class="hc-title">Public &amp; Product Liability</h3>
+            <p class="hc-desc">Protect your business against third-party claims for bodily injury or property damage caused by your operations, products, or employees.</p>
+            <ul class="hc-benefits">
+              <li><i class="fas fa-circle business-icon"></i> Third-party injury &amp; property damage</li>
+              <li><i class="fas fa-circle business-icon"></i> Product defect liability coverage</li>
+              <li><i class="fas fa-circle business-icon"></i> Legal defence costs included</li>
+              <li><i class="fas fa-circle business-icon"></i> Mandatory for many industries</li>
+            </ul>
+            <div class="hc-footer">
+              <a href="contact.html" class="hc-cta-link business-link">Get Quote <i class="fas fa-arrow-right"></i></a>
+              <button class="hc-watch-btn wbtn-business video-trigger-btn" data-video-id="JuMZi0uHXTE" data-video-title="Business Liability Insurance">
+                <i class="fas fa-play"></i> Watch
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- end highlights-embed-section -->
+
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BOTTOM BAR
+     ============================================================ -->
+<section style="padding: 30px 0 60px; background: white">
+  <div class="container">
+    <div class="highlights-cta-bar reveal">
+      <h2>Ready to Find the Perfect Insurance Plan?</h2>
+      <p>Compare 100+ plans from 20+ top insurers. Get expert guidance from our IRDAI-certified advisors — absolutely free.</p>
+      <div class="btns">
+        <a href="quote.html" class="btn btn-accent btn-lg"><i class="fas fa-file-alt"></i> Get Free Quote Now</a>
+        <a href="advisor.html" class="btn btn-outline-white btn-lg"><i class="fas fa-user-tie"></i> Talk to an Advisor</a>
+        <a href="contact.html" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VIDEO MODAL
+     ============================================================ -->
+<div class="video-modal-overlay" id="videoModalOverlay">
+  <div class="video-modal" id="videoModal">
+    <div class="video-modal-header">
+      <div class="video-modal-title">
+        <i class="fas fa-play-circle" style="color:var(--accent)"></i>
+        <span id="videoModalTitle">Insurance Product Video</span>
+      </div>
+      <button class="video-modal-close" id="videoModalClose"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="video-modal-body">
+      <div class="video-responsive-wrap">
+        <iframe id="videoModalFrame" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><img src="https://asb.shikharimf.com/assets/logo.png" alt="Shikhar IMF" onerror="this.style.display='none'"><span>Shikhar IMF</span></div>
+        <p>Your trusted IRDAI-approved Insurance Marketing Firm based in Pune, India.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/people/Shikhar-IMF-Pvt-Ltd/61581852464505/" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/shikharimf" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/919356633524" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Insurance Products</h5>
+        <ul>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Life Insurance</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Health Insurance</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Motor Insurance</a></li>
+          <li><a href="product-highlights.html"><i class="fas fa-chevron-right"></i> Product Highlights</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="advisor.html"><i class="fas fa-chevron-right"></i> Become an Advisor</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+          <li><a href="learning-videos.html"><i class="fas fa-chevron-right"></i> Learning &amp; Videos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect With Us</h5>
+        <ul class="footer-contact">
+          <li><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></li>
+          <li><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 9356633524</a></li>
+          <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/919356633524">WhatsApp Us</a></li>
+          <li><i class="fas fa-map-marker-alt"></i>Office No-1311/12, Boulevard Towers, 13th Floor, Sadhu Vaswani Chowk, Camp, Pune - 411001</li>
+          <li><i class="fas fa-clock"></i>Mon-Fri: 9:30 AM – 6:00 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shikhar IMF Pvt. Ltd. All rights reserved. | IRDAI Registered &bull; ISO Certified</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="irdai-guidelines.html">IRDAI Guidelines</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    <div class="container">
+      <p>Insurance is the subject matter of solicitation. For more details on risk factors, terms &amp; conditions, please read the sales brochure carefully before concluding a sale. All insurance products are subject to IRDAI approval and guidelines.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="floating-btns">
+  <a href="https://wa.me/919356633524" class="float-btn whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <button class="float-btn scroll-top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<!-- ===== LEAD GENERATION POPUP ===== -->
+<div id="leadGenOverlay" role="dialog" aria-modal="true" aria-labelledby="lgModalTitle">
+  <div id="leadGenModal">
+    <button id="leadGenClose" aria-label="Close popup"><i class="fas fa-times"></i></button>
+    <!-- Left Panel -->
+    <div class="lead-left">
+      <div class="lead-particles">
+        <div class="lead-dot"></div><div class="lead-dot"></div><div class="lead-dot"></div>
+        <div class="lead-dot"></div><div class="lead-dot"></div>
+      </div>
+      <div class="lead-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+      <h3 id="lgModalTitle">Get Your Free Insurance Consultation</h3>
+      <p class="lead-sub">Talk to a certified advisor in 24 hours — no obligation, no spam.</p>
+      <ul class="lead-benefits">
+        <li><i class="fas fa-check-circle"></i> Compare 20+ top insurance plans instantly</li>
+        <li><i class="fas fa-check-circle"></i> Personalised cover recommendations for your family</li>
+        <li><i class="fas fa-check-circle"></i> Dedicated claim support &amp; zero paperwork hassle</li>
+        <li><i class="fas fa-check-circle"></i> IRDAI-approved advisors you can trust</li>
+      </ul>
+      <div class="lead-left-badge"><i class="fas fa-award"></i> IRDAI Approved &amp; Trusted</div>
+    </div>
+    <!-- Right Panel -->
+    <div class="lead-right">
+      <h4>Request a Free Callback</h4>
+      <p class="lead-right-sub">Fill in your details and we'll have an expert reach out to you.</p>
+      <!-- Form body -->
+      <div id="lgFormBody">
+        <div class="lead-form-row">
+          <div class="form-group">
+            <label>First Name <span style="color:#e74c3c">*</span></label>
+            <input type="text" id="lgFirstName" placeholder="Amit" required>
+            <span class="error-msg"></span>
+          </div>
+          <div class="form-group">
+            <label>Last Name <span style="color:#e74c3c">*</span></label>
+            <input type="text" id="lgLastName" placeholder="Sharma" required>
+            <span class="error-msg"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number <span style="color:#e74c3c">*</span></label>
+          <input type="tel" id="lgMobile" class="phone-field" placeholder="9XXXXXXXXX" maxlength="10" required>
+          <span class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <label>Email ID <span style="color:#e74c3c">*</span></label>
+          <input type="email" id="lgEmail" placeholder="amit@email.com" required>
+          <span class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <label>Insurance Requirement <span style="color:#e74c3c">*</span></label>
+          <select id="lgInsurance" required>
+            <option value="">-- Select Insurance Type --</option>
+            <option value="health">Health Insurance</option>
+            <option value="life">Life Insurance</option>
+            <option value="motor">Motor Insurance</option>
+            <option value="business">Business Insurance</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="error-msg"></span>
+        </div>
+        <button id="lgSubmitBtn" class="lead-submit-btn"><i class="fas fa-paper-plane"></i> Get Free Consultation</button>
+        <p class="lead-privacy"><i class="fas fa-lock"></i> Your information is safe &amp; never shared.</p>
+      </div>
+      <!-- Success state -->
+      <div id="lgSuccessState" class="lead-success">
+        <div class="lead-success-icon"><i class="fas fa-check"></i></div>
+        <h4>Thank You!</h4>
+        <p>Our advisor will contact you within <strong>24 hours</strong> to discuss the best plans for you.</p>
+        <p class="lead-countdown" id="lgCountdown"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===== END LEAD POPUP ===== -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+$(function () {
+  /* ===== CATEGORY TAB SCROLL ===== */
+  var tabColorMap = {
+    'health-highlights': 'active-health',
+    'life-highlights':   'active-life',
+    'motor-highlights':  'active-motor',
+    'business-highlights':'active-business'
+  };
+
+  // Scroll to section on tab click
+  $('.cat-tab').on('click', function () {
+    var target = $(this).data('target');
+    if (target) {
+      var $el = $('#' + target);
+      if ($el.length) {
+        $('html,body').animate({ scrollTop: $el.offset().top - 130 }, 520, 'swing');
+      }
+    }
+  });
+
+  // Highlight active tab on scroll
+  function updateActiveTab() {
+    var scrollY = $(window).scrollTop() + 160;
+    var active = null;
+    ['health-highlights','life-highlights','motor-highlights','business-highlights'].forEach(function(id){
+      var $sec = $('#' + id);
+      if ($sec.length && scrollY >= $sec.offset().top) active = id;
+    });
+    $('.cat-tab').removeClass('active-health active-life active-motor active-business');
+    if (active) {
+      $('[data-target="'+active+'"]').addClass(tabColorMap[active]);
+    }
+  }
+  $(window).on('scroll', updateActiveTab);
+  updateActiveTab();
+
+  /* ===== VIDEO MODAL ===== */
+  function openVideo(videoId, title) {
+    $('#videoModalTitle').text(title || 'Insurance Product Video');
+    $('#videoModalFrame').attr('src',
+      'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1'
+    );
+    $('#videoModalOverlay').addClass('open');
+    $('body').css('overflow', 'hidden');
+  }
+  function closeVideo() {
+    $('#videoModalOverlay').removeClass('open');
+    $('#videoModalFrame').attr('src', '');
+    $('body').css('overflow', '');
+  }
+
+  // Click on video thumbnail
+  $(document).on('click', '.video-trigger, .fh-video', function () {
+    var id = $(this).data('video-id') || $(this).closest('[data-video-id]').data('video-id');
+    var title = $(this).data('video-title') || $(this).closest('[data-video-id]').data('video-title');
+    if (id) openVideo(id, title);
+  });
+  // Click on watch buttons
+  $(document).on('click', '.video-trigger-btn', function (e) {
+    e.stopPropagation();
+    var id = $(this).data('video-id');
+    var title = $(this).data('video-title');
+    if (id) openVideo(id, title);
+  });
+  // Close modal
+  $(document).on('click', '#videoModalClose', closeVideo);
+  $(document).on('click', '#videoModalOverlay', function (e) {
+    if ($(e.target).is('#videoModalOverlay')) closeVideo();
+  });
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') closeVideo();
+  });
+
+  /* ===== RESOURCES DROPDOWN ===== */
+  $('.nav-dropdown-toggle').on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    var $menu = $(this).siblings('.nav-dropdown-menu');
+    var isOpen = $menu.is(':visible');
+    $('.nav-dropdown-menu').hide();
+    $('.nav-dropdown-toggle i').css('transform', '');
+    if (!isOpen) {
+      $menu.show();
+      $(this).find('i').css('transform', 'rotate(180deg)');
+    }
+  });
+  $(document).on('click', function (e) {
+    if (!$(e.target).closest('.nav-dropdown').length) {
+      $('.nav-dropdown-menu').hide();
+      $('.nav-dropdown-toggle i').css('transform', '');
+    }
+  });
+
+  /* ===== HERO CHIP SMOOTH SCROLL ===== */
+  $('a[href^="#"]').on('click', function (e) {
+    var target = $(this.getAttribute('href'));
+    if (target.length) {
+      e.preventDefault();
+      $('html,body').animate({ scrollTop: target.offset().top - 130 }, 600);
+    }
+  });
+});
+</script>
+</body>
+</html>

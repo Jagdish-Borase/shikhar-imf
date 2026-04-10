@@ -1,0 +1,27 @@
+{
+  "overview": "Shikhar IMF is a fully static, responsive multi-page website for an insurance distributor in Pune, India. The site features 17 pages including Home, Services, About, Become an Advisor, Contact, and more — with validated forms, 16 insurance company partner logos, animated sections, hero sliders, and legal/compliance pages.",
+  "features": [
+    "17 responsive HTML pages with navy/green branding",
+    "16 insurance company partner logos (General, Health, Life)",
+    "Hero slider with animated transitions",
+    "Validated forms for Contact, Quote, Advisor, Login, Register, Forgot Password",
+    "Google Maps embed for Pune office location",
+    "Glassmorphism and cool visual effects across sections",
+    "Privacy Policy, Terms of Service, IRDAI Guidelines, 404 pages",
+    "Asset download page for all logos and images",
+    "WhatsApp floating button and scroll-to-top",
+    "Mobile hamburger menu and full responsiveness"
+  ],
+  "category": "business",
+  "tags": [
+    "insurance",
+    "static-site",
+    "html",
+    "css",
+    "jquery",
+    "responsive",
+    "india",
+    "imf"
+  ],
+  "last_updated": "2026-04-10T07:58:30.198Z"
+}

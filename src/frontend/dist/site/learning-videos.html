@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning &amp; Product Videos - Shikhar IMF | Insurance Education Hub</title>
+  <meta name="description" content="Watch expert insurance guides, product explainers, and learning videos on health, life, motor, and business insurance from Shikhar IMF.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ===== LEARNING VIDEOS PAGE STYLES ===== */
+
+    /* Hero */
+    .lv-hero {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0a1a3e 0%, #1B3A7A 40%, #0f3d22 100%);
+      background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+    .lv-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(10,26,62,0.88) 0%, rgba(27,58,122,0.72) 45%, rgba(15,61,34,0.65) 100%);
+      z-index: 1;
+    }
+    .lv-hero-particles, .lv-hero-orb, .lv-hero-content, .lv-hero-scroll { position: relative; z-index: 2; }
+    .lv-hero-particles { position: absolute; inset: 0; pointer-events: none; }
+    .lv-hero-particles span {
+      position: absolute;
+      width: 3px; height: 3px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      animation: lv-float 6s infinite ease-in-out;
+    }
+    .lv-hero-particles span:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
+    .lv-hero-particles span:nth-child(2) { top: 70%; left: 20%; animation-delay: 1s; }
+    .lv-hero-particles span:nth-child(3) { top: 30%; left: 60%; animation-delay: 2s; }
+    .lv-hero-particles span:nth-child(4) { top: 80%; left: 75%; animation-delay: 0.5s; }
+    .lv-hero-particles span:nth-child(5) { top: 50%; left: 90%; animation-delay: 1.5s; }
+    .lv-hero-particles span:nth-child(6) { top: 10%; left: 45%; animation-delay: 2.5s; }
+    .lv-hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(39,174,96,0.15), transparent 70%);
+      pointer-events: none;
+    }
+    .lv-hero-orb-1 { width: 500px; height: 500px; top: -200px; right: -100px; }
+    .lv-hero-orb-2 { width: 350px; height: 350px; bottom: -120px; left: -80px; background: radial-gradient(circle, rgba(232,163,32,0.1), transparent 70%); }
+    @keyframes lv-float {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+      50% { transform: translateY(-20px) scale(1.5); opacity: 0.8; }
+    }
+    .lv-hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 80px 30px 60px; width: 100%; }
+    .lv-hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(232,163,32,0.9); color: #0a1a3e;
+      padding: 6px 16px; border-radius: 20px;
+      font-size: 0.78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .lv-hero-content h1 {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .lv-hero-content h1 span { color: #4ade80; }
+    .lv-hero-content p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 580px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .lv-hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .lv-hero-scroll {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.5); font-size: 0.8rem; text-align: center;
+      animation: lv-bounce 2s infinite;
+    }
+    .lv-hero-scroll i { display: block; margin-top: 6px; }
+    @keyframes lv-bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* Stats Bar */
+    .lv-stats-bar {
+      background: linear-gradient(90deg, #0a1a3e 0%, #1B3A7A 50%, #0a1a3e 100%);
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .lv-stats-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 20px;
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+    }
+    .lv-stat {
+      text-align: center; color: white;
+      padding: 10px 0;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .lv-stat:last-child { border-right: none; }
+    .lv-stat .lv-num { font-size: 2rem; font-weight: 800; color: #E8A320; display: block; line-height: 1; }
+    .lv-stat .lv-lbl { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 5px; display: block; }
+
+    /* Video Section Container */
+    .lv-section {
+      padding: 70px 0;
+      background: #f4f7ff;
+    }
+
+    /* Filter Tabs */
+    .lv-filter-bar {
+      display: flex; align-items: center; gap: 10px;
+      flex-wrap: wrap; justify-content: center;
+      margin-bottom: 48px;
+    }
+    .lv-filter-btn {
+      padding: 9px 22px;
+      border-radius: 30px;
+      border: 2px solid #dee2e6;
+      background: white;
+      color: #6c757d;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: 'Poppins', sans-serif;
+      display: flex; align-items: center; gap: 7px;
+    }
+    .lv-filter-btn:hover { border-color: #1B3A7A; color: #1B3A7A; }
+    .lv-filter-btn.active { background: #1B3A7A; color: white; border-color: #1B3A7A; }
+    .lv-filter-btn .lv-count {
+      background: rgba(255,255,255,0.25);
+      color: inherit;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+    }
+    .lv-filter-btn.active .lv-count { background: rgba(255,255,255,0.25); }
+
+    /* Featured Video */
+    .lv-featured-wrap {
+      margin-bottom: 52px;
+    }
+    .lv-featured-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #E8A320, #f5b82e);
+      color: #0a1a3e;
+      padding: 6px 18px; border-radius: 20px;
+      font-size: 0.8rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .lv-featured-card {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 0;
+      background: linear-gradient(135deg, #0a1a3e 0%, #1B3A7A 100%);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(27,58,122,0.35);
+      position: relative;
+    }
+    .lv-featured-thumb {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .lv-featured-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .lv-featured-thumb:hover img { transform: scale(1.04); }
+    .lv-featured-thumb-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(27,58,122,0.3));
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s ease;
+    }
+    .lv-featured-thumb:hover .lv-featured-thumb-overlay { background: rgba(0,0,0,0.5); }
+    .lv-play-big {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.9);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; color: #1B3A7A;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 0 0 rgba(255,255,255,0.4);
+      animation: lv-pulse 2.5s infinite;
+    }
+    .lv-featured-thumb:hover .lv-play-big { transform: scale(1.1); background: white; }
+    @keyframes lv-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.5); }
+      70% { box-shadow: 0 0 0 20px rgba(255,255,255,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+    }
+    .lv-featured-duration {
+      position: absolute; bottom: 14px; right: 14px;
+      background: rgba(0,0,0,0.7); color: white;
+      padding: 4px 10px; border-radius: 6px;
+      font-size: 0.78rem; font-weight: 600;
+    }
+    .lv-featured-info {
+      padding: 40px;
+      display: flex; flex-direction: column; justify-content: center;
+      color: white;
+    }
+    .lv-featured-cat {
+      display: inline-block;
+      padding: 4px 12px; border-radius: 20px;
+      font-size: 0.72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .lv-featured-info h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800; line-height: 1.3;
+      color: white; margin-bottom: 14px;
+    }
+    .lv-featured-info h2 span { color: #4ade80; }
+    .lv-featured-info p {
+      font-size: 0.92rem; color: rgba(255,255,255,0.78);
+      line-height: 1.7; margin-bottom: 28px;
+    }
+    .lv-featured-meta {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      font-size: 0.82rem; color: rgba(255,255,255,0.65);
+      margin-bottom: 28px;
+    }
+    .lv-featured-meta span { display: flex; align-items: center; gap: 6px; }
+    .lv-featured-meta i { color: #E8A320; }
+
+    /* Video Grid */
+    .lv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px;
+    }
+
+    /* Video Card */
+    .lv-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(27,58,122,0.10);
+      transition: all 0.35s ease;
+      cursor: pointer;
+      border: 1px solid #e8edf8;
+      display: flex; flex-direction: column;
+    }
+    .lv-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(27,58,122,0.2);
+      border-color: #1B3A7A;
+    }
+    .lv-card-thumb {
+      position: relative;
+      overflow: hidden;
+      height: 190px;
+    }
+    .lv-card-thumb img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .lv-card:hover .lv-card-thumb img { transform: scale(1.06); }
+    .lv-card-thumb-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.35);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .lv-card:hover .lv-card-thumb-overlay { opacity: 1; }
+    .lv-play-btn {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: #1B3A7A;
+      box-shadow: 0 0 0 6px rgba(255,255,255,0.25);
+      transition: transform 0.3s ease;
+    }
+    .lv-card:hover .lv-play-btn { transform: scale(1.1); }
+    .lv-card-dur {
+      position: absolute; bottom: 10px; right: 10px;
+      background: rgba(0,0,0,0.72); color: white;
+      padding: 3px 9px; border-radius: 5px;
+      font-size: 0.75rem; font-weight: 600;
+    }
+    .lv-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .lv-card-cat {
+      display: inline-block;
+      padding: 3px 11px;
+      border-radius: 20px;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.8px;
+      margin-bottom: 10px;
+    }
+    .lv-cat-health { background: #e8f8f0; color: #1e8449; }
+    .lv-cat-life { background: #eef2ff; color: #1B3A7A; }
+    .lv-cat-motor { background: #fef9e7; color: #b7860b; }
+    .lv-cat-learning { background: #f3e8ff; color: #7c3aed; }
+    .lv-cat-general { background: #fff0e8; color: #c2410c; }
+    .lv-card-title {
+      font-size: 1rem; font-weight: 700;
+      color: #0D1B3E; margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .lv-card-desc {
+      font-size: 0.83rem; color: #6c757d;
+      line-height: 1.6; flex: 1;
+      margin-bottom: 16px;
+    }
+    .lv-card-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 14px;
+      border-top: 1px solid #f0f0f0;
+    }
+    .lv-card-views {
+      font-size: 0.78rem; color: #aaa;
+      display: flex; align-items: center; gap: 5px;
+    }
+    .lv-watch-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.82rem; font-weight: 600;
+      color: #1B3A7A;
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: 1px solid #1B3A7A;
+      transition: all 0.25s ease;
+    }
+    .lv-watch-btn:hover { background: #1B3A7A; color: white; }
+
+    /* Modal */
+    .lv-modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.9);
+      z-index: 9000;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(6px);
+      padding: 20px 16px;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+    .lv-modal-overlay.open { opacity: 1; pointer-events: all; }
+    .lv-modal-box {
+      background: #0a1a3e;
+      border-radius: 18px;
+      width: 100%; max-width: 900px;
+      /* Use dvh with vh fallback; no fixed max-height that clips content */
+      max-height: calc(100dvh - 40px);
+      max-height: calc(100vh - 40px);
+      overflow: hidden;
+      overflow-y: auto;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+      transform: scale(0.9) translateY(30px);
+      transition: transform 0.35s ease;
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      /* Custom scrollbar */
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.2) transparent;
+    }
+    .lv-modal-box::-webkit-scrollbar { width: 4px; }
+    .lv-modal-box::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 4px; }
+    .lv-modal-overlay.open .lv-modal-box { transform: scale(1) translateY(0); }
+    .lv-modal-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-shrink: 0;
+      position: sticky; top: 0; z-index: 10;
+    }
+    .lv-modal-header .lv-modal-title { font-size: 0.95rem; font-weight: 700; color: white; flex: 1; padding-right: 16px; line-height: 1.3; }
+    .lv-modal-close {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: none; color: white;
+      font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s ease;
+      flex-shrink: 0;
+    }
+    .lv-modal-close:hover { background: rgba(255,0,0,0.4); }
+    /* Video wrapper — flex-shrink:0 ensures it doesn't collapse */
+    .lv-modal-iframe-wrap {
+      position: relative;
+      padding-top: 56.25%;
+      background: black;
+      flex-shrink: 0;
+    }
+    .lv-modal-iframe-wrap iframe {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    /* Info + description area — always fully visible (scrollable parent) */
+    .lv-modal-info {
+      padding: 18px 20px 22px;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 14px; flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    .lv-modal-info-text { flex: 1; min-width: 0; }
+    .lv-modal-info-text .lv-modal-cat { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; display: block; }
+    .lv-modal-info-text .lv-modal-desc {
+      font-size: 0.85rem; color: rgba(255,255,255,0.7);
+      line-height: 1.65;
+      /* Ensure text never clips — no max-width constraint */
+    }
+    .lv-modal-share { display: flex; gap: 8px; flex-shrink: 0; }
+    .lv-modal-share a {
+      width: 36px; height: 36px;
+      border-radius: 50%; background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-size: 0.9rem; transition: background 0.2s ease;
+    }
+    .lv-modal-share a:hover { background: rgba(255,255,255,0.2); }
+
+    /* CTA strip */
+    .lv-cta-strip {
+      background: linear-gradient(135deg, #0a1a3e 0%, #1B3A7A 50%, #0f3d22 100%);
+      padding: 60px 0;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .lv-cta-strip::before {
+      content: '';
+      position: absolute; top: -80px; right: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: rgba(39,174,96,0.1);
+    }
+    .lv-cta-strip .container { position: relative; z-index: 2; }
+    .lv-cta-strip h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 800; color: white; margin-bottom: 12px; }
+    .lv-cta-strip p { color: rgba(255,255,255,0.75); font-size: 1rem; margin-bottom: 28px; }
+    .lv-cta-strip .btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* Hide class */
+    .lv-hidden { display: none !important; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .lv-featured-card { grid-template-columns: 1fr; }
+      .lv-featured-thumb { height: 240px; }
+      .lv-featured-info { padding: 30px; }
+      .lv-stats-inner { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .lv-hero-content { padding: 60px 20px 50px; }
+      .lv-grid { grid-template-columns: 1fr; }
+      .lv-stats-inner { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+      .lv-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .lv-stat:nth-child(3), .lv-stat:nth-child(4) { border-bottom: none; }
+      .lv-modal-overlay { padding: 8px; }
+      .lv-modal-box { border-radius: 14px; }
+      .lv-modal-info { flex-direction: column; gap: 10px; }
+      .lv-modal-share { justify-content: flex-start; }
+    }
+    /* Landscape mobile — reduce video height so description is reachable below */
+    @media (max-height: 520px) and (orientation: landscape) {
+      .lv-modal-overlay { padding: 6px; align-items: flex-start; }
+      .lv-modal-box { max-height: calc(100dvh - 12px); max-height: calc(100vh - 12px); border-radius: 12px; }
+      .lv-modal-header { padding: 10px 16px; }
+      .lv-modal-header .lv-modal-title { font-size: 0.85rem; }
+      /* Reduce iframe aspect ratio in landscape so description is visible below */
+      .lv-modal-iframe-wrap { padding-top: 42%; }
+      .lv-modal-info { padding: 12px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-left">
+      <span><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></span>
+      <span><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 93566 33524</a></span>
+    </div>
+    <div class="top-bar-right">
+      <span><i class="fas fa-clock"></i> Mon-Fri: 9:30 AM - 6 PM</span>
+      <span class="badge-irdai"><i class="fas fa-shield-alt"></i> IRDAI Approved</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://asb.shikharimf.com/assets/logo.png" alt="Shikhar IMF" onerror="this.style.display='none'">
+      <span>Shikhar IMF</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="insurers.html">Partners</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle">Company <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown-menu">
+          <a href="about.html"><span class="dd-icon" style="background:#eef2ff"><i class="fas fa-building" style="color:#1B3A7A"></i></span> About Us</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle active">Learn <i class="fas fa-chevron-down"></i></a>
+        <div class="nav-dropdown-menu">
+          <a href="product-highlights.html"><span class="dd-icon" style="background:#fef9e7"><i class="fas fa-star" style="color:#E8A320"></i></span> Product Highlights</a>
+          <a href="learning-videos.html" class="active"><span class="dd-icon" style="background:#e8f8f0"><i class="fas fa-play-circle" style="color:#27AE60"></i></span> Learning &amp; Videos</a>
+          <a href="insurance-guide.html"><span class="dd-icon" style="background:#eef2ff"><i class="fas fa-book-open" style="color:#1B3A7A"></i></span> Insurance Guide</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn-login"><i class="fas fa-sign-in-alt"></i> Login</a>
+      <a href="advisor.html" class="btn-advisor-cta"><i class="fas fa-handshake"></i> Become an Advisor</a>
+      <a href="quote.html" class="btn-quote"><i class="fas fa-file-alt"></i> Get Quote</a>
+    </div>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="insurers.html">Our Partners</a>
+    <a href="contact.html">Contact</a>
+    <span class="mobile-dropdown-label"><i class="fas fa-building" style="margin-right:6px;color:#1B3A7A"></i> Company</span>
+    <div class="mobile-dropdown-items">
+      <a href="about.html"><i class="fas fa-building" style="color:#1B3A7A;margin-right:6px"></i> About Us</a>
+    </div>
+    <span class="mobile-dropdown-label"><i class="fas fa-graduation-cap" style="margin-right:6px;color:#E8A320"></i> Learn</span>
+    <div class="mobile-dropdown-items">
+      <a href="product-highlights.html"><i class="fas fa-star" style="color:#E8A320;margin-right:6px"></i> Product Highlights</a>
+      <a href="learning-videos.html" style="color:#1B3A7A;font-weight:700"><i class="fas fa-play-circle" style="color:#27AE60;margin-right:6px"></i> Learning &amp; Videos</a>
+      <a href="insurance-guide.html"><i class="fas fa-book-open" style="color:#1B3A7A;margin-right:6px"></i> Insurance Guide</a>
+    </div>
+    <div class="mobile-menu-btns">
+      <a href="login.html" class="btn-login">Login</a>
+      <a href="advisor.html" class="btn-advisor-cta"><i class="fas fa-handshake"></i> Become an Advisor</a>
+      <a href="quote.html" class="btn-quote">Get Quote</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="lv-hero" data-ocid="lv-hero">
+  <div class="lv-hero-orb lv-hero-orb-1"></div>
+  <div class="lv-hero-orb lv-hero-orb-2"></div>
+  <div class="lv-hero-particles">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="lv-hero-content">
+    <div class="breadcrumb" style="margin-bottom:16px">
+      <a href="index.html" style="color:rgba(255,255,255,0.65)">Home</a>
+      <i class="fas fa-chevron-right" style="color:rgba(255,255,255,0.4)"></i>
+      <span style="color:rgba(255,255,255,0.9)">Learning Videos</span>
+    </div>
+    <span class="lv-hero-tag"><i class="fas fa-play-circle"></i> Video Education Hub</span>
+    <h1>Learning &amp; <span>Product Videos</span></h1>
+    <p>Understand insurance better with our expert-curated video guides. From basics to detailed product explainers — everything you need to make the smartest insurance decisions.</p>
+    <div class="lv-hero-btns">
+      <a href="#lv-videos" class="btn btn-green btn-lg"><i class="fas fa-play"></i> Start Watching</a>
+      <a href="quote.html" class="btn btn-outline-white btn-lg"><i class="fas fa-file-alt"></i> Get Free Quote</a>
+    </div>
+  </div>
+  <div class="lv-hero-scroll">Scroll to explore<i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- STATS BAR -->
+<div class="lv-stats-bar">
+  <div class="lv-stats-inner">
+    <div class="lv-stat">
+      <span class="lv-num" data-target="10" data-suffix="+">10+</span>
+      <span class="lv-lbl"><i class="fas fa-video" style="color:#E8A320;margin-right:4px"></i> Total Videos</span>
+    </div>
+    <div class="lv-stat">
+      <span class="lv-num" data-target="5" data-suffix="">5</span>
+      <span class="lv-lbl"><i class="fas fa-layer-group" style="color:#4ade80;margin-right:4px"></i> Categories</span>
+    </div>
+    <div class="lv-stat">
+      <span class="lv-num" data-target="50" data-suffix="+">50+</span>
+      <span class="lv-lbl"><i class="fas fa-user-tie" style="color:#E8A320;margin-right:4px"></i> Expert Advisors</span>
+    </div>
+    <div class="lv-stat">
+      <span class="lv-num" data-target="50000" data-suffix="+">50K+</span>
+      <span class="lv-lbl"><i class="fas fa-smile" style="color:#4ade80;margin-right:4px"></i> Happy Customers</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN VIDEO SECTION -->
+<section class="lv-section" id="lv-videos">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="section-header">
+      <span class="section-tag"><i class="fas fa-graduation-cap"></i> Insurance Knowledge Hub</span>
+      <h2 class="section-title">Watch, Learn &amp; <span>Get Covered Right</span></h2>
+      <p class="section-subtitle">Expert insights, product guides, and advisor resources — all in one place</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="lv-filter-bar" data-ocid="lv-filter-bar" role="tablist" aria-label="Video category filter">
+      <button class="lv-filter-btn active" data-filter="all" role="tab" aria-selected="true">
+        <i class="fas fa-th"></i> All Videos <span class="lv-count">10</span>
+      </button>
+      <button class="lv-filter-btn" data-filter="health" role="tab" aria-selected="false">
+        <i class="fas fa-heartbeat"></i> Health Insurance <span class="lv-count">3</span>
+      </button>
+      <button class="lv-filter-btn" data-filter="life" role="tab" aria-selected="false">
+        <i class="fas fa-heart"></i> Life Insurance <span class="lv-count">2</span>
+      </button>
+      <button class="lv-filter-btn" data-filter="motor" role="tab" aria-selected="false">
+        <i class="fas fa-car"></i> Motor Insurance <span class="lv-count">2</span>
+      </button>
+      <button class="lv-filter-btn" data-filter="learning" role="tab" aria-selected="false">
+        <i class="fas fa-lightbulb"></i> Learning Tips <span class="lv-count">2</span>
+      </button>
+      <button class="lv-filter-btn" data-filter="general" role="tab" aria-selected="false">
+        <i class="fas fa-building"></i> About Shikhar <span class="lv-count">1</span>
+      </button>
+    </div>
+
+    <!-- FEATURED VIDEO -->
+    <div class="lv-featured-wrap" id="lv-featured" data-ocid="lv-featured-video">
+      <span class="lv-featured-label"><i class="fas fa-star"></i> Featured Video</span>
+      <!-- VIDEO PATHS: User will update these YouTube embed URLs with local video file paths. Format: src='assets/videos/filename.mp4' -->
+      <div class="lv-featured-card"
+           data-video="xvLmH_qUJgY"
+           data-title="Health Insurance Basics – Everything You Need to Know"
+           data-cat="health"
+           role="button"
+           tabindex="0"
+           aria-label="Play featured video: Health Insurance Basics">
+        <div class="lv-featured-thumb">
+          <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg"
+               alt="Health Insurance Basics"
+               onerror="this.src='assets/generated/hero-health.dim_1920x800.jpg'">
+          <div class="lv-featured-thumb-overlay">
+            <div class="lv-play-big"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-featured-duration">12:34</span>
+        </div>
+        <div class="lv-featured-info">
+          <span class="lv-featured-cat lv-cat-health">
+            <i class="fas fa-heartbeat"></i> Health Insurance
+          </span>
+          <h2>Health Insurance Basics –<br><span>Everything You Need to Know</span></h2>
+          <p>A comprehensive beginner's guide to health insurance in India. Learn about policy types, coverage benefits, cashless hospitalization, network hospitals, and how to choose the best plan for your family.</p>
+          <div class="lv-featured-meta">
+            <span><i class="fas fa-clock"></i> 12 min 34 sec</span>
+            <span><i class="fas fa-eye"></i> 24.5K views</span>
+            <span><i class="fas fa-user-tie"></i> Expert: Rahul Sharma</span>
+            <span><i class="fas fa-calendar"></i> March 2025</span>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <button class="btn btn-green lv-play-card-btn" style="font-size:0.9rem;padding:11px 26px">
+              <i class="fas fa-play-circle"></i> Watch Now
+            </button>
+            <a href="quote.html" class="btn btn-outline-white" style="font-size:0.9rem;padding:11px 26px">
+              <i class="fas fa-file-alt"></i> Get Health Quote
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIDEO GRID -->
+    <div class="lv-grid" id="lv-grid" data-ocid="lv-video-grid">
+
+      <!-- Card 1: Life Insurance Guide -->
+      <div class="lv-card" data-cat="life" data-video="JuMZi0uHXTE" data-title="Life Insurance Guide for Indian Families" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg"
+               alt="Life Insurance Guide"
+               onerror="this.src='assets/generated/product-life.dim_600x400.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">9:18</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-life"><i class="fas fa-heart"></i> Life Insurance</span>
+          <h3 class="lv-card-title">Life Insurance Guide for Indian Families</h3>
+          <p class="lv-card-desc">Discover term, whole life, ULIP, and endowment plans — what each offers and which suits your life stage and financial goals.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 18.2K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Motor Insurance Tips -->
+      <div class="lv-card" data-cat="motor" data-video="xvLmH_qUJgY" data-title="Motor Insurance Tips – Save Money on Your Car Policy" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg"
+               alt="Motor Insurance Tips"
+               onerror="this.src='assets/generated/product-motor.dim_600x400.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">7:45</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-motor"><i class="fas fa-car"></i> Motor Insurance</span>
+          <h3 class="lv-card-title">Motor Insurance Tips – Save Money on Your Car Policy</h3>
+          <p class="lv-card-desc">Expert tips on comparing car insurance policies, understanding add-ons like zero depreciation, and maximising your NCB benefits.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 31.6K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: Business Insurance Overview -->
+      <div class="lv-card" data-cat="learning" data-video="JuMZi0uHXTE" data-title="Business Insurance Overview – Protect Your Enterprise" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg"
+               alt="Business Insurance Overview"
+               onerror="this.src='assets/generated/product-business.dim_600x400.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">11:02</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-learning"><i class="fas fa-lightbulb"></i> Learning Tips</span>
+          <h3 class="lv-card-title">Business Insurance Overview – Protect Your Enterprise</h3>
+          <p class="lv-card-desc">A complete overview of commercial insurance products for SMEs — fire, marine, cyber liability, and professional indemnity policies explained.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 9.4K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4: Term Insurance Explained -->
+      <div class="lv-card" data-cat="life" data-video="JuMZi0uHXTE" data-title="Term Insurance Explained – Why Every Indian Needs It" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg"
+               alt="Term Insurance Explained"
+               onerror="this.src='assets/generated/hero-life.dim_1920x800.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">8:55</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-life"><i class="fas fa-heart"></i> Life Insurance</span>
+          <h3 class="lv-card-title">Term Insurance Explained – Why Every Indian Needs It</h3>
+          <p class="lv-card-desc">Understanding pure term plans — the most affordable way to protect your family's financial future with maximum sum assured.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 22.1K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5: Claim Process Guide -->
+      <div class="lv-card" data-cat="learning" data-video="xvLmH_qUJgY" data-title="How to File an Insurance Claim – Step-by-Step Guide" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg"
+               alt="Claim Process Guide"
+               onerror="this.src='assets/generated/hero-business.dim_1920x800.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">10:20</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-learning"><i class="fas fa-lightbulb"></i> Learning Tips</span>
+          <h3 class="lv-card-title">How to File an Insurance Claim – Step-by-Step Guide</h3>
+          <p class="lv-card-desc">Walk through the complete claims process for health, motor, and life insurance — documents required, timelines, and how Shikhar IMF assists.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 14.8K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6: Health Policy Comparison -->
+      <div class="lv-card" data-cat="health" data-video="xvLmH_qUJgY" data-title="Compare Health Policies – Which Plan is Best for You?" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg"
+               alt="Health Policy Comparison"
+               onerror="this.src='assets/generated/product-health.dim_600x400.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">13:07</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-health"><i class="fas fa-heartbeat"></i> Health Insurance</span>
+          <h3 class="lv-card-title">Compare Health Policies – Which Plan is Best for You?</h3>
+          <p class="lv-card-desc">Side-by-side comparison of top Indian health insurance plans — CARE Health, Star Health, Aditya Birla, and Manipal Cigna analysed.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 19.3K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7: Motor Third Party vs Comprehensive -->
+      <div class="lv-card" data-cat="motor" data-video="JuMZi0uHXTE" data-title="Third Party vs Comprehensive Motor Insurance – Know the Difference" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg"
+               alt="Motor Third Party vs Comprehensive"
+               onerror="this.src='assets/generated/hero-motor.dim_1920x800.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">6:30</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-motor"><i class="fas fa-car"></i> Motor Insurance</span>
+          <h3 class="lv-card-title">Third Party vs Comprehensive Motor Insurance – Know the Difference</h3>
+          <p class="lv-card-desc">Breaking down the key differences between third-party liability and comprehensive motor coverage — what's mandatory vs optional.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 27.9K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8: Why Choose Shikhar IMF -->
+      <div class="lv-card" data-cat="general" data-video="JuMZi0uHXTE" data-title="Why Choose Shikhar IMF – India's Trusted Insurance Advisor" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/JuMZi0uHXTE/hqdefault.jpg"
+               alt="Why Choose Shikhar IMF"
+               onerror="this.src='assets/generated/about-intro-clean.dim_1200x700.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">5:15</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-general"><i class="fas fa-building"></i> About Shikhar</span>
+          <h3 class="lv-card-title">Why Choose Shikhar IMF – India's Trusted Insurance Advisor</h3>
+          <p class="lv-card-desc">Learn what makes Shikhar IMF different — 18+ years of experience, IRDAI approval, 50,000+ happy customers, and multi-language support.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 8.7K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9: Advisor Program Introduction -->
+      <div class="lv-card" data-cat="general lv-hidden-by-filter" data-video="xvLmH_qUJgY" data-title="Become an Insurance Advisor – Shikhar IMF Partner Program" data-ocid="lv-card" style="display:none">
+        <!-- Hidden for 'general' filter count; shown under all -->
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg"
+               alt="Advisor Program Introduction"
+               onerror="this.src='assets/generated/hero-business.dim_1920x800.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">8:00</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-general"><i class="fas fa-building"></i> About Shikhar</span>
+          <h3 class="lv-card-title">Become an Insurance Advisor – Shikhar IMF Partner Program</h3>
+          <p class="lv-card-desc">Explore the Shikhar IMF Advisor program — training, support, earnings potential, and how to kick-start your career in insurance advisory.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 11.2K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 10: Cashless vs Reimbursement -->
+      <div class="lv-card" data-cat="health" data-video="xvLmH_qUJgY" data-title="Cashless vs Reimbursement Claims – What You Must Know" data-ocid="lv-card">
+        <div class="lv-card-thumb">
+          <img src="https://img.youtube.com/vi/xvLmH_qUJgY/hqdefault.jpg"
+               alt="Cashless vs Reimbursement"
+               onerror="this.src='assets/generated/product-health.dim_600x400.jpg'">
+          <div class="lv-card-thumb-overlay">
+            <div class="lv-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <span class="lv-card-dur">9:47</span>
+        </div>
+        <div class="lv-card-body">
+          <span class="lv-card-cat lv-cat-health"><i class="fas fa-heartbeat"></i> Health Insurance</span>
+          <h3 class="lv-card-title">Cashless vs Reimbursement Claims – What You Must Know</h3>
+          <p class="lv-card-desc">Understand the two ways to raise a health insurance claim and which method is faster, safer, and financially smarter for you.</p>
+          <div class="lv-card-footer">
+            <span class="lv-card-views"><i class="fas fa-eye"></i> 16.5K views</span>
+            <span class="lv-watch-btn"><i class="fas fa-play"></i> Watch</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /lv-grid -->
+
+    <!-- No Results Message -->
+    <div id="lv-no-results" class="lv-hidden" style="text-align:center;padding:60px 20px" data-ocid="lv-empty-state">
+      <i class="fas fa-video-slash" style="font-size:3rem;color:#dee2e6;margin-bottom:16px;display:block"></i>
+      <h3 style="color:#6c757d;margin-bottom:8px">No videos in this category yet</h3>
+      <p style="color:#aaa;font-size:0.9rem">Check back soon — we're adding new content regularly.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section class="lv-cta-strip">
+  <div class="container">
+    <h2>Ready to Secure Your Future?</h2>
+    <p>Now that you're informed, get personalised insurance quotes from India's top insurers in under 2 minutes.</p>
+    <div class="btns">
+      <a href="quote.html" class="btn btn-accent btn-lg"><i class="fas fa-file-alt"></i> Get Free Quote</a>
+      <a href="advisor.html" class="btn btn-outline-white btn-lg"><i class="fas fa-handshake"></i> Become an Advisor</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="https://asb.shikharimf.com/assets/logo.png" alt="Shikhar IMF" onerror="this.style.display='none'">
+          <span>Shikhar IMF</span>
+        </div>
+        <p>Your trusted IRDAI-approved Insurance Marketing Firm based in Pune, India.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/people/Shikhar-IMF-Pvt-Ltd/61581852464505/" class="social-btn" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/shikharimf" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/919356633524" class="social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Insurance Products</h5>
+        <ul>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Life Insurance</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Health Insurance</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> Motor Insurance</a></li>
+          <li><a href="services.html"><i class="fas fa-chevron-right"></i> All Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="learning-videos.html"><i class="fas fa-chevron-right"></i> Learning Videos</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+          <li><a href="advisor.html"><i class="fas fa-chevron-right"></i> Become an Advisor</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Connect With Us</h5>
+        <ul class="footer-contact">
+          <li><i class="fas fa-envelope"></i><a href="mailto:info@shikharimf.in">info@shikharimf.in</a></li>
+          <li><i class="fas fa-phone"></i><a href="tel:+919356633524">+91 9356633524</a></li>
+          <li><i class="fab fa-whatsapp"></i><a href="https://wa.me/919356633524">WhatsApp Us</a></li>
+          <li><i class="fas fa-map-marker-alt"></i>Office No-1311/12, Boulevard Towers, 13th Floor, Sadhu Vaswani Chowk, Camp, Pune - 411001</li>
+          <li><i class="fas fa-clock"></i>Mon-Fri: 9:30 AM – 6:00 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Shikhar IMF Pvt. Ltd. All rights reserved. | IRDAI Registered &bull; ISO Certified</p>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="irdai-guidelines.html">IRDAI Guidelines</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    <div class="container">
+      <p>Insurance is the subject matter of solicitation. For more details on risk factors, terms &amp; conditions, please read the sales brochure carefully before concluding a sale. Shikhar IMF is a registered trademark. All insurance products are subject to IRDAI approval and guidelines.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-btns">
+  <a href="https://wa.me/919356633524" class="float-btn whatsapp-btn" target="_blank" aria-label="WhatsApp Shikhar IMF"><i class="fab fa-whatsapp"></i></a>
+  <button class="float-btn scroll-top" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+</div>
+
+<!-- VIDEO MODAL -->
+<div class="lv-modal-overlay" id="lvModal" role="dialog" aria-modal="true" aria-label="Video player" data-ocid="lv-modal">
+  <div class="lv-modal-box" id="lvModalBox">
+    <div class="lv-modal-header">
+      <span class="lv-modal-title" id="lvModalTitle">Video Title</span>
+      <button class="lv-modal-close" id="lvModalClose" aria-label="Close video">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="lv-modal-iframe-wrap">
+      <iframe id="lvModalIframe"
+              src=""
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              title="Insurance Learning Video">
+      </iframe>
+    </div>
+    <div class="lv-modal-info">
+      <div class="lv-modal-info-text">
+        <div class="lv-modal-cat" id="lvModalCat" style="color:#E8A320;margin-bottom:6px"></div>
+        <p class="lv-modal-desc" id="lvModalDesc"></p>
+      </div>
+      <div class="lv-modal-share">
+        <a href="quote.html" title="Get a Quote" style="background:linear-gradient(135deg,#27AE60,#1e8449)">
+          <i class="fas fa-file-alt"></i>
+        </a>
+        <a href="contact.html" title="Talk to Expert">
+          <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://wa.me/919356633524" target="_blank" title="Share on WhatsApp" style="background:linear-gradient(135deg,#25d366,#128c7e)">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== LEAD GENERATION POPUP ===== -->
+<div id="leadGenOverlay" role="dialog" aria-modal="true" aria-labelledby="lgModalTitle">
+  <div id="leadGenModal">
+    <button id="leadGenClose" aria-label="Close popup"><i class="fas fa-times"></i></button>
+    <!-- Left Panel -->
+    <div class="lead-left">
+      <div class="lead-particles">
+        <div class="lead-dot"></div><div class="lead-dot"></div><div class="lead-dot"></div>
+        <div class="lead-dot"></div><div class="lead-dot"></div>
+      </div>
+      <div class="lead-icon-wrap"><i class="fas fa-shield-alt"></i></div>
+      <h3 id="lgModalTitle">Get Your Free Insurance Consultation</h3>
+      <p class="lead-sub">Talk to a certified advisor in 24 hours — no obligation, no spam.</p>
+      <ul class="lead-benefits">
+        <li><i class="fas fa-check-circle"></i> Compare 20+ top insurance plans instantly</li>
+        <li><i class="fas fa-check-circle"></i> Personalised cover recommendations for your family</li>
+        <li><i class="fas fa-check-circle"></i> Dedicated claim support &amp; zero paperwork hassle</li>
+        <li><i class="fas fa-check-circle"></i> IRDAI-approved advisors you can trust</li>
+      </ul>
+      <div class="lead-left-badge"><i class="fas fa-award"></i> IRDAI Approved &amp; Trusted</div>
+    </div>
+    <!-- Right Panel -->
+    <div class="lead-right">
+      <h4>Request a Free Callback</h4>
+      <p class="lead-right-sub">Fill in your details and we'll have an expert reach out to you.</p>
+      <!-- Form body -->
+      <div id="lgFormBody">
+        <div class="lead-form-row">
+          <div class="form-group">
+            <label>First Name <span style="color:#e74c3c">*</span></label>
+            <input type="text" id="lgFirstName" placeholder="Amit" required>
+            <span class="error-msg"></span>
+          </div>
+          <div class="form-group">
+            <label>Last Name <span style="color:#e74c3c">*</span></label>
+            <input type="text" id="lgLastName" placeholder="Sharma" required>
+            <span class="error-msg"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number <span style="color:#e74c3c">*</span></label>
+          <input type="tel" id="lgMobile" class="phone-field" placeholder="9XXXXXXXXX" maxlength="10" required>
+          <span class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <label>Email ID <span style="color:#e74c3c">*</span></label>
+          <input type="email" id="lgEmail" placeholder="amit@email.com" required>
+          <span class="error-msg"></span>
+        </div>
+        <div class="form-group">
+          <label>Insurance Requirement <span style="color:#e74c3c">*</span></label>
+          <select id="lgInsurance" required>
+            <option value="">-- Select Insurance Type --</option>
+            <option value="health">Health Insurance</option>
+            <option value="life">Life Insurance</option>
+            <option value="motor">Motor Insurance</option>
+            <option value="business">Business Insurance</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="error-msg"></span>
+        </div>
+        <button id="lgSubmitBtn" class="lead-submit-btn"><i class="fas fa-paper-plane"></i> Get Free Consultation</button>
+        <p class="lead-privacy"><i class="fas fa-lock"></i> Your information is safe &amp; never shared.</p>
+      </div>
+      <!-- Success state -->
+      <div id="lgSuccessState" class="lead-success">
+        <div class="lead-success-icon"><i class="fas fa-check"></i></div>
+        <h4>Thank You!</h4>
+        <p>Our advisor will contact you within <strong>24 hours</strong> to discuss the best plans for you.</p>
+        <p class="lead-countdown" id="lgCountdown"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===== END LEAD POPUP ===== -->
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+$(function () {
+
+  // ===== FILTER TABS =====
+  $('.lv-filter-btn').on('click', function () {
+    var filter = $(this).data('filter');
+
+    // Update active tab
+    $('.lv-filter-btn').removeClass('active').attr('aria-selected', 'false');
+    $(this).addClass('active').attr('aria-selected', 'true');
+
+    if (filter === 'all') {
+      // Show featured video
+      $('#lv-featured').show();
+      // Show all cards (except the advisor card which we manage separately)
+      $('#lv-grid .lv-card').each(function () {
+        $(this).show();
+      });
+    } else {
+      // Hide featured if it doesn't match
+      var featuredCat = $('.lv-featured-card').data('cat');
+      if (featuredCat === filter) {
+        $('#lv-featured').show();
+      } else {
+        $('#lv-featured').hide();
+      }
+
+      // Filter cards
+      $('#lv-grid .lv-card').each(function () {
+        var cats = ($(this).data('cat') || '').split(' ');
+        if (cats.indexOf(filter) !== -1) {
+          $(this).show();
+        } else {
+          $(this).hide();
+        }
+      });
+    }
+
+    // Show "no results" if nothing visible
+    var visibleCount = $('#lv-grid .lv-card:visible').length;
+    var featuredVisible = $('#lv-featured').is(':visible');
+    if (!visibleCount && !featuredVisible) {
+      $('#lv-no-results').show();
+    } else {
+      $('#lv-no-results').hide();
+    }
+  });
+
+  // On load: show all (featured + all cards)
+  $('#lv-featured').show();
+  // The advisor card is shown too when "all"
+  // Ensure advisor card shows on all filter
+  var $advisorCard = $('#lv-grid .lv-card').filter(function(){
+    return $(this).data('title') && $(this).data('title').indexOf('Become an Insurance Advisor') !== -1;
+  });
+  $advisorCard.show().removeAttr('style');
+
+  // ===== OPEN MODAL =====
+  function openVideoModal(videoId, title, cat, desc) {
+    var catLabel = {
+      health: '<i class="fas fa-heartbeat"></i> Health Insurance',
+      life: '<i class="fas fa-heart"></i> Life Insurance',
+      motor: '<i class="fas fa-car"></i> Motor Insurance',
+      learning: '<i class="fas fa-lightbulb"></i> Learning Tips',
+      general: '<i class="fas fa-building"></i> About Shikhar IMF'
+    }[cat] || '<i class="fas fa-play"></i> Insurance Videos';
+
+    $('#lvModalTitle').text(title);
+    $('#lvModalCat').html(catLabel);
+    $('#lvModalDesc').text(desc || 'Watch this expert video to learn more about ' + title + '.');
+    $('#lvModalIframe').attr('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1');
+    $('#lvModal').addClass('open');
+    $('body').css('overflow', 'hidden');
+  }
+
+  function closeVideoModal() {
+    $('#lvModal').removeClass('open');
+    $('#lvModalIframe').attr('src', '');
+    $('body').css('overflow', '');
+  }
+
+  // Click on video cards
+  $(document).on('click keypress', '.lv-card', function (e) {
+    if (e.type === 'keypress' && e.which !== 13) return;
+    var $this = $(this);
+    openVideoModal(
+      $this.data('video'),
+      $this.data('title'),
+      ($this.data('cat') || '').split(' ')[0],
+      $this.find('.lv-card-desc').text()
+    );
+  });
+
+  // Click on featured card
+  $(document).on('click keypress', '.lv-featured-card, .lv-play-card-btn', function (e) {
+    if (e.type === 'keypress' && e.which !== 13) return;
+    e.stopPropagation();
+    var $fc = $('.lv-featured-card');
+    openVideoModal(
+      $fc.data('video'),
+      $fc.data('title'),
+      $fc.data('cat'),
+      'A comprehensive beginner\'s guide to health insurance in India — coverage types, cashless hospitalization, network hospitals, and plan selection.'
+    );
+  });
+
+  // Close modal
+  $('#lvModalClose, #lvModal').on('click', function (e) {
+    if ($(e.target).is('#lvModal') || $(e.target).is('#lvModalClose') || $(e.target).closest('#lvModalClose').length) {
+      closeVideoModal();
+    }
+  });
+
+  // Escape key
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape') closeVideoModal();
+  });
+
+  // ===== STATS COUNTER =====
+  function animateCounter($el) {
+    var target = parseInt($el.data('target'), 10);
+    var suffix = $el.data('suffix') || '';
+    var duration = 1800;
+    var start = 0;
+    var startTime = null;
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+      var current = Math.floor(eased * target);
+      if (target >= 1000) {
+        $el.text((current >= 1000 ? (current / 1000).toFixed(current >= 10000 ? 0 : 1) + 'K' : current) + suffix);
+      } else {
+        $el.text(current + suffix);
+      }
+      if (progress < 1) requestAnimationFrame(step);
+      else {
+        if (target >= 50000) $el.text('50K' + suffix);
+        else $el.text(target + suffix);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  var statsAnimated = false;
+  function checkStats() {
+    if (statsAnimated) return;
+    var $bar = $('.lv-stats-bar');
+    if ($bar.length) {
+      var barTop = $bar.offset().top;
+      var windowBottom = $(window).scrollTop() + $(window).height();
+      if (windowBottom > barTop + 50) {
+        statsAnimated = true;
+        $('.lv-num[data-target]').each(function () {
+          animateCounter($(this));
+        });
+      }
+    }
+  }
+  $(window).on('scroll', checkStats);
+  setTimeout(checkStats, 400);
+
+  // ===== SCROLL REVEAL for cards =====
+  function checkReveal() {
+    $('.lv-card:visible').each(function () {
+      var top = $(this).offset().top;
+      var winBottom = $(window).scrollTop() + $(window).height();
+      if (winBottom > top + 60) {
+        $(this).css({ opacity: 1, transform: 'translateY(0)' });
+      }
+    });
+  }
+  // Set initial state
+  $('.lv-card').css({ opacity: 0, transform: 'translateY(28px)', transition: 'opacity 0.5s ease, transform 0.5s ease' });
+  $(window).on('scroll', checkReveal);
+  setTimeout(checkReveal, 300);
+
+}); // end ready
+</script>
+</body>
+</html>
