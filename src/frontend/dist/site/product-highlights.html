@@ -24,6 +24,8 @@
       display: flex;
       align-items: center;
       overflow: hidden;
+      isolation: isolate;
+      z-index: 0;
     }
     .ph-hero-overlay {
       position: absolute; inset: 0;
@@ -1437,29 +1439,11 @@ $(function () {
     if (e.key === 'Escape') closeVideo();
   });
 
-  /* ===== RESOURCES DROPDOWN ===== */
-  $('.nav-dropdown-toggle').on('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-    var $menu = $(this).siblings('.nav-dropdown-menu');
-    var isOpen = $menu.is(':visible');
-    $('.nav-dropdown-menu').hide();
-    $('.nav-dropdown-toggle i').css('transform', '');
-    if (!isOpen) {
-      $menu.show();
-      $(this).find('i').css('transform', 'rotate(180deg)');
-    }
-  });
-  $(document).on('click', function (e) {
-    if (!$(e.target).closest('.nav-dropdown').length) {
-      $('.nav-dropdown-menu').hide();
-      $('.nav-dropdown-toggle i').css('transform', '');
-    }
-  });
-
   /* ===== HERO CHIP SMOOTH SCROLL ===== */
-  $('a[href^="#"]').on('click', function (e) {
-    var target = $(this.getAttribute('href'));
+  $('a[href^="#"]').not('.nav-dropdown-toggle').on('click', function (e) {
+    var href = this.getAttribute('href');
+    if (!href || href === '#') return;
+    var target = $(href);
     if (target.length) {
       e.preventDefault();
       $('html,body').animate({ scrollTop: target.offset().top - 130 }, 600);

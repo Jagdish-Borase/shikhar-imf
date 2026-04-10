@@ -151,8 +151,10 @@ $(document).ready(function () {
     e.preventDefault();
     e.stopPropagation();
     var $menu = $(this).siblings('.nav-dropdown-menu');
-    var isOpen = $menu.is(':visible');
-    $('.nav-dropdown-menu').hide();
+    // Read visibility BEFORE closing others (use css() to detect inline display:none)
+    var isOpen = $menu.css('display') !== 'none';
+    // Close all menus (remove inline style so CSS default hides them, then force hide)
+    $('.nav-dropdown-menu').removeAttr('style').hide();
     $('.nav-dropdown-toggle i').css('transform', '');
     if (!isOpen) {
       $menu.show();
@@ -161,7 +163,7 @@ $(document).ready(function () {
   });
   $(document).on('click', function (e) {
     if (!$(e.target).closest('.nav-dropdown').length) {
-      $('.nav-dropdown-menu').hide();
+      $('.nav-dropdown-menu').removeAttr('style').hide();
       $('.nav-dropdown-toggle i').css('transform', '');
     }
   });
