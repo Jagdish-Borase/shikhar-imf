@@ -65,7 +65,8 @@ var teamData = {
     socials: [
       { icon: 'fab fa-linkedin-in', url: 'https://www.linkedin.com/in/laxman-ghube-0aa80161/', label: 'LinkedIn' },
       { icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/laxmanghube', label: 'Facebook' },
-      { icon: 'fab fa-instagram', url: 'https://www.instagram.com/ghubelaxman', label: 'Instagram' }
+      { icon: 'fab fa-instagram', url: 'https://www.instagram.com/ghubelaxman', label: 'Instagram' },
+      { icon: 'fas fa-id-card', url: 'contact-card-laxman.html', label: 'Digital Card', type: 'digitalCard' }
     ]
   },
   kalyan: {
@@ -76,7 +77,8 @@ var teamData = {
     achievements: ['Designed the advisor onboarding framework at Shikhar IMF', 'Trained 500+ insurance advisors across Maharashtra', 'Specialist in health and life insurance product advisory', 'Key contributor to the company\'s digital sales transformation'],
     socials: [
       { icon: 'fab fa-facebook-f', url: 'https://www.facebook.com/kalyan.goshegaonkar.3', label: 'Facebook' },
-      { icon: 'fab fa-instagram', url: 'https://www.instagram.com/kalyan.goshegaonkar', label: 'Instagram' }
+      { icon: 'fab fa-instagram', url: 'https://www.instagram.com/kalyan.goshegaonkar', label: 'Instagram' },
+      { icon: 'fas fa-id-card', url: 'contact-card-kalyan.html', label: 'Digital Card', type: 'digitalCard' }
     ]
   },
   rajesh: {
@@ -87,7 +89,8 @@ var teamData = {
     achievements: ['Streamlined the digital quote comparison system', 'Oversees 3,000+ network garage partnerships for motor claims', 'Expert in commercial and vehicle insurance products', 'Led Shikhar IMF\'s technology and CRM platform integration'],
     socials: [
       { icon: 'fab fa-linkedin-in', url: '#', label: 'LinkedIn' },
-      { icon: 'fab fa-facebook-f', url: '#', label: 'Facebook' }
+      { icon: 'fab fa-facebook-f', url: '#', label: 'Facebook' },
+      { icon: 'fas fa-id-card', url: 'contact-card-rajesh.html', label: 'Digital Card', type: 'digitalCard' }
     ]
   },
   rashmi: {
@@ -98,7 +101,8 @@ var teamData = {
     achievements: ['Pioneered the family floater insurance advisory service', 'Built Shikhar IMF\'s multilingual support framework', 'Expert in senior citizen and critical illness plans', 'Instrumental in achieving 99% claim settlement rate'],
     socials: [
       { icon: 'fab fa-linkedin-in', url: '#', label: 'LinkedIn' },
-      { icon: 'fab fa-instagram', url: '#', label: 'Instagram' }
+      { icon: 'fab fa-instagram', url: '#', label: 'Instagram' },
+      { icon: 'fas fa-id-card', url: 'contact-card-rashmi.html', label: 'Digital Card', type: 'digitalCard' }
     ]
   },
   pralhad: {
@@ -109,7 +113,8 @@ var teamData = {
     achievements: ['Established Shikhar IMF\'s B2B insurance division', 'Managed corporate insurance portfolios worth ₹50+ crores', 'Expert in multi-location business insurance solutions', 'Key partnerships with 15+ commercial insurance providers'],
     socials: [
       { icon: 'fab fa-linkedin-in', url: '#', label: 'LinkedIn' },
-      { icon: 'fab fa-facebook-f', url: '#', label: 'Facebook' }
+      { icon: 'fab fa-facebook-f', url: '#', label: 'Facebook' },
+      { icon: 'fas fa-id-card', url: 'contact-card-pralhad.html', label: 'Digital Card', type: 'digitalCard' }
     ]
   }
 };
@@ -580,7 +585,11 @@ $(document).ready(function () {
     var achHtml = d.achievements.map(function (a) { return '<li>' + a + '</li>'; }).join('');
     $('#tmAchievements').html(achHtml);
     var socialHtml = d.socials.map(function (s) {
-      return '<a href="' + s.url + '" target="_blank" title="' + s.label + '"><i class="' + s.icon + '"></i></a>';
+      if (s.type === 'digitalCard') {
+        return '<a href="' + s.url + '" class="tm-social" title="Digital Card"><i class="' + s.icon + '"></i></a>';
+      }
+      var target = s.internal ? '' : ' target="_blank"';
+      return '<a href="' + s.url + '"' + target + ' title="' + s.label + '"><i class="' + s.icon + '"></i></a>';
     }).join('');
     $('#tmSocials').html(socialHtml);
     $('#teamModal').addClass('open');

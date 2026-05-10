@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rashmi Vaidya - Co-Founder | Shikhar IMF</title>
+  <meta name="description" content="Rashmi Vaidya - Co-Founder at Shikhar IMF Pvt. Ltd. Family Insurance Specialist. Connect, call, WhatsApp, or save contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cc-primary: #1B3A7A;
+      --cc-primary-dark: #09122a;
+      --cc-green: #27AE60;
+      --cc-green-light: #2ecc71;
+      --cc-accent: #E8A320;
+      --cc-whatsapp: #25D366;
+      --cc-white: #ffffff;
+      --cc-off-white: #f8f9fb;
+      --cc-text: #2c2c2c;
+      --cc-text-muted: #6c757d;
+      --cc-border: #e2e8f0;
+      --cc-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      --cc-shadow-md: 0 8px 32px rgba(0,0,0,0.12);
+      --cc-shadow-lg: 0 20px 60px rgba(0,0,0,0.18);
+      --cc-transition: all 0.28s ease;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff;
+      min-height: 100vh;
+      color: var(--cc-text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== MAIN WRAPPER ===== */
+    .cc-wrapper {
+      max-width: 460px;
+      margin: 0 auto;
+      padding: 24px 0 48px;
+    }
+
+    /* ===== PROFILE HERO ===== */
+    .cc-hero {
+      background: linear-gradient(155deg, var(--cc-primary-dark) 0%, #1B3A7A 55%, #0f2a60 100%);
+      border-radius: 18px;
+      margin: 0 14px;
+      padding: 32px 24px 28px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: var(--cc-shadow-lg);
+    }
+    .cc-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 15% 15%, rgba(39,174,96,0.15) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 85%, rgba(232,163,32,0.1) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    .cc-hero-dots span {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      animation: cc-float 7s ease-in-out infinite;
+    }
+    .cc-hero-dots span:nth-child(1){width:8px;height:8px;top:12%;left:8%;animation-delay:0s;}
+    .cc-hero-dots span:nth-child(2){width:5px;height:5px;top:45%;left:4%;animation-delay:1.2s;}
+    .cc-hero-dots span:nth-child(3){width:10px;height:10px;top:18%;right:7%;animation-delay:2s;}
+    .cc-hero-dots span:nth-child(4){width:6px;height:6px;top:65%;right:10%;animation-delay:1.6s;}
+    .cc-hero-dots span:nth-child(5){width:4px;height:4px;top:82%;left:22%;animation-delay:3.2s;}
+    @keyframes cc-float {
+      0%,100%{transform:translateY(0);opacity:.5;}
+      50%{transform:translateY(-10px);opacity:1;}
+    }
+
+    /* ===== LOGO CORNER ===== */
+    .cc-logo-corner {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      background: rgba(255,255,255,0.92);
+      border-radius: 10px;
+      padding: 5px 9px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    .cc-logo-corner img {
+      max-height: 36px;
+      max-width: 120px;
+      width: auto;
+      height: auto;
+      display: block;
+    }
+    .cc-logo-corner span {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--cc-primary-dark);
+      white-space: nowrap;
+      line-height: 1.2;
+    }
+    .cc-logo-corner span em {
+      color: var(--cc-green);
+      font-style: normal;
+      font-size: 0.6rem;
+      display: block;
+      font-weight: 500;
+    }
+
+    /* ===== AVATAR ===== */
+    .cc-avatar-wrap {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.18), 0 0 30px rgba(39,174,96,0.35);
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--cc-primary), var(--cc-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cc-avatar-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .cc-avatar-initials {
+      display: none;
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+      letter-spacing: 1px;
+    }
+
+    /* ===== PROFILE INFO ===== */
+    .cc-name {
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      margin-bottom: 4px;
+      position: relative;
+      z-index: 2;
+    }
+    .cc-role {
+      color: var(--cc-green-light);
+      font-size: 0.83rem;
+      font-weight: 600;
+      margin-bottom: 3px;
+      position: relative;
+      z-index: 2;
+      letter-spacing: 0.2px;
+    }
+    .cc-company {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.76rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ===== ICON ACTION BUTTONS ===== */
+    .cc-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 2;
+    }
+    .cc-icon-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: var(--cc-transition);
+      border: none;
+      cursor: pointer;
+      position: relative;
+    }
+    .cc-icon-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .cc-icon-btn.call {
+      background: #1976D2;
+      color: white;
+    }
+    .cc-icon-btn.call:hover { background: #1565C0; }
+    .cc-icon-btn.whatsapp {
+      background: #25D366;
+      color: white;
+    }
+    .cc-icon-btn.whatsapp:hover { background: #1EBE5A; }
+    .cc-icon-btn.email {
+      background: linear-gradient(135deg, #E65100, #FF7043);
+      color: white;
+    }
+    .cc-icon-btn.email:hover { background: linear-gradient(135deg, #BF360C, #E64A19); }
+
+    /* ===== SHARE + SAVE ROW INSIDE HERO ===== */
+    .cc-hero-bottom {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 16px;
+      margin-top: 4px;
+    }
+    .cc-share-save-row {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .cc-share-input {
+      flex: 1;
+      min-width: 0;
+      padding: 9px 12px;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      outline: none;
+      transition: var(--cc-transition);
+    }
+    .cc-share-input::placeholder { color: rgba(255,255,255,0.45); }
+    .cc-share-input:focus { border-color: var(--cc-green-light); background: rgba(255,255,255,0.15); }
+    .cc-share-btn {
+      padding: 9px 13px;
+      background: linear-gradient(135deg, var(--cc-green), var(--cc-green-light));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--cc-transition);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .cc-share-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 16px rgba(39,174,96,0.4); }
+    .cc-save-btn {
+      padding: 9px 13px;
+      background: linear-gradient(135deg, #f7971e, #ffd200);
+      border: 1.5px solid rgba(255,210,0,0.5);
+      color: #1B3A7A;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--cc-transition);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+    .cc-save-btn:hover { background: linear-gradient(135deg, #ffaa2c, #ffe033); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(255,210,0,0.45); }
+    .cc-share-error {
+      color: #ff8a80;
+      font-size: 0.72rem;
+      margin-top: 5px;
+      display: none;
+      align-items: center;
+      gap: 4px;
+    }
+    .cc-share-error.show { display: flex; }
+
+    /* ===== SECTION CARDS (flat) ===== */
+    .cc-section {
+      background: var(--cc-white);
+      margin: 0 14px 12px;
+      padding: 22px 20px;
+      border-left: 3px solid var(--cc-primary);
+      box-shadow: var(--cc-shadow);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+    }
+    .cc-section.visible { opacity: 1; transform: translateY(0); }
+    .cc-section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--cc-primary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .cc-section-title .cc-title-icon {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--cc-primary), #2550b8);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+    }
+    .cc-section-title .cc-title-line {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cc-green) 0%, transparent 100%);
+      border-radius: 1px;
+    }
+
+    /* ===== ABOUT TEXT ===== */
+    .cc-about-text {
+      font-size: 0.84rem;
+      line-height: 1.8;
+      color: var(--cc-text);
+    }
+    .cc-about-text strong { color: var(--cc-primary); }
+
+    /* ===== KEY ACHIEVEMENTS - BIO CARD ===== */
+    .cc-section.achievements { border-left-color: var(--cc-accent); }
+    .cc-bio-intro {
+      font-size: 0.84rem;
+      line-height: 1.7;
+      color: var(--cc-text);
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      background: linear-gradient(135deg, #f0f5ff, #fff8e8);
+      border-radius: 6px;
+    }
+    .cc-bio-intro strong { color: var(--cc-primary); }
+    .cc-bio-block {
+      margin-bottom: 16px;
+    }
+    .cc-bio-block-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--cc-primary);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cc-bio-block-label i {
+      color: var(--cc-accent);
+      font-size: 0.75rem;
+    }
+    .cc-quote-block {
+      background: linear-gradient(135deg, #f0f5ff 0%, #eaf5ee 100%);
+      border-left: 3px solid var(--cc-primary);
+      padding: 13px 15px;
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: var(--cc-text);
+      font-style: italic;
+      position: relative;
+    }
+    .cc-quote-block::before {
+      content: '\201C';
+      position: absolute;
+      top: -4px;
+      left: 10px;
+      font-size: 2rem;
+      color: var(--cc-primary);
+      opacity: 0.15;
+      font-style: normal;
+      line-height: 1;
+    }
+    .cc-expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .cc-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      background: #eef2ff;
+      color: var(--cc-primary);
+      font-size: 0.72rem;
+      font-weight: 600;
+      border-radius: 4px;
+      border: 1px solid #d0dbf8;
+    }
+    .cc-tag i { font-size: 0.65rem; color: var(--cc-green); }
+
+    /* ===== OTHER LINKS GRID ===== */
+    .cc-section.other-links { border-left-color: var(--cc-green); }
+    .cc-links-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+    .cc-link-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 14px 8px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: white;
+      transition: var(--cc-transition);
+      min-height: 72px;
+    }
+    .cc-link-pill:hover { transform: translateY(-3px); box-shadow: var(--cc-shadow-md); filter: brightness(1.08); }
+    .cc-link-pill i { font-size: 1.2rem; }
+    .cc-link-pill.website  { background: linear-gradient(135deg, var(--cc-primary-dark), var(--cc-primary)); }
+    .cc-link-pill.facebook { background: #1877F2; }
+    .cc-link-pill.linkedin { background: #0A66C2; }
+    .cc-link-pill.youtube  { background: #FF0000; }
+    .cc-link-pill.instagram { background: linear-gradient(135deg, #833ab4, #c13584, #fd1d1d, #fcb045); }
+
+    /* ===== PRODUCTS GRID ===== */
+    .cc-products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    .cc-product-card {
+      display: block;
+      padding: 14px 12px;
+      background: var(--cc-off-white);
+      border: 1px solid var(--cc-border);
+      border-top: 2px solid var(--cc-green);
+      text-decoration: none;
+      transition: var(--cc-transition);
+    }
+    .cc-product-card:hover {
+      border-top-color: var(--cc-primary);
+      box-shadow: 0 6px 20px rgba(27,58,122,0.1);
+      transform: translateY(-2px);
+    }
+    .cc-product-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--cc-primary), var(--cc-green));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-size: 0.82rem;
+      margin-bottom: 8px;
+    }
+    .cc-product-name { font-size: 0.8rem; font-weight: 700; color: var(--cc-primary); margin-bottom: 3px; }
+    .cc-product-desc { font-size: 0.7rem; color: var(--cc-text-muted); line-height: 1.5; }
+    .cc-product-cta {
+      font-size: 0.68rem;
+      color: var(--cc-green);
+      font-weight: 600;
+      margin-top: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    /* ===== CONTACT US FORM ===== */
+    .cc-section.contact-form { border-left-color: var(--cc-green); }
+    .cc-form-group {
+      margin-bottom: 14px;
+    }
+    .cc-form-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--cc-primary);
+      margin-bottom: 5px;
+    }
+    .cc-form-input,
+    .cc-form-textarea {
+      width: 100%;
+      padding: 10px 13px;
+      border: 1.5px solid var(--cc-border);
+      border-radius: 7px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      color: var(--cc-text);
+      background: var(--cc-off-white);
+      outline: none;
+      transition: var(--cc-transition);
+      display: block;
+    }
+    .cc-form-input::placeholder,
+    .cc-form-textarea::placeholder { color: #b0bec5; }
+    .cc-form-input:focus,
+    .cc-form-textarea:focus {
+      border-color: var(--cc-primary);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(27,58,122,0.09);
+    }
+    .cc-form-input.error,
+    .cc-form-textarea.error {
+      border-color: #e53935;
+      background: #fff5f5;
+    }
+    .cc-form-input.success,
+    .cc-form-textarea.success {
+      border-color: var(--cc-green);
+      background: #f0fbf4;
+    }
+    .cc-form-textarea { resize: vertical; min-height: 82px; }
+    .cc-error-msg {
+      display: none;
+      color: #e53935;
+      font-size: 0.7rem;
+      margin-top: 4px;
+      align-items: center;
+      gap: 4px;
+    }
+    .cc-error-msg.show { display: flex; }
+    .cc-submit-btn {
+      width: 100%;
+      padding: 11px 20px;
+      background: linear-gradient(135deg, #1e8449, #2ecc71);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--cc-transition);
+      letter-spacing: 0.2px;
+      margin-top: 4px;
+    }
+    .cc-submit-btn:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(30,132,73,0.38);
+      filter: brightness(1.06);
+    }
+    .cc-submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+    .cc-views-counter {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.73rem;
+      color: var(--cc-text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+    .cc-views-counter i { color: var(--cc-primary); font-size: 0.78rem; opacity: 0.7; }
+    .cc-disclaimer {
+      margin-top: 14px;
+      padding: 12px 14px;
+      background: linear-gradient(135deg, #f8f9fb, #eef5ea);
+      border-left: 3px solid var(--cc-green);
+      border-radius: 0 6px 6px 0;
+      font-size: 0.68rem;
+      line-height: 1.75;
+      color: var(--cc-text-muted);
+    }
+    .cc-disclaimer strong {
+      color: var(--cc-primary);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .cc-success-alert {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      background: linear-gradient(135deg, #e8f5e9, #f0fbf4);
+      border: 1.5px solid var(--cc-green);
+      border-radius: 8px;
+      margin-bottom: 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a7a3c;
+    }
+    .cc-success-alert.show { display: flex; }
+    .cc-success-alert i { font-size: 1.1rem; color: var(--cc-green); flex-shrink: 0; }
+
+    /* ===== FOOTER ===== */
+    .cc-footer {
+      text-align: center;
+      padding: 18px 20px 28px;
+      margin-top: 4px;
+    }
+    .cc-footer p { color: #adb5bd; font-size: 0.72rem; line-height: 1.7; }
+    .cc-footer a { color: var(--cc-green); text-decoration: none; font-weight: 500; }
+    .cc-footer a:hover { text-decoration: underline; }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 480px) {
+      .cc-wrapper { padding: 16px 0 36px; }
+      .cc-hero { margin: 0 10px; padding: 28px 18px 24px; }
+      .cc-section { margin: 0 10px 10px; padding: 18px 15px; }
+      .cc-links-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+      .cc-link-pill { padding: 12px 6px; min-height: 66px; font-size: 0.68rem; }
+      .cc-share-save-row { gap: 6px; flex-wrap: wrap; }
+      .cc-share-input { min-width: 0; }
+      .cc-share-btn, .cc-save-btn { padding: 9px 10px; font-size: 0.7rem; }
+      .cc-avatar-wrap { width: 110px; height: 110px; }
+      .cc-action-row { gap: 14px; }
+      .cc-icon-btn { width: 46px; height: 46px; font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cc-wrapper">
+
+  <!-- PROFILE HERO -->
+  <div class="cc-hero">
+    <div class="cc-hero-dots">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Logo top-right corner -->
+    <div class="cc-logo-corner">
+      <img src="https://shikharimf.com/public/assets/logo.svg" alt="Shikhar IMF" onerror="this.src='https://asb.shikharimf.com/assets/logo.png'">
+      <span>Shikhar IMF<em>Authorised IMF</em></span>
+    </div>
+
+    <!-- Avatar -->
+    <div class="cc-avatar-wrap">
+      <img src="https://shikharimf.com/assets/team/rashmi-vaidya.jpg" alt="Rashmi Vaidya"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="cc-avatar-initials">RV</div>
+    </div>
+
+    <!-- Profile Info -->
+    <div class="cc-name">Rashmi Vaidya</div>
+    <div class="cc-role">Co-Founder</div>
+    <div class="cc-company">Shikhar IMF Pvt. Ltd.</div>
+
+    <!-- Icon-only action buttons -->
+    <div class="cc-action-row">
+      <a href="tel:+919356633524" class="cc-icon-btn call" title="Call" aria-label="Call Rashmi Vaidya">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="https://wa.me/919356633524" class="cc-icon-btn whatsapp" target="_blank" rel="noopener" title="WhatsApp" aria-label="WhatsApp Rashmi Vaidya">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:info@shikharimf.in" class="cc-icon-btn email" title="Email" aria-label="Email Rashmi Vaidya">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <!-- Share + Save merged row -->
+    <div class="cc-hero-bottom">
+      <div class="cc-share-save-row">
+        <input type="tel" id="ccShareNum" class="cc-share-input" placeholder="Mobile to share card" maxlength="10" inputmode="numeric" aria-label="Enter mobile number to share this card via WhatsApp">
+        <button class="cc-share-btn" id="ccShareBtn" type="button" aria-label="Share via WhatsApp">
+          <i class="fab fa-whatsapp"></i> Share
+        </button>
+        <button class="cc-save-btn" id="ccSaveBtn" type="button" aria-label="Save contact as VCF">
+          <i class="fas fa-download"></i> Save
+        </button>
+      </div>
+      <div class="cc-share-error" id="ccShareError" role="alert"><i class="fas fa-exclamation-circle"></i> <span id="ccShareErrMsg"></span></div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="cc-section" style="margin-top:14px">
+    <div class="cc-section-title">
+      <span class="cc-title-icon"><i class="fas fa-user"></i></span>
+      About
+      <span class="cc-title-line"></span>
+    </div>
+    <p class="cc-about-text">Rashmi Vaidya is a Co-Founder at <strong>Shikhar IMF Pvt. Ltd.</strong> and a dedicated professional with expertise in insurance planning for families and individuals. Her empathetic approach and meticulous attention to detail ensure every client gets the most suitable coverage.</p>
+  </div>
+
+  <!-- KEY ACHIEVEMENTS -->
+  <div class="cc-section achievements">
+    <div class="cc-section-title">
+      <span class="cc-title-icon" style="background:linear-gradient(135deg,#c27f00,var(--cc-accent))"><i class="fas fa-star"></i></span>
+      Key Achievements
+      <span class="cc-title-line" style="background:linear-gradient(90deg,var(--cc-accent),transparent)"></span>
+    </div>
+
+    <div class="cc-bio-intro">
+      <strong>Co-Founder at Shikhar IMF</strong> &mdash; Family Insurance Specialist committed to guiding every client with clarity and confidence in their insurance journey.
+    </div>
+
+    <div class="cc-bio-block">
+      <div class="cc-bio-block-label"><i class="fas fa-quote-left"></i> My Mission</div>
+      <div class="cc-quote-block">
+        Every family's protection journey is unique. My mission is to be a trusted guide, offering clarity and confidence in every insurance decision.
+      </div>
+    </div>
+
+    <div class="cc-bio-block" style="margin-bottom:8px">
+      <div class="cc-bio-block-label"><i class="fas fa-trophy"></i> Highlights</div>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:#f8f9fb;border-radius:6px">
+          <span style="width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#1B3A7A,#2ecc71);display:flex;align-items:center;justify-content:center;color:white;font-size:0.75rem;flex-shrink:0"><i class="fas fa-home"></i></span>
+          <span style="font-size:0.8rem;font-weight:600;color:#2c2c2c">100+ Families Protected</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:#f8f9fb;border-radius:6px">
+          <span style="width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#1B3A7A,#2ecc71);display:flex;align-items:center;justify-content:center;color:white;font-size:0.75rem;flex-shrink:0"><i class="fas fa-heartbeat"></i></span>
+          <span style="font-size:0.8rem;font-weight:600;color:#2c2c2c">Health Insurance Specialist</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:#f8f9fb;border-radius:6px">
+          <span style="width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#1B3A7A,#2ecc71);display:flex;align-items:center;justify-content:center;color:white;font-size:0.75rem;flex-shrink:0"><i class="fas fa-handshake"></i></span>
+          <span style="font-size:0.8rem;font-weight:600;color:#2c2c2c">Co-Founded Shikhar IMF</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:#f8f9fb;border-radius:6px">
+          <span style="width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#1B3A7A,#2ecc71);display:flex;align-items:center;justify-content:center;color:white;font-size:0.75rem;flex-shrink:0"><i class="fas fa-female"></i></span>
+          <span style="font-size:0.8rem;font-weight:600;color:#2c2c2c">Women in Finance Leader</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;padding:9px 12px;background:#f8f9fb;border-radius:6px">
+          <span style="width:30px;height:30px;border-radius:7px;background:linear-gradient(135deg,#1B3A7A,#2ecc71);display:flex;align-items:center;justify-content:center;color:white;font-size:0.75rem;flex-shrink:0"><i class="fas fa-star"></i></span>
+          <span style="font-size:0.8rem;font-weight:600;color:#2c2c2c">Trusted Family Advisor</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cc-bio-block" style="margin-bottom:0">
+      <div class="cc-bio-block-label"><i class="fas fa-briefcase"></i> Areas of Expertise</div>
+      <div class="cc-expertise-tags">
+        <span class="cc-tag"><i class="fas fa-home"></i> Family Insurance</span>
+        <span class="cc-tag"><i class="fas fa-heartbeat"></i> Health Insurance</span>
+        <span class="cc-tag"><i class="fas fa-venus"></i> Women in Finance</span>
+        <span class="cc-tag"><i class="fas fa-comments"></i> Client Counselling</span>
+        <span class="cc-tag"><i class="fas fa-file-alt"></i> Policy Management</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OTHER LINKS -->
+  <div class="cc-section other-links">
+    <div class="cc-section-title">
+      <span class="cc-title-icon" style="background:linear-gradient(135deg,#1a8a4a,var(--cc-green-light))"><i class="fas fa-link"></i></span>
+      Other Links
+      <span class="cc-title-line"></span>
+    </div>
+    <div class="cc-links-grid" style="grid-template-columns:repeat(1,1fr);max-width:160px">
+      <a href="https://shikharimf.com" target="_blank" rel="noopener" class="cc-link-pill website">
+        <i class="fas fa-globe"></i>
+        <span>Website</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- KNOW MORE ABOUT PRODUCTS -->
+  <div class="cc-section">
+    <div class="cc-section-title">
+      <span class="cc-title-icon"><i class="fas fa-th-large"></i></span>
+      Know More About Products
+      <span class="cc-title-line"></span>
+    </div>
+    <div class="cc-products-grid">
+      <a href="services.html" class="cc-product-card">
+        <div class="cc-product-icon"><i class="fas fa-heartbeat"></i></div>
+        <div class="cc-product-name">Health Insurance</div>
+        <div class="cc-product-desc">Comprehensive health cover for you &amp; family</div>
+        <div class="cc-product-cta">Explore <i class="fas fa-arrow-right"></i></div>
+      </a>
+      <a href="services.html" class="cc-product-card">
+        <div class="cc-product-icon"><i class="fas fa-user-shield"></i></div>
+        <div class="cc-product-name">Life Insurance</div>
+        <div class="cc-product-desc">Secure your family's financial future</div>
+        <div class="cc-product-cta">Explore <i class="fas fa-arrow-right"></i></div>
+      </a>
+      <a href="services.html" class="cc-product-card">
+        <div class="cc-product-icon"><i class="fas fa-car"></i></div>
+        <div class="cc-product-name">Motor Insurance</div>
+        <div class="cc-product-desc">Protect your vehicle against all risks</div>
+        <div class="cc-product-cta">Explore <i class="fas fa-arrow-right"></i></div>
+      </a>
+      <a href="services.html" class="cc-product-card">
+        <div class="cc-product-icon"><i class="fas fa-umbrella"></i></div>
+        <div class="cc-product-name">General Insurance</div>
+        <div class="cc-product-desc">Wide coverage for all general risks</div>
+        <div class="cc-product-cta">Explore <i class="fas fa-arrow-right"></i></div>
+      </a>
+      <a href="quote.html" class="cc-product-card">
+        <div class="cc-product-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="cc-product-name">Investment Plans</div>
+        <div class="cc-product-desc">Grow your wealth with smart insurance plans</div>
+        <div class="cc-product-cta">Explore <i class="fas fa-arrow-right"></i></div>
+      </a>
+      <a href="advisor.html" class="cc-product-card">
+        <div class="cc-product-icon"><i class="fas fa-user-tie"></i></div>
+        <div class="cc-product-name">Become an Advisor</div>
+        <div class="cc-product-desc">Join our expert advisor network</div>
+        <div class="cc-product-cta">Join Now <i class="fas fa-arrow-right"></i></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- CONTACT US FORM -->
+  <div class="cc-section contact-form">
+    <div class="cc-section-title">
+      <span class="cc-title-icon" style="background:linear-gradient(135deg,#1a8a4a,var(--cc-green-light))"><i class="fas fa-envelope"></i></span>
+      Contact Us
+      <span class="cc-title-line"></span>
+    </div>
+
+    <div class="cc-success-alert" id="ccContactSuccess" role="alert">
+      <i class="fas fa-check-circle"></i>
+      <span>Thank you! Your message has been sent. We'll get back to you shortly.</span>
+    </div>
+
+    <form id="ccContactForm" novalidate>
+      <div class="cc-form-group">
+        <label class="cc-form-label" for="ccName">Your Name <span style="color:#e53935">*</span></label>
+        <input type="text" id="ccName" class="cc-form-input" placeholder="Enter Your Name" maxlength="80" autocomplete="name">
+        <div class="cc-error-msg" id="ccNameErr"><i class="fas fa-exclamation-circle"></i> <span></span></div>
+      </div>
+
+      <div class="cc-form-group">
+        <label class="cc-form-label" for="ccMobile">Mobile No <span style="color:#e53935">*</span></label>
+        <input type="tel" id="ccMobile" class="cc-form-input" placeholder="Enter Your Mobile No" maxlength="10" inputmode="numeric" autocomplete="tel">
+        <div class="cc-error-msg" id="ccMobileErr"><i class="fas fa-exclamation-circle"></i> <span></span></div>
+      </div>
+
+      <div class="cc-form-group">
+        <label class="cc-form-label" for="ccEmail">Email Address <span style="color:#e53935">*</span></label>
+        <input type="email" id="ccEmail" class="cc-form-input" placeholder="Enter Your Email Address" maxlength="120" autocomplete="email">
+        <div class="cc-error-msg" id="ccEmailErr"><i class="fas fa-exclamation-circle"></i> <span></span></div>
+      </div>
+
+      <div class="cc-form-group">
+        <label class="cc-form-label" for="ccMessage">Message / Query <span style="color:#e53935">*</span></label>
+        <textarea id="ccMessage" class="cc-form-textarea" placeholder="Enter your Message or Query" rows="3" maxlength="1000"></textarea>
+        <div class="cc-error-msg" id="ccMessageErr"><i class="fas fa-exclamation-circle"></i> <span></span></div>
+      </div>
+
+      <button type="submit" class="cc-submit-btn" id="ccSubmitBtn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+
+    <div class="cc-views-counter">
+      <i class="fas fa-eye"></i>
+      <span id="ccViewsCount">32 Views</span>
+    </div>
+
+    <div class="cc-disclaimer">
+      <strong><i class="fas fa-info-circle" style="margin-right:4px"></i>Disclaimer</strong>
+      I hereby authorize Shikhar IMF to call me on the contact number made available by me on the website with a specific request to call back. I further declare that, irrespective of my contact number being registered on National Customer Preference Register (NCPR) or on National Do Not Call Registry (NDNC), any call made, SMS or WhatsApp sent in response to my request shall not be construed as an Unsolicited Commercial Communication even though the content of the call may be for the purposes of explaining various insurance products and services or solicitation and procurement of insurance business.
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cc-footer">
+    <p>&copy; 2026 Shikhar IMF Pvt. Ltd. All rights reserved.</p>
+    <p><a href="index.html">Visit Main Website</a></p>
+  </div>
+
+</div><!-- end cc-wrapper -->
+
+<script>
+  // ===== CONTACT US FORM VALIDATION =====
+  (function() {
+    var phoneRe = /^[6-9]\d{9}$/;
+    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    function ccShowError(inputId, errId, msg) {
+      var input = document.getElementById(inputId);
+      var errEl = document.getElementById(errId);
+      input.classList.remove('success');
+      input.classList.add('error');
+      errEl.querySelector('span').textContent = msg;
+      errEl.classList.add('show');
+    }
+
+    function ccClearError(inputId, errId) {
+      var input = document.getElementById(inputId);
+      var errEl = document.getElementById(errId);
+      input.classList.remove('error');
+      errEl.classList.remove('show');
+    }
+
+    function ccMarkSuccess(inputId) {
+      var input = document.getElementById(inputId);
+      input.classList.remove('error');
+      input.classList.add('success');
+    }
+
+    ['ccName','ccMobile','ccEmail','ccMessage'].forEach(function(id) {
+      var errMap = { ccName:'ccNameErr', ccMobile:'ccMobileErr', ccEmail:'ccEmailErr', ccMessage:'ccMessageErr' };
+      document.getElementById(id).addEventListener('input', function() {
+        ccClearError(id, errMap[id]);
+      });
+    });
+
+    document.getElementById('ccMobile').addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+    });
+
+    document.getElementById('ccContactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name    = document.getElementById('ccName').value.trim();
+      var mobile  = document.getElementById('ccMobile').value.trim();
+      var email   = document.getElementById('ccEmail').value.trim();
+      var message = document.getElementById('ccMessage').value.trim();
+      var valid = true;
+
+      if (!name) {
+        ccShowError('ccName','ccNameErr','Please enter your name.');
+        valid = false;
+      } else { ccMarkSuccess('ccName'); }
+
+      if (!mobile) {
+        ccShowError('ccMobile','ccMobileErr','Please enter your mobile number.');
+        valid = false;
+      } else if (!phoneRe.test(mobile)) {
+        ccShowError('ccMobile','ccMobileErr','Enter a valid 10-digit Indian mobile number.');
+        valid = false;
+      } else { ccMarkSuccess('ccMobile'); }
+
+      if (!email) {
+        ccShowError('ccEmail','ccEmailErr','Please enter your email address.');
+        valid = false;
+      } else if (!emailRe.test(email)) {
+        ccShowError('ccEmail','ccEmailErr','Enter a valid email address.');
+        valid = false;
+      } else { ccMarkSuccess('ccEmail'); }
+
+      if (!message) {
+        ccShowError('ccMessage','ccMessageErr','Please enter your message or query.');
+        valid = false;
+      } else { ccMarkSuccess('ccMessage'); }
+
+      if (!valid) return;
+
+      var btn = document.getElementById('ccSubmitBtn');
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+      setTimeout(function() {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        ['ccName','ccMobile','ccEmail','ccMessage'].forEach(function(id) {
+          var el = document.getElementById(id);
+          el.value = '';
+          el.classList.remove('success','error');
+        });
+        var successEl = document.getElementById('ccContactSuccess');
+        successEl.classList.add('show');
+        setTimeout(function() { successEl.classList.remove('show'); }, 6000);
+      }, 900);
+    });
+  })();
+
+  // VCF DOWNLOAD
+  document.getElementById('ccSaveBtn').addEventListener('click', function() {
+    var vcf = [
+      'BEGIN:VCARD',
+      'VERSION:3.0',
+      'FN:Rashmi Vaidya',
+      'N:Vaidya;Rashmi;;;',
+      'ORG:Shikhar IMF Pvt. Ltd.',
+      'TITLE:Co-Founder',
+      'TEL;TYPE=CELL:+919356633524',
+      'EMAIL;TYPE=WORK:info@shikharimf.in',
+      'URL:https://shikharimf.com',
+      'ADR;TYPE=WORK:;;Office No 1311/12 Boulevard Towers 13th Floor Sadhu Vaswani Chowk Camp;;Pune;Maharashtra;411001;India',
+      'NOTE:Co-Founder at Shikhar IMF Pvt. Ltd. Family Insurance Specialist.',
+      'END:VCARD'
+    ].join('\r\n');
+    var blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'RashmiVaidya.vcf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function() { URL.revokeObjectURL(url); }, 500);
+  });
+
+  // SHARE VIA WHATSAPP
+  document.getElementById('ccShareBtn').addEventListener('click', function() {
+    var num = document.getElementById('ccShareNum').value.trim();
+    var errEl = document.getElementById('ccShareError');
+    var msgEl = document.getElementById('ccShareErrMsg');
+    errEl.classList.remove('show');
+    if (!num) {
+      msgEl.textContent = 'Please enter a mobile number.';
+      errEl.classList.add('show');
+      return;
+    }
+    if (!/^[6-9]\d{9}$/.test(num)) {
+      msgEl.textContent = 'Enter a valid 10-digit Indian mobile number.';
+      errEl.classList.add('show');
+      return;
+    }
+    var msg = encodeURIComponent('Hi! Here is the digital visiting card of Rashmi Vaidya (Co-Founder - Shikhar IMF): ' + window.location.href);
+    window.open('https://wa.me/91' + num + '?text=' + msg, '_blank');
+  });
+
+  document.getElementById('ccShareNum').addEventListener('input', function() {
+    this.value = this.value.replace(/[^0-9]/g, '');
+    document.getElementById('ccShareError').classList.remove('show');
+  });
+
+  // DYNAMIC VIEWS COUNTER
+  (function() {
+    var key = 'shikhar_card_views_rashmi';
+    var stored = localStorage.getItem(key);
+    var count = stored ? parseInt(stored, 10) : 32;
+    if (!stored) { count = 32; }
+    count += 1;
+    localStorage.setItem(key, count);
+    var el = document.getElementById('ccViewsCount');
+    if (el) el.textContent = count.toLocaleString() + ' Views';
+  })();
+
+  // INTERSECTION OBSERVER ANIMATIONS
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.cc-section').forEach(function(el, i) {
+    el.style.transitionDelay = (i * 0.07) + 's';
+    obs.observe(el);
+  });
+</script>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
